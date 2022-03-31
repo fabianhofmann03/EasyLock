@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">EasyLock</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+
+    <string name="menu_home">Start</string>
+    <string name="menu_terminal">Terminal</string>
+    <string name="menu_devices">Geräte</string>
+    <string name="menu_settings">Einstellungen</string>
+    <string name="toolbox_connect">Verbinden</string>
+    <string name="toolbox_disconnect">Trennen</string>
+    <string name="text_password">Passwort:</string>
+    <string name="text_new_password">Neues Passwort:</string>
+    <string name="text_change">Passwort ändern</string>
+    <string name="text_password_hint">Passwort</string>
+    <string name="text_new_password_hint">Neues Passwort für das ausgewählte Gerät</string>
+
+    <string name="bluetooth_permission_denied">Glückwunsch. Du hast diese App nutzlos gemacht</string>
+
+    <string name="bluetooth_messages_1">Bluetooth® Technologie muss aktiviert sein damit diese App funktioniert</string>
+    <string name="bluetooth_messages_2">Du brauchst immer noch Bluetooth damit die App funktioniert</string>
+    <string name="bluetooth_messages_3">Ich hab dir grad zweimal gesagt, dass du Bluetooth brauchst</string>
+    <string name="bluetooth_messages_4">Hey, ein Bluetooth Schloss funktioniert nicht ohne Bluetooth</string>
+    <string name="bluetooth_messages_5">Was machst du? Ohne Bluetooth funktioniert gar nichts in dieser App</string>
+    <string name="bluetooth_messages_6">Hab ich schon erwähnt, dass Bluetooth benötigt wird?</string>
+    <string name="bluetooth_messages_7">Wenn du kein Bluetooth verwenden willst, dann nimm ein Kabel und schiebs dir in den Arsch</string>
+    <string name="bluetooth_messages_8">Egal an welchen Gott du glaubst, er ist enttäuscht</string>
+    <string name="bluetooth_messages_9">Bist du 6, 60 oder Mutters Enttäuschung?</string>
+    <string name="bluetooth_messages_10">Rosen sind rot, Veilchen sind blau, mein Mittelfinger ist für dich, das weißt du genau</string>
+    <string name="bluetooth_messages_11">*intensives weinen*</string>
+
+    <string name="bluetooth_permission_message">Keine Berechtigung für Bluetooth® Technologie verfügbar</string>
+
+    <string name="bluetooth_device_message">Kein Gerät ausgewählt</string>
+    <string name="bluetooth_not_connected">Kein Gerät verbunden</string>
+
+    <string name="connected">Verbunden mit</string>
+    <string name="not_connected_1">Verbindung mit</string>
+    <string name="not_connected_2">nicht möglich</string>
+
+    <string name="error_data">Fehler, zu viele Daten wurden gesendet</string>
+    <string name="pw_too_long">Passwort ist zu lang. Maximal 127 Zeichen sind erlaubt</string>
+    <string name="new_pw_too_long">Neues Passwort ist zu lang. Maximal 127 Zeichen sind erlaubt</string>
+    <string name="wrong_password">Falsches Passwort</string>
+    <string name="device_disconnected">Die Bluetooth® Verbindung wurde unterbrochen</string>
+    <string name="password_changed">Passwort geändert</string>
+    <string name="inactivity">Aktivität wurde wegen Inaktivität beendet</string>
+
+    <!-- Configuration -->
+    <string name="start_configuration">Starte Konfiguration</string>
+    <string name="configuration_message_1">Bitte schließ die Tür</string>
+    <string name="configuration_message_2">Bitte öffne nun die Tür</string>
+    <string name="continue_config">Fortfahren</string>
+    <string name="finish_config">Fertig</string>
+    <string name="config_complete">Konfiguration fertig</string>
+
+    <!-- Preference Titles -->
+    <string name="settings_title_device">Gerät</string>
+    <string name="settings_title_start">Start</string>
+
+    <!-- Device Preferences -->
+    <string name="settings_device_change_password">Passwort ändern</string>
+    <string name="settings_device_config_device">Auf-Zu Erkennung konfigurieren</string>
+
+    <!-- Start Preferences -->
+    <string name="settings_start_automatic_device">Geräteauswahl nach Start</string>
+    <string name="settings_start_specific_bluetooth_device">Standart Gerät</string>
+    <string name="settings_start_last_device">Letzes ausgewähltes Gerät</string>
+    <string name="settings_start_specific_device">Spezifisches Gerät</string>
+    <string name="settings_start_automatic_connection">Automatische Verbindung</string>
+    <string name="settings_start_automatic_connection_on">App verbindet sich automatisch zu dem Gerät</string>
+    <string name="settings_start_automatic_connection_off">Es passiert nichts</string>
+</resources>
