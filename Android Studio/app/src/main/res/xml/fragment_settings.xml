@@ -1,0 +1,44 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="@string/settings_title_device">
+
+        <Preference
+            app:title="@string/settings_device_config_device"
+            app:key="settings_device_config_device"
+            />
+
+        <Preference
+            app:title="@string/settings_device_change_password"
+            app:key="settings_device_change_password"
+            />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/settings_title_start">
+
+        <ListPreference
+            app:title="@string/settings_start_automatic_device"
+            app:key="settings_start_automatic_device"
+            app:defaultValue="@string/settings_start_last_device"
+            app:entries="@array/device_entries"
+            app:entryValues="@array/device_values"
+            app:useSimpleSummaryProvider="true"
+            />
+
+        <ListPreference
+            app:key="settings_start_specific_bluetooth_device"
+            app:title="@string/settings_start_specific_bluetooth_device"
+            app:useSimpleSummaryProvider="true"
+            app:entries="@array/empty_entries"
+            app:entryValues="@array/empty_values"
+            />
+
+        <SwitchPreferenceCompat
+            app:key="settings_start_automatic_connection"
+            app:summaryOff="@string/settings_start_automatic_connection_off"
+            app:summaryOn="@string/settings_start_automatic_connection_on"
+            app:title="@string/settings_start_automatic_connection" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

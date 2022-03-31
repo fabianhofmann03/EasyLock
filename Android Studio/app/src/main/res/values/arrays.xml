@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="bluetooth_messages">
+        <item>@string/bluetooth_messages_1</item>
+        <item>@string/bluetooth_messages_2</item>
+        <item>@string/bluetooth_messages_3</item>
+        <item>@string/bluetooth_messages_4</item>
+        <item>@string/bluetooth_messages_5</item>
+        <item>@string/bluetooth_messages_6</item>
+        <item>@string/bluetooth_messages_7</item>
+        <item>@string/bluetooth_messages_8</item>
+        <item>@string/bluetooth_messages_9</item>
+        <item>@string/bluetooth_messages_10</item>
+        <item>@string/bluetooth_messages_11</item>
+    </string-array>
+
+    <string-array name="device_entries">
+        <item>@string/settings_start_last_device</item>
+        <item>@string/settings_start_specific_device</item>
+    </string-array>
+
+    <string-array name="device_values">
+        <item>settings_start_last_device</item>
+        <item>settings_start_specific_device</item>
+    </string-array>
+
+
+    <string-array name="empty_entries">
+    </string-array>
+
+    <string-array name="empty_values">
+    </string-array>
+
+</resources>

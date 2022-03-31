@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="animation_speed">20</integer>
+    <integer name="snackbar_time">5000</integer>
+    <integer name="response_timer">500</integer>
+    <integer name="response_retry">5</integer>
+</resources>

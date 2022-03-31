@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/lock_animation0001" android:duration="@integer/animation_speed" />
+    <item android:drawable="@drawable/lock_animation0002" android:duration="@integer/animation_speed" />
+    <item android:drawable="@drawable/lock_animation0003" android:duration="@integer/animation_speed" />
+    <item android:drawable="@drawable/lock_animation0004" android:duration="@integer/animation_speed" />
+    <item android:drawable="@drawable/lock_animation0005" android:duration="@integer/animation_speed" />
+    <item android:drawable="@drawable/lock_animation0006" android:duration="@integer/animation_speed" />
+    <item android:drawable="@drawable/lock_animation0007" android:duration="@integer/animation_speed" />
+    <item android:drawable="@drawable/lock_animation0008" android:duration="@integer/animation_speed" />
+    <item android:drawable="@drawable/lock_animation0009" android:duration="@integer/animation_speed" />
+    <item android:drawable="@drawable/lock_animation0010" android:duration="@integer/animation_speed" />
+    <item android:drawable="@drawable/lock_animation0011" android:duration="@integer/animation_speed" />
+    <item android:drawable="@drawable/lock_animation0012" android:duration="@integer/animation_speed" />
+    <item android:drawable="@drawable/lock_animation0013" android:duration="@integer/animation_speed" />
+    <item android:drawable="@drawable/lock_animation0014" android:duration="@integer/animation_speed" />
+    <item android:drawable="@drawable/lock_animation0015" android:duration="@integer/animation_speed" />
+    <item android:drawable="@drawable/lock_animation0016" android:duration="@integer/animation_speed" />
+    <item android:drawable="@drawable/lock_animation0017" android:duration="@integer/animation_speed" />
+    <item android:drawable="@drawable/lock_animation0018" android:duration="@integer/animation_speed" />
+    <item android:drawable="@drawable/lock_animation0019" android:duration="@integer/animation_speed" />
+    <item android:drawable="@drawable/lock_animation0020" android:duration="@integer/animation_speed" />
+    <item android:drawable="@drawable/lock_animation0021" android:duration="@integer/animation_speed" />
+    <item android:drawable="@drawable/lock_animation0022" android:duration="@integer/animation_speed" />
+    <item android:drawable="@drawable/lock_animation0023" android:duration="@integer/animation_speed" />
+    <item android:drawable="@drawable/lock_animation0024" android:duration="@integer/animation_speed" />
+    <item android:drawable="@drawable/lock_animation0025" android:duration="@integer/animation_speed" />
+    <item android:drawable="@drawable/lock_animation0026" android:duration="@integer/animation_speed" />
+    <item android:drawable="@drawable/lock_animation0027" android:duration="@integer/animation_speed" />
+    <item android:drawable="@drawable/lock_animation0028" android:duration="@integer/animation_speed" />
+    <item android:drawable="@drawable/lock_animation0029" android:duration="@integer/animation_speed" />
+    <item android:drawable="@drawable/lock_animation0030" android:duration="@integer/animation_speed" />
+
+</animation-list>
