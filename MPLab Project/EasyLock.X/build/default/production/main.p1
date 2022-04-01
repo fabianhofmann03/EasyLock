@@ -1,0 +1,2561 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"64 main.c
+[; ;main.c: 64: enum lockstates working_state = IDLE;
+[c E2906 0 1 2 3 .. ]
+[n E2906 lockstates IDLE OPENLOCK WAITFOROPEN WAITFORCLOSE  ]
+"69
+[; ;main.c: 69: enum commandcontroll cmd_state = WAITFORCMD;
+[c E2912 0 1 2 3 4 5 6 7 .. ]
+[n E2912 commandcontroll WAITFORCMD READCMD READREQ READDATLEN READDATVAR READDAT READSTAT COMP  ]
+"74
+[; ;main.c: 74: enum commandexecution cmd_exe = WAITTOSTART;
+[c E2922 0 1 .. ]
+[n E2922 commandexecution WAITTOSTART EXECMD  ]
+[p mainexit ]
+"74 ./mcc_generated_files/mcc.h
+[; ;./mcc_generated_files/mcc.h: 74: void SYSTEM_Initialize(void);
+[v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
+"117 ./mcc_generated_files/eusart.h
+[; ;./mcc_generated_files/eusart.h: 117: void EUSART_Initialize(void);
+[v _EUSART_Initialize `(v ~T0 @X0 0 ef ]
+"136 ./mcc_generated_files/adc.h
+[; ;./mcc_generated_files/adc.h: 136: void ADC_Initialize(void);
+[v _ADC_Initialize `(v ~T0 @X0 0 ef ]
+"104 ./mcc_generated_files/tmr2.h
+[; ;./mcc_generated_files/tmr2.h: 104: void TMR2_Initialize(void);
+[v _TMR2_Initialize `(v ~T0 @X0 0 ef ]
+"358 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 358:     struct {
+[s S31 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S31 . IOCIF INTF TMR0IF IOCIE INTE TMR0IE PEIE GIE ]
+"368
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 368:     struct {
+[s S32 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S32 . . T0IF . T0IE ]
+"357
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 357: typedef union {
+[u S30 `S31 1 `S32 1 ]
+[n S30 . . . ]
+"375
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 375: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
+[v _INTCONbits `VS30 ~T0 @X0 0 e@11 ]
+"193 ./mcc_generated_files/adc.h
+[; ;./mcc_generated_files/adc.h: 193: void ADC_StartConversion(void);
+[v _ADC_StartConversion `(v ~T0 @X0 0 ef ]
+[v F2513 `(v ~T0 @X0 0 tf ]
+"344 ./mcc_generated_files/tmr2.h
+[; ;./mcc_generated_files/tmr2.h: 344:  void TMR2_SetInterruptHandler(void (* InterruptHandler)(void));
+[v _TMR2_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F2513 ]
+[v F2998 `(v ~T0 @X0 0 tf ]
+"118 main.c
+[; ;main.c: 118: void read_hall_codes(void);
+[v _read_hall_codes `(v ~T0 @X0 0 ef ]
+"498 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 498:     struct {
+[s S36 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S36 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
+"497
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 497: typedef union {
+[u S35 `S36 1 ]
+[n S35 . . ]
+"509
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 509: extern volatile PORTBbits_t PORTBbits __attribute__((address(0x00D)));
+[v _PORTBbits `VS35 ~T0 @X0 0 e@13 ]
+"121 main.c
+[; ;main.c: 121: void stop_cmd(void);
+[v _stop_cmd `(v ~T0 @X0 0 ef ]
+"115
+[; ;main.c: 115: void send_stat(uint8_t stat);
+[v _send_stat `(v ~T0 @X0 0 ef1`uc ]
+"183
+[; ;main.c: 183:             send_stat(CANCELD);
+[c E2934 1 2 3 4 5 6 7 8 9 .. ]
+[n E2934 status_message COMMAND_EXECUTED RECEIVED DENY TOO_MUCH_DATA MESSAGE_CORRUPTED LOCK_OPEND LOCK_CLOSED CANCELD CONTINUE  ]
+"213 ./mcc_generated_files/eusart.h
+[; ;./mcc_generated_files/eusart.h: 213: _Bool EUSART_is_rx_ready(void);
+[v _EUSART_is_rx_ready `(a ~T0 @X0 0 ef ]
+"328
+[; ;./mcc_generated_files/eusart.h: 328: uint8_t EUSART_Read(void);
+[v _EUSART_Read `(uc ~T0 @X0 0 ef ]
+"312 main.c
+[; ;main.c: 312:             }
+[c E2930 1 2 3 .. ]
+[n E2930 variable PASSWORD NEW_PASSWORD LOCK_STATUS  ]
+"113
+[; ;main.c: 113: void send_req(uint8_t var);
+[v _send_req `(v ~T0 @X0 0 ef1`uc ]
+"122
+[; ;main.c: 122: int seek_confirmation(int wait_num, int continue_num, int retry_num, int cancel_num);
+[v _seek_confirmation `(i ~T0 @X0 0 ef4`i`i`i`i ]
+"120
+[; ;main.c: 120: _Bool wait_for_requested(uint8_t req);
+[v _wait_for_requested `(a ~T0 @X0 0 ef1`uc ]
+"116
+[; ;main.c: 116: _Bool compare_pw(uint8_t *pw, uint8_t len);
+[v _compare_pw `(a ~T0 @X0 0 ef2`*uc`uc ]
+"117
+[; ;main.c: 117: void save_pw(uint8_t *pw, uint8_t len);
+[v _save_pw `(v ~T0 @X0 0 ef2`*uc`uc ]
+"2046 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 2046:     struct {
+[s S110 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S110 . LATA0 LATA1 LATA2 LATA3 LATA4 . LATA6 LATA7 ]
+"2045
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 2045: typedef union {
+[u S109 `S110 1 ]
+[n S109 . . ]
+"2057
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 2057: extern volatile LATAbits_t LATAbits __attribute__((address(0x10C)));
+[v _LATAbits `VS109 ~T0 @X0 0 e@268 ]
+"225 ./mcc_generated_files/adc.h
+[; ;./mcc_generated_files/adc.h: 225: _Bool ADC_IsConversionDone(void);
+[v _ADC_IsConversionDone `(a ~T0 @X0 0 ef ]
+"258
+[; ;./mcc_generated_files/adc.h: 258: uint8_t ADC_GetConversionResult(void);
+[v _ADC_GetConversionResult `(uc ~T0 @X0 0 ef ]
+"119 main.c
+[; ;main.c: 119: void save_hall_codes(uint8_t open, uint8_t close);
+[v _save_hall_codes `(v ~T0 @X0 0 ef2`uc`uc ]
+"466
+[; ;main.c: 466:                 }
+[c E2926 1 2 3 .. ]
+[n E2926 command CHANGE_PASSWORD OPEN_LOCK START_CONFIG  ]
+"1868 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 1868: extern volatile unsigned char ADRESH __attribute__((address(0x09C)));
+[v _ADRESH `Vuc ~T0 @X0 0 e@156 ]
+"123 main.c
+[; ;main.c: 123: _Bool door_status_changed(_Bool open_or_close, int16_t val);
+[v _door_status_changed `(a ~T0 @X0 0 ef2`a`s ]
+"260 ./mcc_generated_files/eusart.h
+[; ;./mcc_generated_files/eusart.h: 260: _Bool EUSART_is_tx_done(void);
+[v _EUSART_is_tx_done `(a ~T0 @X0 0 ef ]
+"348
+[; ;./mcc_generated_files/eusart.h: 348: void EUSART_Write(uint8_t txData);
+[v _EUSART_Write `(v ~T0 @X0 0 ef1`uc ]
+"246 ./mcc_generated_files/memory.h
+[; ;./mcc_generated_files/memory.h: 246: uint8_t DATAEE_ReadByte(uint8_t bAdd);
+[v _DATAEE_ReadByte `(uc ~T0 @X0 0 ef1`uc ]
+"220
+[; ;./mcc_generated_files/memory.h: 220: void DATAEE_WriteByte(uint8_t bAdd, uint8_t bData);
+[v _DATAEE_WriteByte `(v ~T0 @X0 0 ef2`uc`uc ]
+"55 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 55: __asm("INDF0 equ 00h");
+[; <" INDF0 equ 00h ;# ">
+"75
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 75: __asm("INDF1 equ 01h");
+[; <" INDF1 equ 01h ;# ">
+"95
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 95: __asm("PCL equ 02h");
+[; <" PCL equ 02h ;# ">
+"115
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 115: __asm("STATUS equ 03h");
+[; <" STATUS equ 03h ;# ">
+"178
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 178: __asm("FSR0L equ 04h");
+[; <" FSR0L equ 04h ;# ">
+"198
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 198: __asm("FSR0H equ 05h");
+[; <" FSR0H equ 05h ;# ">
+"222
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 222: __asm("FSR1L equ 06h");
+[; <" FSR1L equ 06h ;# ">
+"242
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 242: __asm("FSR1H equ 07h");
+[; <" FSR1H equ 07h ;# ">
+"262
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 262: __asm("BSR equ 08h");
+[; <" BSR equ 08h ;# ">
+"314
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 314: __asm("WREG equ 09h");
+[; <" WREG equ 09h ;# ">
+"334
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 334: __asm("PCLATH equ 0Ah");
+[; <" PCLATH equ 0Ah ;# ">
+"354
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 354: __asm("INTCON equ 0Bh");
+[; <" INTCON equ 0Bh ;# ">
+"432
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 432: __asm("PORTA equ 0Ch");
+[; <" PORTA equ 0Ch ;# ">
+"494
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 494: __asm("PORTB equ 0Dh");
+[; <" PORTB equ 0Dh ;# ">
+"556
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 556: __asm("PIR1 equ 011h");
+[; <" PIR1 equ 011h ;# ">
+"618
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 618: __asm("PIR2 equ 012h");
+[; <" PIR2 equ 012h ;# ">
+"669
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 669: __asm("PIR3 equ 013h");
+[; <" PIR3 equ 013h ;# ">
+"709
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 709: __asm("PIR4 equ 014h");
+[; <" PIR4 equ 014h ;# ">
+"735
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 735: __asm("TMR0 equ 015h");
+[; <" TMR0 equ 015h ;# ">
+"755
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 755: __asm("TMR1 equ 016h");
+[; <" TMR1 equ 016h ;# ">
+"762
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 762: __asm("TMR1L equ 016h");
+[; <" TMR1L equ 016h ;# ">
+"782
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 782: __asm("TMR1H equ 017h");
+[; <" TMR1H equ 017h ;# ">
+"802
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 802: __asm("T1CON equ 018h");
+[; <" T1CON equ 018h ;# ">
+"874
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 874: __asm("T1GCON equ 019h");
+[; <" T1GCON equ 019h ;# ">
+"944
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 944: __asm("TMR2 equ 01Ah");
+[; <" TMR2 equ 01Ah ;# ">
+"964
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 964: __asm("PR2 equ 01Bh");
+[; <" PR2 equ 01Bh ;# ">
+"984
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 984: __asm("T2CON equ 01Ch");
+[; <" T2CON equ 01Ch ;# ">
+"1055
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 1055: __asm("CPSCON0 equ 01Eh");
+[; <" CPSCON0 equ 01Eh ;# ">
+"1109
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 1109: __asm("CPSCON1 equ 01Fh");
+[; <" CPSCON1 equ 01Fh ;# ">
+"1155
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 1155: __asm("TRISA equ 08Ch");
+[; <" TRISA equ 08Ch ;# ">
+"1217
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 1217: __asm("TRISB equ 08Dh");
+[; <" TRISB equ 08Dh ;# ">
+"1279
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 1279: __asm("PIE1 equ 091h");
+[; <" PIE1 equ 091h ;# ">
+"1341
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 1341: __asm("PIE2 equ 092h");
+[; <" PIE2 equ 092h ;# ">
+"1392
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 1392: __asm("PIE3 equ 093h");
+[; <" PIE3 equ 093h ;# ">
+"1432
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 1432: __asm("PIE4 equ 094h");
+[; <" PIE4 equ 094h ;# ">
+"1458
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 1458: __asm("OPTION_REG equ 095h");
+[; <" OPTION_REG equ 095h ;# ">
+"1541
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 1541: __asm("PCON equ 096h");
+[; <" PCON equ 096h ;# ">
+"1592
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 1592: __asm("WDTCON equ 097h");
+[; <" WDTCON equ 097h ;# ">
+"1651
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 1651: __asm("OSCTUNE equ 098h");
+[; <" OSCTUNE equ 098h ;# ">
+"1709
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 1709: __asm("OSCCON equ 099h");
+[; <" OSCCON equ 099h ;# ">
+"1781
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 1781: __asm("OSCSTAT equ 09Ah");
+[; <" OSCSTAT equ 09Ah ;# ">
+"1843
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 1843: __asm("ADRES equ 09Bh");
+[; <" ADRES equ 09Bh ;# ">
+"1850
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 1850: __asm("ADRESL equ 09Bh");
+[; <" ADRESL equ 09Bh ;# ">
+"1870
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 1870: __asm("ADRESH equ 09Ch");
+[; <" ADRESH equ 09Ch ;# ">
+"1890
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 1890: __asm("ADCON0 equ 09Dh");
+[; <" ADCON0 equ 09Dh ;# ">
+"1970
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 1970: __asm("ADCON1 equ 09Eh");
+[; <" ADCON1 equ 09Eh ;# ">
+"2042
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 2042: __asm("LATA equ 010Ch");
+[; <" LATA equ 010Ch ;# ">
+"2099
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 2099: __asm("LATB equ 010Dh");
+[; <" LATB equ 010Dh ;# ">
+"2161
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 2161: __asm("CM1CON0 equ 0111h");
+[; <" CM1CON0 equ 0111h ;# ">
+"2218
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 2218: __asm("CM1CON1 equ 0112h");
+[; <" CM1CON1 equ 0112h ;# ">
+"2284
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 2284: __asm("CM2CON0 equ 0113h");
+[; <" CM2CON0 equ 0113h ;# ">
+"2341
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 2341: __asm("CM2CON1 equ 0114h");
+[; <" CM2CON1 equ 0114h ;# ">
+"2407
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 2407: __asm("CMOUT equ 0115h");
+[; <" CMOUT equ 0115h ;# ">
+"2433
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 2433: __asm("BORCON equ 0116h");
+[; <" BORCON equ 0116h ;# ">
+"2460
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 2460: __asm("FVRCON equ 0117h");
+[; <" FVRCON equ 0117h ;# ">
+"2536
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 2536: __asm("DACCON0 equ 0118h");
+[; <" DACCON0 equ 0118h ;# ">
+"2597
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 2597: __asm("DACCON1 equ 0119h");
+[; <" DACCON1 equ 0119h ;# ">
+"2649
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 2649: __asm("SRCON0 equ 011Ah");
+[; <" SRCON0 equ 011Ah ;# ">
+"2720
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 2720: __asm("SRCON1 equ 011Bh");
+[; <" SRCON1 equ 011Bh ;# ">
+"2782
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 2782: __asm("APFCON0 equ 011Dh");
+[; <" APFCON0 equ 011Dh ;# ">
+"2844
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 2844: __asm("APFCON1 equ 011Eh");
+[; <" APFCON1 equ 011Eh ;# ">
+"2864
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 2864: __asm("ANSELA equ 018Ch");
+[; <" ANSELA equ 018Ch ;# ">
+"2916
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 2916: __asm("ANSELB equ 018Dh");
+[; <" ANSELB equ 018Dh ;# ">
+"2981
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 2981: __asm("EEADR equ 0191h");
+[; <" EEADR equ 0191h ;# ">
+"2988
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 2988: __asm("EEADRL equ 0191h");
+[; <" EEADRL equ 0191h ;# ">
+"3008
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 3008: __asm("EEADRH equ 0192h");
+[; <" EEADRH equ 0192h ;# ">
+"3028
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 3028: __asm("EEDAT equ 0193h");
+[; <" EEDAT equ 0193h ;# ">
+"3035
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 3035: __asm("EEDATL equ 0193h");
+[; <" EEDATL equ 0193h ;# ">
+"3040
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 3040: __asm("EEDATA equ 0193h");
+[; <" EEDATA equ 0193h ;# ">
+"3073
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 3073: __asm("EEDATH equ 0194h");
+[; <" EEDATH equ 0194h ;# ">
+"3093
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 3093: __asm("EECON1 equ 0195h");
+[; <" EECON1 equ 0195h ;# ">
+"3155
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 3155: __asm("EECON2 equ 0196h");
+[; <" EECON2 equ 0196h ;# ">
+"3175
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 3175: __asm("RCREG equ 0199h");
+[; <" RCREG equ 0199h ;# ">
+"3195
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 3195: __asm("TXREG equ 019Ah");
+[; <" TXREG equ 019Ah ;# ">
+"3215
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 3215: __asm("SP1BRG equ 019Bh");
+[; <" SP1BRG equ 019Bh ;# ">
+"3222
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 3222: __asm("SP1BRGL equ 019Bh");
+[; <" SP1BRGL equ 019Bh ;# ">
+"3227
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 3227: __asm("SPBRG equ 019Bh");
+[; <" SPBRG equ 019Bh ;# ">
+"3231
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 3231: __asm("SPBRGL equ 019Bh");
+[; <" SPBRGL equ 019Bh ;# ">
+"3276
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 3276: __asm("SP1BRGH equ 019Ch");
+[; <" SP1BRGH equ 019Ch ;# ">
+"3281
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 3281: __asm("SPBRGH equ 019Ch");
+[; <" SPBRGH equ 019Ch ;# ">
+"3314
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 3314: __asm("RCSTA equ 019Dh");
+[; <" RCSTA equ 019Dh ;# ">
+"3376
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 3376: __asm("TXSTA equ 019Eh");
+[; <" TXSTA equ 019Eh ;# ">
+"3438
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 3438: __asm("BAUDCON equ 019Fh");
+[; <" BAUDCON equ 019Fh ;# ">
+"3490
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 3490: __asm("WPUA equ 020Ch");
+[; <" WPUA equ 020Ch ;# ">
+"3519
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 3519: __asm("WPUB equ 020Dh");
+[; <" WPUB equ 020Dh ;# ">
+"3589
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 3589: __asm("SSP1BUF equ 0211h");
+[; <" SSP1BUF equ 0211h ;# ">
+"3594
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 3594: __asm("SSPBUF equ 0211h");
+[; <" SSPBUF equ 0211h ;# ">
+"3627
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 3627: __asm("SSP1ADD equ 0212h");
+[; <" SSP1ADD equ 0212h ;# ">
+"3632
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 3632: __asm("SSPADD equ 0212h");
+[; <" SSPADD equ 0212h ;# ">
+"3665
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 3665: __asm("SSP1MSK equ 0213h");
+[; <" SSP1MSK equ 0213h ;# ">
+"3670
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 3670: __asm("SSPMSK equ 0213h");
+[; <" SSPMSK equ 0213h ;# ">
+"3703
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 3703: __asm("SSP1STAT equ 0214h");
+[; <" SSP1STAT equ 0214h ;# ">
+"3708
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 3708: __asm("SSPSTAT equ 0214h");
+[; <" SSPSTAT equ 0214h ;# ">
+"3825
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 3825: __asm("SSP1CON1 equ 0215h");
+[; <" SSP1CON1 equ 0215h ;# ">
+"3830
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 3830: __asm("SSPCON1 equ 0215h");
+[; <" SSPCON1 equ 0215h ;# ">
+"3834
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 3834: __asm("SSPCON equ 0215h");
+[; <" SSPCON equ 0215h ;# ">
+"4029
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 4029: __asm("SSP1CON2 equ 0216h");
+[; <" SSP1CON2 equ 0216h ;# ">
+"4034
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 4034: __asm("SSPCON2 equ 0216h");
+[; <" SSPCON2 equ 0216h ;# ">
+"4151
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 4151: __asm("SSP1CON3 equ 0217h");
+[; <" SSP1CON3 equ 0217h ;# ">
+"4156
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 4156: __asm("SSPCON3 equ 0217h");
+[; <" SSPCON3 equ 0217h ;# ">
+"4273
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 4273: __asm("SSP2BUF equ 0219h");
+[; <" SSP2BUF equ 0219h ;# ">
+"4293
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 4293: __asm("SSP2ADD equ 021Ah");
+[; <" SSP2ADD equ 021Ah ;# ">
+"4313
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 4313: __asm("SSP2MSK equ 021Bh");
+[; <" SSP2MSK equ 021Bh ;# ">
+"4333
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 4333: __asm("SSP2STAT equ 021Ch");
+[; <" SSP2STAT equ 021Ch ;# ">
+"4395
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 4395: __asm("SSP2CON1 equ 021Dh");
+[; <" SSP2CON1 equ 021Dh ;# ">
+"4465
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 4465: __asm("SSP2CON2 equ 021Eh");
+[; <" SSP2CON2 equ 021Eh ;# ">
+"4527
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 4527: __asm("SSP2CON3 equ 021Fh");
+[; <" SSP2CON3 equ 021Fh ;# ">
+"4589
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 4589: __asm("CCPR1 equ 0291h");
+[; <" CCPR1 equ 0291h ;# ">
+"4596
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 4596: __asm("CCPR1L equ 0291h");
+[; <" CCPR1L equ 0291h ;# ">
+"4616
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 4616: __asm("CCPR1H equ 0292h");
+[; <" CCPR1H equ 0292h ;# ">
+"4636
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 4636: __asm("CCP1CON equ 0293h");
+[; <" CCP1CON equ 0293h ;# ">
+"4718
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 4718: __asm("PWM1CON equ 0294h");
+[; <" PWM1CON equ 0294h ;# ">
+"4788
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 4788: __asm("CCP1AS equ 0295h");
+[; <" CCP1AS equ 0295h ;# ">
+"4793
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 4793: __asm("ECCP1AS equ 0295h");
+[; <" ECCP1AS equ 0295h ;# ">
+"4950
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 4950: __asm("PSTR1CON equ 0296h");
+[; <" PSTR1CON equ 0296h ;# ">
+"4994
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 4994: __asm("CCPR2 equ 0298h");
+[; <" CCPR2 equ 0298h ;# ">
+"5001
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 5001: __asm("CCPR2L equ 0298h");
+[; <" CCPR2L equ 0298h ;# ">
+"5021
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 5021: __asm("CCPR2H equ 0299h");
+[; <" CCPR2H equ 0299h ;# ">
+"5041
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 5041: __asm("CCP2CON equ 029Ah");
+[; <" CCP2CON equ 029Ah ;# ">
+"5123
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 5123: __asm("PWM2CON equ 029Bh");
+[; <" PWM2CON equ 029Bh ;# ">
+"5193
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 5193: __asm("CCP2AS equ 029Ch");
+[; <" CCP2AS equ 029Ch ;# ">
+"5198
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 5198: __asm("ECCP2AS equ 029Ch");
+[; <" ECCP2AS equ 029Ch ;# ">
+"5355
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 5355: __asm("PSTR2CON equ 029Dh");
+[; <" PSTR2CON equ 029Dh ;# ">
+"5399
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 5399: __asm("CCPTMRS equ 029Eh");
+[; <" CCPTMRS equ 029Eh ;# ">
+"5404
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 5404: __asm("CCPTMRS0 equ 029Eh");
+[; <" CCPTMRS0 equ 029Eh ;# ">
+"5573
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 5573: __asm("CCPR3 equ 0311h");
+[; <" CCPR3 equ 0311h ;# ">
+"5580
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 5580: __asm("CCPR3L equ 0311h");
+[; <" CCPR3L equ 0311h ;# ">
+"5600
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 5600: __asm("CCPR3H equ 0312h");
+[; <" CCPR3H equ 0312h ;# ">
+"5620
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 5620: __asm("CCP3CON equ 0313h");
+[; <" CCP3CON equ 0313h ;# ">
+"5684
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 5684: __asm("CCPR4 equ 0318h");
+[; <" CCPR4 equ 0318h ;# ">
+"5691
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 5691: __asm("CCPR4L equ 0318h");
+[; <" CCPR4L equ 0318h ;# ">
+"5711
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 5711: __asm("CCPR4H equ 0319h");
+[; <" CCPR4H equ 0319h ;# ">
+"5731
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 5731: __asm("CCP4CON equ 031Ah");
+[; <" CCP4CON equ 031Ah ;# ">
+"5795
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 5795: __asm("IOCBP equ 0394h");
+[; <" IOCBP equ 0394h ;# ">
+"5865
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 5865: __asm("IOCBN equ 0395h");
+[; <" IOCBN equ 0395h ;# ">
+"5935
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 5935: __asm("IOCBF equ 0396h");
+[; <" IOCBF equ 0396h ;# ">
+"6005
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 6005: __asm("CLKRCON equ 039Ah");
+[; <" CLKRCON equ 039Ah ;# ">
+"6081
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 6081: __asm("MDCON equ 039Ch");
+[; <" MDCON equ 039Ch ;# ">
+"6132
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 6132: __asm("MDSRC equ 039Dh");
+[; <" MDSRC equ 039Dh ;# ">
+"6185
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 6185: __asm("MDCARL equ 039Eh");
+[; <" MDCARL equ 039Eh ;# ">
+"6250
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 6250: __asm("MDCARH equ 039Fh");
+[; <" MDCARH equ 039Fh ;# ">
+"6315
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 6315: __asm("TMR4 equ 0415h");
+[; <" TMR4 equ 0415h ;# ">
+"6335
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 6335: __asm("PR4 equ 0416h");
+[; <" PR4 equ 0416h ;# ">
+"6355
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 6355: __asm("T4CON equ 0417h");
+[; <" T4CON equ 0417h ;# ">
+"6426
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 6426: __asm("TMR6 equ 041Ch");
+[; <" TMR6 equ 041Ch ;# ">
+"6446
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 6446: __asm("PR6 equ 041Dh");
+[; <" PR6 equ 041Dh ;# ">
+"6466
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 6466: __asm("T6CON equ 041Eh");
+[; <" T6CON equ 041Eh ;# ">
+"6537
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 6537: __asm("STATUS_SHAD equ 0FE4h");
+[; <" STATUS_SHAD equ 0FE4h ;# ">
+"6569
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 6569: __asm("WREG_SHAD equ 0FE5h");
+[; <" WREG_SHAD equ 0FE5h ;# ">
+"6589
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 6589: __asm("BSR_SHAD equ 0FE6h");
+[; <" BSR_SHAD equ 0FE6h ;# ">
+"6609
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 6609: __asm("PCLATH_SHAD equ 0FE7h");
+[; <" PCLATH_SHAD equ 0FE7h ;# ">
+"6629
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 6629: __asm("FSR0L_SHAD equ 0FE8h");
+[; <" FSR0L_SHAD equ 0FE8h ;# ">
+"6649
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 6649: __asm("FSR0H_SHAD equ 0FE9h");
+[; <" FSR0H_SHAD equ 0FE9h ;# ">
+"6669
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 6669: __asm("FSR1L_SHAD equ 0FEAh");
+[; <" FSR1L_SHAD equ 0FEAh ;# ">
+"6689
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 6689: __asm("FSR1H_SHAD equ 0FEBh");
+[; <" FSR1H_SHAD equ 0FEBh ;# ">
+"6709
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 6709: __asm("STKPTR equ 0FEDh");
+[; <" STKPTR equ 0FEDh ;# ">
+"6729
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 6729: __asm("TOSL equ 0FEEh");
+[; <" TOSL equ 0FEEh ;# ">
+"6749
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 6749: __asm("TOSH equ 0FEFh");
+[; <" TOSH equ 0FEFh ;# ">
+"64 main.c
+[; ;main.c: 64: enum lockstates working_state = IDLE;
+[v _working_state `E2906 ~T0 @X0 1 e ]
+[i _working_state
+. `E2906 0
+]
+"69
+[; ;main.c: 69: enum commandcontroll cmd_state = WAITFORCMD;
+[v _cmd_state `E2912 ~T0 @X0 1 e ]
+[i _cmd_state
+. `E2912 0
+]
+"74
+[; ;main.c: 74: enum commandexecution cmd_exe = WAITTOSTART;
+[v _cmd_exe `E2922 ~T0 @X0 1 e ]
+[i _cmd_exe
+. `E2922 0
+]
+"88
+[; ;main.c: 88: uint8_t cmd;
+[v _cmd `uc ~T0 @X0 1 e ]
+"89
+[; ;main.c: 89: uint8_t data_storage[127 + 2];
+[v _data_storage `uc ~T0 @X0 -> 129 `i e ]
+"94
+[; ;main.c: 94: uint8_t request_storage;
+[v _request_storage `uc ~T0 @X0 1 e ]
+"97
+[; ;main.c: 97: uint8_t status_storage;
+[v _status_storage `uc ~T0 @X0 1 e ]
+"100
+[; ;main.c: 100: uint8_t hall_codes[] = {127, 103};
+[v _hall_codes `uc ~T0 @X0 -> 2 `i e ]
+[i _hall_codes
+:U ..
+-> -> 127 `i `uc
+-> -> 103 `i `uc
+..
+]
+"103
+[; ;main.c: 103: int cmd_exe_counter = 0;
+[v _cmd_exe_counter `i ~T0 @X0 1 e ]
+[i _cmd_exe_counter
+-> 0 `i
+]
+"104
+[; ;main.c: 104: _Bool lock_status = 0;
+[v _lock_status `a ~T0 @X0 1 e ]
+[i _lock_status
+-> -> 0 `i `a
+]
+"106
+[; ;main.c: 106: uint8_t new_hall_code_open = 0;
+[v _new_hall_code_open `uc ~T0 @X0 1 e ]
+[i _new_hall_code_open
+-> -> 0 `i `uc
+]
+"107
+[; ;main.c: 107: uint8_t new_hall_code_close = 0;
+[v _new_hall_code_close `uc ~T0 @X0 1 e ]
+[i _new_hall_code_close
+-> -> 0 `i `uc
+]
+"126
+[; ;main.c: 126: long receive_time = 0;
+[v _receive_time `l ~T0 @X0 1 e ]
+[i _receive_time
+-> -> 0 `i `l
+]
+"127
+[; ;main.c: 127: long receive_timer_len = 0;
+[v _receive_timer_len `l ~T0 @X0 1 e ]
+[i _receive_timer_len
+-> -> 0 `i `l
+]
+"128
+[; ;main.c: 128: long cmd_time = 0;
+[v _cmd_time `l ~T0 @X0 1 e ]
+[i _cmd_time
+-> -> 0 `i `l
+]
+"129
+[; ;main.c: 129: long cmd_timer_len = 0;
+[v _cmd_timer_len `l ~T0 @X0 1 e ]
+[i _cmd_timer_len
+-> -> 0 `i `l
+]
+"130
+[; ;main.c: 130: long button_time = 0;
+[v _button_time `l ~T0 @X0 1 e ]
+[i _button_time
+-> -> 0 `i `l
+]
+"131
+[; ;main.c: 131: _Bool button_status = 0;
+[v _button_status `a ~T0 @X0 1 e ]
+[i _button_status
+-> -> 0 `i `a
+]
+"133
+[; ;main.c: 133: void timer_up() {
+[v _timer_up `(v ~T0 @X0 1 ef ]
+{
+[e :U _timer_up ]
+[f ]
+"134
+[; ;main.c: 134:     if(receive_timer_len > 0) receive_time++;
+[e $ ! > _receive_timer_len -> -> 0 `i `l 360  ]
+[e ++ _receive_time -> -> 1 `i `l ]
+[e :U 360 ]
+"135
+[; ;main.c: 135:     if(cmd_timer_len > 0) cmd_time++;
+[e $ ! > _cmd_timer_len -> -> 0 `i `l 361  ]
+[e ++ _cmd_time -> -> 1 `i `l ]
+[e :U 361 ]
+"136
+[; ;main.c: 136:     if(button_status) button_time++;
+[e $ ! != -> _button_status `i -> 0 `i 362  ]
+[e ++ _button_time -> -> 1 `i `l ]
+[e :U 362 ]
+"137
+[; ;main.c: 137: }
+[e :UE 359 ]
+}
+[v $root$_main `(v ~T0 @X0 0 e ]
+"139
+[; ;main.c: 139: void main(void) {
+[v _main `(v ~T0 @X0 1 ef ]
+{
+[e :U _main ]
+[f ]
+"141
+[; ;main.c: 141:     SYSTEM_Initialize();
+[e ( _SYSTEM_Initialize ..  ]
+"142
+[; ;main.c: 142:     EUSART_Initialize();
+[e ( _EUSART_Initialize ..  ]
+"143
+[; ;main.c: 143:     ADC_Initialize();
+[e ( _ADC_Initialize ..  ]
+"144
+[; ;main.c: 144:     TMR2_Initialize();
+[e ( _TMR2_Initialize ..  ]
+"150
+[; ;main.c: 150:     (INTCONbits.GIE = 1);
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+"153
+[; ;main.c: 153:     (INTCONbits.PEIE = 1);
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+"155
+[; ;main.c: 155:     ADC_StartConversion();
+[e ( _ADC_StartConversion ..  ]
+"156
+[; ;main.c: 156:     TMR2_SetInterruptHandler(timer_up);
+[e ( _TMR2_SetInterruptHandler (1 -> &U _timer_up `*F2998 ]
+"158
+[; ;main.c: 158:     read_hall_codes();
+[e ( _read_hall_codes ..  ]
+"160
+[; ;main.c: 160:     while (1) {
+[e :U 365 ]
+{
+"162
+[; ;main.c: 162:         _Bool new_button_status = !PORTBbits.RB0;
+[v _new_button_status `a ~T0 @X0 1 a ]
+[e = _new_button_status -> -> ! != -> . . _PORTBbits 0 0 `i -> 0 `i `i `a ]
+"163
+[; ;main.c: 163:         if(new_button_status != button_status) {
+[e $ ! != -> _new_button_status `i -> _button_status `i 367  ]
+{
+"164
+[; ;main.c: 164:             if(button_status && button_time < 50) {
+[e $ ! && != -> _button_status `i -> 0 `i < _button_time -> -> 50 `i `l 368  ]
+{
+"165
+[; ;main.c: 165:                 if(lock_status) {
+[e $ ! != -> _lock_status `i -> 0 `i 369  ]
+{
+"166
+[; ;main.c: 166:                     working_state = WAITFORCLOSE;
+[e = _working_state . `E2906 3 ]
+"167
+[; ;main.c: 167:                 }else {
+}
+[e $U 370  ]
+[e :U 369 ]
+{
+"168
+[; ;main.c: 168:                     working_state = OPENLOCK;
+[e = _working_state . `E2906 1 ]
+"169
+[; ;main.c: 169:                 }
+}
+[e :U 370 ]
+"170
+[; ;main.c: 170:             }else {
+}
+[e $U 371  ]
+[e :U 368 ]
+{
+"171
+[; ;main.c: 171:                 button_time = 0;
+[e = _button_time -> -> 0 `i `l ]
+"172
+[; ;main.c: 172:             }
+}
+[e :U 371 ]
+"173
+[; ;main.c: 173:         }
+}
+[e :U 367 ]
+"175
+[; ;main.c: 175:         button_status = new_button_status;
+[e = _button_status _new_button_status ]
+"176
+[; ;main.c: 176:         button_status = !PORTBbits.RB0;
+[e = _button_status -> -> ! != -> . . _PORTBbits 0 0 `i -> 0 `i `i `a ]
+"177
+[; ;main.c: 177:         if(receive_timer_len > 0 && receive_time > receive_timer_len) {
+[e $ ! && > _receive_timer_len -> -> 0 `i `l > _receive_time _receive_timer_len 372  ]
+{
+"178
+[; ;main.c: 178:             receive_time = 0;
+[e = _receive_time -> -> 0 `i `l ]
+"179
+[; ;main.c: 179:             receive_timer_len = 0;
+[e = _receive_timer_len -> -> 0 `i `l ]
+"180
+[; ;main.c: 180:             stop_cmd();
+[e ( _stop_cmd ..  ]
+"181
+[; ;main.c: 181:         }
+}
+[e :U 372 ]
+"182
+[; ;main.c: 182:         if(cmd_timer_len > 0 && cmd_time > cmd_timer_len) {
+[e $ ! && > _cmd_timer_len -> -> 0 `i `l > _cmd_time _cmd_timer_len 373  ]
+{
+"183
+[; ;main.c: 183:             send_stat(CANCELD);
+[e ( _send_stat (1 -> . `E2934 7 `uc ]
+"184
+[; ;main.c: 184:             stop_cmd();
+[e ( _stop_cmd ..  ]
+"185
+[; ;main.c: 185:         }
+}
+[e :U 373 ]
+"186
+[; ;main.c: 186:         if (EUSART_is_rx_ready()) {
+[e $ ! != -> ( _EUSART_is_rx_ready ..  `i -> 0 `i 374  ]
+{
+"187
+[; ;main.c: 187:             receive_timer_len = 50;
+[e = _receive_timer_len -> -> 50 `i `l ]
+"188
+[; ;main.c: 188:             receive_time = 0;
+[e = _receive_time -> -> 0 `i `l ]
+"189
+[; ;main.c: 189:             uint8_t input = EUSART_Read();
+[v _input `uc ~T0 @X0 1 a ]
+[e = _input ( _EUSART_Read ..  ]
+"190
+[; ;main.c: 190:             static uint8_t control_byte;
+[v F3002 `uc ~T0 @X0 1 s control_byte ]
+"191
+[; ;main.c: 191:             static uint8_t data_storage_counter = 0;
+[v F3003 `uc ~T0 @X0 1 s data_storage_counter ]
+[i F3003
+-> -> 0 `i `uc
+]
+"192
+[; ;main.c: 192:             static enum commandcontroll last_state = WAITFORCMD;
+[v F3004 `E2912 ~T0 @X0 1 s last_state ]
+[i F3004
+. `E2912 0
+]
+"193
+[; ;main.c: 193:             switch (cmd_state) {
+[e $U 376  ]
+{
+"194
+[; ;main.c: 194:                 case WAITFORCMD:
+[e :U 377 ]
+"195
+[; ;main.c: 195:                     last_state = cmd_state;
+[e = F3004 _cmd_state ]
+"196
+[; ;main.c: 196:                     if (input == 0b10000001) cmd_state = READCMD;
+[e $ ! == -> _input `i -> 129 `i 378  ]
+[e = _cmd_state . `E2912 1 ]
+[e $U 379  ]
+"197
+[; ;main.c: 197:                     else if (input == 0b01000010) cmd_state = READREQ;
+[e :U 378 ]
+[e $ ! == -> _input `i -> 66 `i 380  ]
+[e = _cmd_state . `E2912 2 ]
+[e $U 381  ]
+"198
+[; ;main.c: 198:                     else if (input == 0b00100100) cmd_state = READDATVAR;
+[e :U 380 ]
+[e $ ! == -> _input `i -> 36 `i 382  ]
+[e = _cmd_state . `E2912 4 ]
+[e $U 383  ]
+"199
+[; ;main.c: 199:                     else if (input == 0b00011000) cmd_state = READSTAT;
+[e :U 382 ]
+[e $ ! == -> _input `i -> 24 `i 384  ]
+[e = _cmd_state . `E2912 6 ]
+[e :U 384 ]
+[e :U 383 ]
+[e :U 381 ]
+[e :U 379 ]
+"200
+[; ;main.c: 200:                     control_byte = input;
+[e = F3002 _input ]
+"201
+[; ;main.c: 201:                     break;
+[e $U 375  ]
+"202
+[; ;main.c: 202:                 case READCMD:
+[e :U 385 ]
+"203
+[; ;main.c: 203:                     cmd = input;
+[e = _cmd _input ]
+"204
+[; ;main.c: 204:                     last_state = cmd_state;
+[e = F3004 _cmd_state ]
+"205
+[; ;main.c: 205:                     cmd_state = COMP;
+[e = _cmd_state . `E2912 7 ]
+"206
+[; ;main.c: 206:                     break;
+[e $U 375  ]
+"207
+[; ;main.c: 207:                 case READREQ:
+[e :U 386 ]
+"208
+[; ;main.c: 208:                     request_storage = input;
+[e = _request_storage _input ]
+"209
+[; ;main.c: 209:                     last_state = cmd_state;
+[e = F3004 _cmd_state ]
+"210
+[; ;main.c: 210:                     cmd_state = COMP;
+[e = _cmd_state . `E2912 7 ]
+"211
+[; ;main.c: 211:                     break;
+[e $U 375  ]
+"212
+[; ;main.c: 212:                 case READDATVAR:
+[e :U 387 ]
+"213
+[; ;main.c: 213:                     data_storage[0] = input;
+[e = *U + &U _data_storage * -> -> -> 0 `i `ui `ux -> -> # *U &U _data_storage `ui `ux _input ]
+"214
+[; ;main.c: 214:                     last_state = cmd_state;
+[e = F3004 _cmd_state ]
+"215
+[; ;main.c: 215:                     cmd_state = READDATLEN;
+[e = _cmd_state . `E2912 3 ]
+"216
+[; ;main.c: 216:                     break;
+[e $U 375  ]
+"217
+[; ;main.c: 217:                 case READDATLEN:
+[e :U 388 ]
+"218
+[; ;main.c: 218:                     data_storage[1] = input;
+[e = *U + &U _data_storage * -> -> -> 1 `i `ui `ux -> -> # *U &U _data_storage `ui `ux _input ]
+"219
+[; ;main.c: 219:                     last_state = cmd_state;
+[e = F3004 _cmd_state ]
+"220
+[; ;main.c: 220:                     cmd_state = READDAT;
+[e = _cmd_state . `E2912 5 ]
+"221
+[; ;main.c: 221:                     if(data_storage[1] == 0) cmd_state = COMP;
+[e $ ! == -> *U + &U _data_storage * -> -> -> 1 `i `ui `ux -> -> # *U &U _data_storage `ui `ux `i -> 0 `i 389  ]
+[e = _cmd_state . `E2912 7 ]
+[e :U 389 ]
+"222
+[; ;main.c: 222:                     break;
+[e $U 375  ]
+"223
+[; ;main.c: 223:                 case READDAT:
+[e :U 390 ]
+"224
+[; ;main.c: 224:                     if (data_storage[1] <= 127) data_storage[data_storage_counter + 2] = input;
+[e $ ! <= -> *U + &U _data_storage * -> -> -> 1 `i `ui `ux -> -> # *U &U _data_storage `ui `ux `i -> 127 `i 391  ]
+[e = *U + &U _data_storage * -> -> + -> F3003 `i -> 2 `i `ui `ux -> -> # *U &U _data_storage `ui `ux _input ]
+[e :U 391 ]
+"225
+[; ;main.c: 225:                     data_storage_counter++;
+[e ++ F3003 -> -> 1 `i `uc ]
+"226
+[; ;main.c: 226:                     if (data_storage_counter == (data_storage[1])) {
+[e $ ! == -> F3003 `i -> *U + &U _data_storage * -> -> -> 1 `i `ui `ux -> -> # *U &U _data_storage `ui `ux `i 392  ]
+{
+"227
+[; ;main.c: 227:                         data_storage_counter = 0;
+[e = F3003 -> -> 0 `i `uc ]
+"228
+[; ;main.c: 228:                         last_state = cmd_state;
+[e = F3004 _cmd_state ]
+"229
+[; ;main.c: 229:                         cmd_state = COMP;
+[e = _cmd_state . `E2912 7 ]
+"230
+[; ;main.c: 230:                     }
+}
+[e :U 392 ]
+"231
+[; ;main.c: 231:                     break;
+[e $U 375  ]
+"232
+[; ;main.c: 232:                 case READSTAT:
+[e :U 393 ]
+"233
+[; ;main.c: 233:                     status_storage = input;
+[e = _status_storage _input ]
+"234
+[; ;main.c: 234:                     last_state = cmd_state;
+[e = F3004 _cmd_state ]
+"235
+[; ;main.c: 235:                     status_storage = status_storage | (1<<7);
+[e = _status_storage -> | -> _status_storage `i << -> 1 `i -> 7 `i `uc ]
+"236
+[; ;main.c: 236:                     cmd_state = WAITFORCMD;
+[e = _cmd_state . `E2912 0 ]
+"237
+[; ;main.c: 237:                     receive_timer_len = 0;
+[e = _receive_timer_len -> -> 0 `i `l ]
+"238
+[; ;main.c: 238:                     break;
+[e $U 375  ]
+"239
+[; ;main.c: 239:                 case COMP:
+[e :U 394 ]
+"240
+[; ;main.c: 240:                     if (control_byte == input) {
+[e $ ! == -> F3002 `i -> _input `i 395  ]
+{
+"241
+[; ;main.c: 241:                         switch (last_state) {
+[e $U 397  ]
+{
+"242
+[; ;main.c: 242:                             case READCMD:
+[e :U 398 ]
+"243
+[; ;main.c: 243:                                 if (control_byte != input) {
+[e $ ! != -> F3002 `i -> _input `i 399  ]
+{
+"244
+[; ;main.c: 244:                                     send_stat(MESSAGE_CORRUPTED);
+[e ( _send_stat (1 -> . `E2934 4 `uc ]
+"245
+[; ;main.c: 245:                                 } else {
+}
+[e $U 400  ]
+[e :U 399 ]
+{
+"246
+[; ;main.c: 246:                                     stop_cmd();
+[e ( _stop_cmd ..  ]
+"247
+[; ;main.c: 247:                                     send_stat(RECEIVED);
+[e ( _send_stat (1 -> . `E2934 1 `uc ]
+"248
+[; ;main.c: 248:                                     cmd_exe = EXECMD;
+[e = _cmd_exe . `E2922 1 ]
+"249
+[; ;main.c: 249:                                 }
+}
+[e :U 400 ]
+"250
+[; ;main.c: 250:                                 break;
+[e $U 396  ]
+"251
+[; ;main.c: 251:                             case READREQ:
+[e :U 401 ]
+"252
+[; ;main.c: 252:                                 if (control_byte != input) {
+[e $ ! != -> F3002 `i -> _input `i 402  ]
+{
+"253
+[; ;main.c: 253:                                     send_stat(MESSAGE_CORRUPTED);
+[e ( _send_stat (1 -> . `E2934 4 `uc ]
+"254
+[; ;main.c: 254:                                 } else {
+}
+[e $U 403  ]
+[e :U 402 ]
+{
+"255
+[; ;main.c: 255:                                     send_stat(RECEIVED);
+[e ( _send_stat (1 -> . `E2934 1 `uc ]
+"256
+[; ;main.c: 256:                                     request_storage = request_storage | (1 << 7);
+[e = _request_storage -> | -> _request_storage `i << -> 1 `i -> 7 `i `uc ]
+"257
+[; ;main.c: 257:                                 }
+}
+[e :U 403 ]
+"258
+[; ;main.c: 258:                                 break;
+[e $U 396  ]
+"259
+[; ;main.c: 259:                             case READDAT:
+[e :U 404 ]
+"260
+[; ;main.c: 260:                                 if (data_storage[1] > 127) {
+[e $ ! > -> *U + &U _data_storage * -> -> -> 1 `i `ui `ux -> -> # *U &U _data_storage `ui `ux `i -> 127 `i 405  ]
+{
+"261
+[; ;main.c: 261:                                     send_stat(TOO_MUCH_DATA);
+[e ( _send_stat (1 -> . `E2934 3 `uc ]
+"262
+[; ;main.c: 262:                                 } else if (control_byte != input) {
+}
+[e $U 406  ]
+[e :U 405 ]
+[e $ ! != -> F3002 `i -> _input `i 407  ]
+{
+"263
+[; ;main.c: 263:                                     send_stat(MESSAGE_CORRUPTED);
+[e ( _send_stat (1 -> . `E2934 4 `uc ]
+"264
+[; ;main.c: 264:                                 } else {
+}
+[e $U 408  ]
+[e :U 407 ]
+{
+"265
+[; ;main.c: 265:                                     send_stat(RECEIVED);
+[e ( _send_stat (1 -> . `E2934 1 `uc ]
+"266
+[; ;main.c: 266:                                     data_storage[0] = data_storage[0] | (1 << 7);
+[e = *U + &U _data_storage * -> -> -> 0 `i `ui `ux -> -> # *U &U _data_storage `ui `ux -> | -> *U + &U _data_storage * -> -> -> 0 `i `ui `ux -> -> # *U &U _data_storage `ui `ux `i << -> 1 `i -> 7 `i `uc ]
+"267
+[; ;main.c: 267:                                 }
+}
+[e :U 408 ]
+[e :U 406 ]
+"268
+[; ;main.c: 268:                                 break;
+[e $U 396  ]
+"269
+[; ;main.c: 269:                             case READDATLEN:
+[e :U 409 ]
+"270
+[; ;main.c: 270:                                 if (data_storage[1] > 127) {
+[e $ ! > -> *U + &U _data_storage * -> -> -> 1 `i `ui `ux -> -> # *U &U _data_storage `ui `ux `i -> 127 `i 410  ]
+{
+"271
+[; ;main.c: 271:                                     send_stat(TOO_MUCH_DATA);
+[e ( _send_stat (1 -> . `E2934 3 `uc ]
+"272
+[; ;main.c: 272:                                 } else if (control_byte != input) {
+}
+[e $U 411  ]
+[e :U 410 ]
+[e $ ! != -> F3002 `i -> _input `i 412  ]
+{
+"273
+[; ;main.c: 273:                                     send_stat(MESSAGE_CORRUPTED);
+[e ( _send_stat (1 -> . `E2934 4 `uc ]
+"274
+[; ;main.c: 274:                                 } else {
+}
+[e $U 413  ]
+[e :U 412 ]
+{
+"275
+[; ;main.c: 275:                                     send_stat(RECEIVED);
+[e ( _send_stat (1 -> . `E2934 1 `uc ]
+"276
+[; ;main.c: 276:                                     data_storage[0] = data_storage[0] | (1 << 7);
+[e = *U + &U _data_storage * -> -> -> 0 `i `ui `ux -> -> # *U &U _data_storage `ui `ux -> | -> *U + &U _data_storage * -> -> -> 0 `i `ui `ux -> -> # *U &U _data_storage `ui `ux `i << -> 1 `i -> 7 `i `uc ]
+"277
+[; ;main.c: 277:                                 }
+}
+[e :U 413 ]
+[e :U 411 ]
+"278
+[; ;main.c: 278:                                 break;
+[e $U 396  ]
+"279
+[; ;main.c: 279:                         }
+}
+[e $U 396  ]
+[e :U 397 ]
+[e [\ -> F3004 `ui , $ -> . `E2912 1 `ui 398
+ , $ -> . `E2912 2 `ui 401
+ , $ -> . `E2912 5 `ui 404
+ , $ -> . `E2912 3 `ui 409
+ 396 ]
+[e :U 396 ]
+"280
+[; ;main.c: 280:                     }
+}
+[e :U 395 ]
+"281
+[; ;main.c: 281:                     last_state = cmd_state;
+[e = F3004 _cmd_state ]
+"282
+[; ;main.c: 282:                     cmd_state = WAITFORCMD;
+[e = _cmd_state . `E2912 0 ]
+"283
+[; ;main.c: 283:                     receive_timer_len = 0;
+[e = _receive_timer_len -> -> 0 `i `l ]
+"284
+[; ;main.c: 284:                     receive_time = 0;
+[e = _receive_time -> -> 0 `i `l ]
+"285
+[; ;main.c: 285:                     break;
+[e $U 375  ]
+"286
+[; ;main.c: 286:             }
+}
+[e $U 375  ]
+[e :U 376 ]
+[e [\ -> _cmd_state `ui , $ -> . `E2912 0 `ui 377
+ , $ -> . `E2912 1 `ui 385
+ , $ -> . `E2912 2 `ui 386
+ , $ -> . `E2912 4 `ui 387
+ , $ -> . `E2912 3 `ui 388
+ , $ -> . `E2912 5 `ui 390
+ , $ -> . `E2912 6 `ui 393
+ , $ -> . `E2912 7 `ui 394
+ 375 ]
+[e :U 375 ]
+"287
+[; ;main.c: 287:             if (last_state != WAITFORCMD) control_byte = control_byte ^ input;
+[e $ ! != -> F3004 `ui -> . `E2912 0 `ui 414  ]
+[e = F3002 -> ^ -> F3002 `i -> _input `i `uc ]
+[e :U 414 ]
+"288
+[; ;main.c: 288:         }
+}
+[e :U 374 ]
+"290
+[; ;main.c: 290:         if((status_storage & (1<<7)) > 0) {
+[e $ ! > & -> _status_storage `i << -> 1 `i -> 7 `i -> 0 `i 415  ]
+{
+"291
+[; ;main.c: 291:             switch(status_storage & (~(1<<7))) {
+[e $U 417  ]
+{
+"292
+[; ;main.c: 292:                 case CANCELD:
+[e :U 418 ]
+"293
+[; ;main.c: 293:                     if(lock_status == 1) {
+[e $ ! == -> _lock_status `i -> 1 `i 419  ]
+{
+"294
+[; ;main.c: 294:                         ADC_StartConversion();
+[e ( _ADC_StartConversion ..  ]
+"295
+[; ;main.c: 295:                         working_state = WAITFORCLOSE;
+[e = _working_state . `E2906 3 ]
+"296
+[; ;main.c: 296:                     }
+}
+[e :U 419 ]
+"297
+[; ;main.c: 297:                     stop_cmd();
+[e ( _stop_cmd ..  ]
+"298
+[; ;main.c: 298:                     status_storage = status_storage & (~(1<<7));
+[e = _status_storage -> & -> _status_storage `i ~ << -> 1 `i -> 7 `i `uc ]
+"299
+[; ;main.c: 299:                     break;
+[e $U 416  ]
+"300
+[; ;main.c: 300:             }
+}
+[e $U 416  ]
+[e :U 417 ]
+[e [\ & -> _status_storage `i ~ << -> 1 `i -> 7 `i , $ . `E2934 7 418
+ 416 ]
+[e :U 416 ]
+"301
+[; ;main.c: 301:         }
+}
+[e :U 415 ]
+"302
+[; ;main.c: 302:         if((request_storage & (1<<7)) > 0) {
+[e $ ! > & -> _request_storage `i << -> 1 `i -> 7 `i -> 0 `i 420  ]
+{
+"303
+[; ;main.c: 303:             switch(request_storage & (~(1<<7))) {
+[e $U 422  ]
+{
+"304
+[; ;main.c: 304:                 case LOCK_STATUS:
+[e :U 423 ]
+"305
+[; ;main.c: 305:                     if(lock_status) {
+[e $ ! != -> _lock_status `i -> 0 `i 424  ]
+{
+"306
+[; ;main.c: 306:                         send_stat(LOCK_OPEND);
+[e ( _send_stat (1 -> . `E2934 5 `uc ]
+"307
+[; ;main.c: 307:                     }else {
+}
+[e $U 425  ]
+[e :U 424 ]
+{
+"308
+[; ;main.c: 308:                         send_stat(LOCK_CLOSED);
+[e ( _send_stat (1 -> . `E2934 6 `uc ]
+"309
+[; ;main.c: 309:                     }
+}
+[e :U 425 ]
+"310
+[; ;main.c: 310:                     request_storage = status_storage & (~(1<<7));
+[e = _request_storage -> & -> _status_storage `i ~ << -> 1 `i -> 7 `i `uc ]
+"311
+[; ;main.c: 311:                     break;
+[e $U 421  ]
+"312
+[; ;main.c: 312:             }
+}
+[e $U 421  ]
+[e :U 422 ]
+[e [\ & -> _request_storage `i ~ << -> 1 `i -> 7 `i , $ . `E2930 2 423
+ 421 ]
+[e :U 421 ]
+"313
+[; ;main.c: 313:         }
+}
+[e :U 420 ]
+"314
+[; ;main.c: 314:         static int old_cmd_exe_counter = 0;
+[v F3005 `i ~T0 @X0 1 s old_cmd_exe_counter ]
+[i F3005
+-> 0 `i
+]
+"315
+[; ;main.c: 315:         switch (cmd_exe) {
+[e $U 427  ]
+{
+"316
+[; ;main.c: 316:             case WAITTOSTART:
+[e :U 428 ]
+"317
+[; ;main.c: 317:                     cmd_timer_len = 0;
+[e = _cmd_timer_len -> -> 0 `i `l ]
+"318
+[; ;main.c: 318:                break;
+[e $U 426  ]
+"319
+[; ;main.c: 319:             case EXECMD:
+[e :U 429 ]
+"320
+[; ;main.c: 320:                 if(old_cmd_exe_counter != cmd_exe_counter) {
+[e $ ! != F3005 _cmd_exe_counter 430  ]
+{
+"321
+[; ;main.c: 321:                     cmd_time = 0;
+[e = _cmd_time -> -> 0 `i `l ]
+"322
+[; ;main.c: 322:                     cmd_timer_len = 1000;
+[e = _cmd_timer_len -> -> 1000 `i `l ]
+"323
+[; ;main.c: 323:                 }
+}
+[e :U 430 ]
+"324
+[; ;main.c: 324:                 old_cmd_exe_counter = cmd_exe_counter;
+[e = F3005 _cmd_exe_counter ]
+"325
+[; ;main.c: 325:                 switch (cmd) {
+[e $U 432  ]
+{
+"326
+[; ;main.c: 326:                     case CHANGE_PASSWORD:
+[e :U 433 ]
+"327
+[; ;main.c: 327:                         switch (cmd_exe_counter) {
+[e $U 435  ]
+{
+"328
+[; ;main.c: 328:                             case 0:
+[e :U 436 ]
+"329
+[; ;main.c: 329:                                 send_req(PASSWORD);
+[e ( _send_req (1 -> . `E2930 0 `uc ]
+"330
+[; ;main.c: 330:                                 cmd_exe_counter++;
+[e ++ _cmd_exe_counter -> 1 `i ]
+"331
+[; ;main.c: 331:                                 break;
+[e $U 434  ]
+"332
+[; ;main.c: 332:                             case 1:
+[e :U 437 ]
+"333
+[; ;main.c: 333:                                 cmd_exe_counter = seek_confirmation(1, 2, 0, 255);
+[e = _cmd_exe_counter ( _seek_confirmation (4 , , , -> 1 `i -> 2 `i -> 0 `i -> 255 `i ]
+"334
+[; ;main.c: 334:                                 break;
+[e $U 434  ]
+"335
+[; ;main.c: 335:                             case 2:
+[e :U 438 ]
+"336
+[; ;main.c: 336:                                 if(wait_for_requested(PASSWORD)) {
+[e $ ! != -> ( _wait_for_requested (1 -> . `E2930 0 `uc `i -> 0 `i 439  ]
+{
+"337
+[; ;main.c: 337:                                     if(compare_pw(&data_storage[2], data_storage[1]) || !PORTBbits.RB0) {
+[e $ ! || != -> ( _compare_pw (2 , &U *U + &U _data_storage * -> -> -> 2 `i `ui `ux -> -> # *U &U _data_storage `ui `ux *U + &U _data_storage * -> -> -> 1 `i `ui `ux -> -> # *U &U _data_storage `ui `ux `i -> 0 `i ! != -> . . _PORTBbits 0 0 `i -> 0 `i 440  ]
+{
+"338
+[; ;main.c: 338:                                         cmd_exe_counter++;
+[e ++ _cmd_exe_counter -> 1 `i ]
+"339
+[; ;main.c: 339:                                     }else {
+}
+[e $U 441  ]
+[e :U 440 ]
+{
+"340
+[; ;main.c: 340:                                         send_stat(DENY);
+[e ( _send_stat (1 -> . `E2934 2 `uc ]
+"341
+[; ;main.c: 341:                                         stop_cmd();
+[e ( _stop_cmd ..  ]
+"342
+[; ;main.c: 342:                                     }
+}
+[e :U 441 ]
+"343
+[; ;main.c: 343:                                 }
+}
+[e :U 439 ]
+"344
+[; ;main.c: 344:                                 break;
+[e $U 434  ]
+"345
+[; ;main.c: 345:                             case 3:
+[e :U 442 ]
+"346
+[; ;main.c: 346:                                 send_req(NEW_PASSWORD);
+[e ( _send_req (1 -> . `E2930 1 `uc ]
+"347
+[; ;main.c: 347:                                 cmd_exe_counter++;
+[e ++ _cmd_exe_counter -> 1 `i ]
+"348
+[; ;main.c: 348:                                 break;
+[e $U 434  ]
+"349
+[; ;main.c: 349:                             case 4:
+[e :U 443 ]
+"350
+[; ;main.c: 350:                                 cmd_exe_counter = seek_confirmation(4, 5, 3, 255);
+[e = _cmd_exe_counter ( _seek_confirmation (4 , , , -> 4 `i -> 5 `i -> 3 `i -> 255 `i ]
+"351
+[; ;main.c: 351:                                 break;
+[e $U 434  ]
+"352
+[; ;main.c: 352:                             case 5:
+[e :U 444 ]
+"353
+[; ;main.c: 353:                                 if(wait_for_requested(NEW_PASSWORD)) {
+[e $ ! != -> ( _wait_for_requested (1 -> . `E2930 1 `uc `i -> 0 `i 445  ]
+{
+"354
+[; ;main.c: 354:                                     save_pw(&data_storage[2], data_storage[1]);
+[e ( _save_pw (2 , &U *U + &U _data_storage * -> -> -> 2 `i `ui `ux -> -> # *U &U _data_storage `ui `ux *U + &U _data_storage * -> -> -> 1 `i `ui `ux -> -> # *U &U _data_storage `ui `ux ]
+"355
+[; ;main.c: 355:                                     send_stat(COMMAND_EXECUTED);
+[e ( _send_stat (1 -> . `E2934 0 `uc ]
+"356
+[; ;main.c: 356:                                     stop_cmd();
+[e ( _stop_cmd ..  ]
+"357
+[; ;main.c: 357:                                 }
+}
+[e :U 445 ]
+"358
+[; ;main.c: 358:                                 break;
+[e $U 434  ]
+"359
+[; ;main.c: 359:                             case 255:
+[e :U 446 ]
+"360
+[; ;main.c: 360:                                 send_stat(CANCELD);
+[e ( _send_stat (1 -> . `E2934 7 `uc ]
+"361
+[; ;main.c: 361:                                 stop_cmd();
+[e ( _stop_cmd ..  ]
+"362
+[; ;main.c: 362:                                 break;
+[e $U 434  ]
+"363
+[; ;main.c: 363:                         }
+}
+[e $U 434  ]
+[e :U 435 ]
+[e [\ _cmd_exe_counter , $ -> 0 `i 436
+ , $ -> 1 `i 437
+ , $ -> 2 `i 438
+ , $ -> 3 `i 442
+ , $ -> 4 `i 443
+ , $ -> 5 `i 444
+ , $ -> 255 `i 446
+ 434 ]
+[e :U 434 ]
+"364
+[; ;main.c: 364:                         break;
+[e $U 431  ]
+"365
+[; ;main.c: 365:                     case OPEN_LOCK:
+[e :U 447 ]
+"366
+[; ;main.c: 366:                         switch (cmd_exe_counter) {
+[e $U 449  ]
+{
+"367
+[; ;main.c: 367:                             case 0:
+[e :U 450 ]
+"368
+[; ;main.c: 368:                                 if(lock_status == 1) {
+[e $ ! == -> _lock_status `i -> 1 `i 451  ]
+{
+"369
+[; ;main.c: 369:                                     working_state = WAITFORCLOSE;
+[e = _working_state . `E2906 3 ]
+"370
+[; ;main.c: 370:                                     send_stat(COMMAND_EXECUTED);
+[e ( _send_stat (1 -> . `E2934 0 `uc ]
+"371
+[; ;main.c: 371:                                     stop_cmd();
+[e ( _stop_cmd ..  ]
+"372
+[; ;main.c: 372:                                 }else {
+}
+[e $U 452  ]
+[e :U 451 ]
+{
+"373
+[; ;main.c: 373:                                     send_req(PASSWORD);
+[e ( _send_req (1 -> . `E2930 0 `uc ]
+"374
+[; ;main.c: 374:                                     cmd_exe_counter++;
+[e ++ _cmd_exe_counter -> 1 `i ]
+"375
+[; ;main.c: 375:                                 }
+}
+[e :U 452 ]
+"376
+[; ;main.c: 376:                                 break;
+[e $U 448  ]
+"377
+[; ;main.c: 377:                             case 1:
+[e :U 453 ]
+"378
+[; ;main.c: 378:                                 cmd_exe_counter = seek_confirmation(1, 2, 0, 255);
+[e = _cmd_exe_counter ( _seek_confirmation (4 , , , -> 1 `i -> 2 `i -> 0 `i -> 255 `i ]
+"379
+[; ;main.c: 379:                                 break;
+[e $U 448  ]
+"380
+[; ;main.c: 380:                             case 2:
+[e :U 454 ]
+"381
+[; ;main.c: 381:                                 if(wait_for_requested(PASSWORD)) {
+[e $ ! != -> ( _wait_for_requested (1 -> . `E2930 0 `uc `i -> 0 `i 455  ]
+{
+"382
+[; ;main.c: 382:                                     if(compare_pw(&data_storage[2], data_storage[1]) || !PORTBbits.RB0) {
+[e $ ! || != -> ( _compare_pw (2 , &U *U + &U _data_storage * -> -> -> 2 `i `ui `ux -> -> # *U &U _data_storage `ui `ux *U + &U _data_storage * -> -> -> 1 `i `ui `ux -> -> # *U &U _data_storage `ui `ux `i -> 0 `i ! != -> . . _PORTBbits 0 0 `i -> 0 `i 456  ]
+{
+"383
+[; ;main.c: 383:                                         working_state = OPENLOCK;
+[e = _working_state . `E2906 1 ]
+"384
+[; ;main.c: 384:                                         send_stat(COMMAND_EXECUTED);
+[e ( _send_stat (1 -> . `E2934 0 `uc ]
+"385
+[; ;main.c: 385:                                     }else {
+}
+[e $U 457  ]
+[e :U 456 ]
+{
+"386
+[; ;main.c: 386:                                         send_stat(DENY);
+[e ( _send_stat (1 -> . `E2934 2 `uc ]
+"387
+[; ;main.c: 387:                                     }
+}
+[e :U 457 ]
+"388
+[; ;main.c: 388:                                     stop_cmd();
+[e ( _stop_cmd ..  ]
+"389
+[; ;main.c: 389:                                 }
+}
+[e :U 455 ]
+"390
+[; ;main.c: 390:                                 break;
+[e $U 448  ]
+"391
+[; ;main.c: 391:                             case 255:
+[e :U 458 ]
+"392
+[; ;main.c: 392:                                 send_stat(CANCELD);
+[e ( _send_stat (1 -> . `E2934 7 `uc ]
+"393
+[; ;main.c: 393:                                 stop_cmd();
+[e ( _stop_cmd ..  ]
+"394
+[; ;main.c: 394:                                 break;
+[e $U 448  ]
+"395
+[; ;main.c: 395:                         }
+}
+[e $U 448  ]
+[e :U 449 ]
+[e [\ _cmd_exe_counter , $ -> 0 `i 450
+ , $ -> 1 `i 453
+ , $ -> 2 `i 454
+ , $ -> 255 `i 458
+ 448 ]
+[e :U 448 ]
+"396
+[; ;main.c: 396:                         break;
+[e $U 431  ]
+"398
+[; ;main.c: 398:                     case START_CONFIG:
+[e :U 459 ]
+"399
+[; ;main.c: 399:                         switch (cmd_exe_counter) {
+[e $U 461  ]
+{
+"400
+[; ;main.c: 400:                             case 0:
+[e :U 462 ]
+"401
+[; ;main.c: 401:                                 send_req(PASSWORD);
+[e ( _send_req (1 -> . `E2930 0 `uc ]
+"402
+[; ;main.c: 402:                                 cmd_exe_counter++;
+[e ++ _cmd_exe_counter -> 1 `i ]
+"403
+[; ;main.c: 403:                                 break;
+[e $U 460  ]
+"404
+[; ;main.c: 404:                             case 1:
+[e :U 463 ]
+"405
+[; ;main.c: 405:                                 cmd_exe_counter = seek_confirmation(1, 2, 0, 255);
+[e = _cmd_exe_counter ( _seek_confirmation (4 , , , -> 1 `i -> 2 `i -> 0 `i -> 255 `i ]
+"406
+[; ;main.c: 406:                                 break;
+[e $U 460  ]
+"407
+[; ;main.c: 407:                             case 2:
+[e :U 464 ]
+"408
+[; ;main.c: 408:                                 if(wait_for_requested(PASSWORD)) {
+[e $ ! != -> ( _wait_for_requested (1 -> . `E2930 0 `uc `i -> 0 `i 465  ]
+{
+"409
+[; ;main.c: 409:                                     if(compare_pw(&data_storage[2], data_storage[1]) || !PORTBbits.RB0) {
+[e $ ! || != -> ( _compare_pw (2 , &U *U + &U _data_storage * -> -> -> 2 `i `ui `ux -> -> # *U &U _data_storage `ui `ux *U + &U _data_storage * -> -> -> 1 `i `ui `ux -> -> # *U &U _data_storage `ui `ux `i -> 0 `i ! != -> . . _PORTBbits 0 0 `i -> 0 `i 466  ]
+{
+"410
+[; ;main.c: 410:                                         working_state = IDLE;
+[e = _working_state . `E2906 0 ]
+"411
+[; ;main.c: 411:                                         do { LATAbits.LATA0 = 1; } while(0);
+[e :U 469 ]
+{
+[e = . . _LATAbits 0 0 -> -> 1 `i `uc ]
+}
+[e :U 468 ]
+"412
+[; ;main.c: 412:                                         send_stat(LOCK_OPEND);
+[e ( _send_stat (1 -> . `E2934 5 `uc ]
+"413
+[; ;main.c: 413:                                         lock_status = 1;
+[e = _lock_status -> -> 1 `i `a ]
+"414
+[; ;main.c: 414:                                         send_stat(CONTINUE);
+[e ( _send_stat (1 -> . `E2934 8 `uc ]
+"415
+[; ;main.c: 415:                                         cmd_exe_counter ++;
+[e ++ _cmd_exe_counter -> 1 `i ]
+"416
+[; ;main.c: 416:                                     }else {
+}
+[e $U 470  ]
+[e :U 466 ]
+{
+"417
+[; ;main.c: 417:                                         send_stat(DENY);
+[e ( _send_stat (1 -> . `E2934 2 `uc ]
+"418
+[; ;main.c: 418:                                         stop_cmd();
+[e ( _stop_cmd ..  ]
+"419
+[; ;main.c: 419:                                     }
+}
+[e :U 470 ]
+"421
+[; ;main.c: 421:                                 }
+}
+[e :U 465 ]
+"422
+[; ;main.c: 422:                                 break;
+[e $U 460  ]
+"423
+[; ;main.c: 423:                             case 3:
+[e :U 471 ]
+"424
+[; ;main.c: 424:                                 cmd_timer_len = 12000;
+[e = _cmd_timer_len -> -> 12000 `i `l ]
+"425
+[; ;main.c: 425:                                 if((status_storage & (1<<7)) > 0 && (status_storage & (~(1<<7))) == CONTINUE) {
+[e $ ! && > & -> _status_storage `i << -> 1 `i -> 7 `i -> 0 `i == & -> _status_storage `i ~ << -> 1 `i -> 7 `i -> . `E2934 8 `i 472  ]
+{
+"426
+[; ;main.c: 426:                                     ADC_StartConversion();
+[e ( _ADC_StartConversion ..  ]
+"427
+[; ;main.c: 427:                                     cmd_exe_counter ++;
+[e ++ _cmd_exe_counter -> 1 `i ]
+"428
+[; ;main.c: 428:                                 }
+}
+[e :U 472 ]
+"429
+[; ;main.c: 429:                                 status_storage = status_storage & (~(1<<7));
+[e = _status_storage -> & -> _status_storage `i ~ << -> 1 `i -> 7 `i `uc ]
+"430
+[; ;main.c: 430:                                 break;
+[e $U 460  ]
+"431
+[; ;main.c: 431:                             case 4:
+[e :U 473 ]
+"432
+[; ;main.c: 432:                                 if(ADC_IsConversionDone()) {
+[e $ ! != -> ( _ADC_IsConversionDone ..  `i -> 0 `i 474  ]
+{
+"433
+[; ;main.c: 433:                                     new_hall_code_close = ADC_GetConversionResult();
+[e = _new_hall_code_close ( _ADC_GetConversionResult ..  ]
+"434
+[; ;main.c: 434:                                     send_stat(CONTINUE);
+[e ( _send_stat (1 -> . `E2934 8 `uc ]
+"435
+[; ;main.c: 435:                                     cmd_exe_counter ++;
+[e ++ _cmd_exe_counter -> 1 `i ]
+"436
+[; ;main.c: 436:                                 }
+}
+[e :U 474 ]
+"437
+[; ;main.c: 437:                                 break;
+[e $U 460  ]
+"438
+[; ;main.c: 438:                             case 5:
+[e :U 475 ]
+"439
+[; ;main.c: 439:                                 if((status_storage & (1<<7)) > 0 && (status_storage & (~(1<<7))) == CONTINUE) {
+[e $ ! && > & -> _status_storage `i << -> 1 `i -> 7 `i -> 0 `i == & -> _status_storage `i ~ << -> 1 `i -> 7 `i -> . `E2934 8 `i 476  ]
+{
+"440
+[; ;main.c: 440:                                     ADC_StartConversion();
+[e ( _ADC_StartConversion ..  ]
+"441
+[; ;main.c: 441:                                     cmd_exe_counter ++;
+[e ++ _cmd_exe_counter -> 1 `i ]
+"442
+[; ;main.c: 442:                                 }
+}
+[e :U 476 ]
+"443
+[; ;main.c: 443:                                 status_storage = status_storage & (~(1<<7));
+[e = _status_storage -> & -> _status_storage `i ~ << -> 1 `i -> 7 `i `uc ]
+"444
+[; ;main.c: 444:                                 break;
+[e $U 460  ]
+"445
+[; ;main.c: 445:                             case 6:
+[e :U 477 ]
+"446
+[; ;main.c: 446:                                 if(ADC_IsConversionDone()) {
+[e $ ! != -> ( _ADC_IsConversionDone ..  `i -> 0 `i 478  ]
+{
+"447
+[; ;main.c: 447:                                     new_hall_code_open = ADC_GetConversionResult();
+[e = _new_hall_code_open ( _ADC_GetConversionResult ..  ]
+"448
+[; ;main.c: 448:                                     send_stat(COMMAND_EXECUTED);
+[e ( _send_stat (1 -> . `E2934 0 `uc ]
+"449
+[; ;main.c: 449:                                     save_hall_codes(new_hall_code_open, new_hall_code_close);
+[e ( _save_hall_codes (2 , _new_hall_code_open _new_hall_code_close ]
+"450
+[; ;main.c: 450:                                     read_hall_codes();
+[e ( _read_hall_codes ..  ]
+"451
+[; ;main.c: 451:                                     working_state = OPENLOCK;
+[e = _working_state . `E2906 1 ]
+"452
+[; ;main.c: 452:                                     stop_cmd();
+[e ( _stop_cmd ..  ]
+"453
+[; ;main.c: 453:                                     new_hall_code_open = 0;
+[e = _new_hall_code_open -> -> 0 `i `uc ]
+"454
+[; ;main.c: 454:                                     new_hall_code_close = 0;
+[e = _new_hall_code_close -> -> 0 `i `uc ]
+"455
+[; ;main.c: 455:                                 }
+}
+[e :U 478 ]
+"456
+[; ;main.c: 456:                                 break;
+[e $U 460  ]
+"457
+[; ;main.c: 457:                             case 255:
+[e :U 479 ]
+"458
+[; ;main.c: 458:                                 send_stat(CANCELD);
+[e ( _send_stat (1 -> . `E2934 7 `uc ]
+"459
+[; ;main.c: 459:                                 stop_cmd();
+[e ( _stop_cmd ..  ]
+"460
+[; ;main.c: 460:                                 new_hall_code_open = 0;
+[e = _new_hall_code_open -> -> 0 `i `uc ]
+"461
+[; ;main.c: 461:                                 new_hall_code_close = 0;
+[e = _new_hall_code_close -> -> 0 `i `uc ]
+"462
+[; ;main.c: 462:                                 break;
+[e $U 460  ]
+"463
+[; ;main.c: 463:                         }
+}
+[e $U 460  ]
+[e :U 461 ]
+[e [\ _cmd_exe_counter , $ -> 0 `i 462
+ , $ -> 1 `i 463
+ , $ -> 2 `i 464
+ , $ -> 3 `i 471
+ , $ -> 4 `i 473
+ , $ -> 5 `i 475
+ , $ -> 6 `i 477
+ , $ -> 255 `i 479
+ 460 ]
+[e :U 460 ]
+"464
+[; ;main.c: 464:                         break;
+[e $U 431  ]
+"466
+[; ;main.c: 466:                 }
+}
+[e $U 431  ]
+[e :U 432 ]
+[e [\ -> _cmd `i , $ . `E2926 0 433
+ , $ . `E2926 1 447
+ , $ . `E2926 2 459
+ 431 ]
+[e :U 431 ]
+"467
+[; ;main.c: 467:                 break;
+[e $U 426  ]
+"468
+[; ;main.c: 468:         }
+}
+[e $U 426  ]
+[e :U 427 ]
+[e [\ -> _cmd_exe `ui , $ -> . `E2922 0 `ui 428
+ , $ -> . `E2922 1 `ui 429
+ 426 ]
+[e :U 426 ]
+"470
+[; ;main.c: 470:         switch (working_state) {
+[e $U 481  ]
+{
+"471
+[; ;main.c: 471:             case IDLE:
+[e :U 482 ]
+"473
+[; ;main.c: 473:                 break;
+[e $U 480  ]
+"474
+[; ;main.c: 474:             case OPENLOCK:
+[e :U 483 ]
+"475
+[; ;main.c: 475:                 do { LATAbits.LATA0 = 1; } while(0);
+[e :U 486 ]
+{
+[e = . . _LATAbits 0 0 -> -> 1 `i `uc ]
+}
+[e :U 485 ]
+"476
+[; ;main.c: 476:                 send_stat(LOCK_OPEND);
+[e ( _send_stat (1 -> . `E2934 5 `uc ]
+"477
+[; ;main.c: 477:                 lock_status = 1;
+[e = _lock_status -> -> 1 `i `a ]
+"478
+[; ;main.c: 478:                 working_state = WAITFOROPEN;
+[e = _working_state . `E2906 2 ]
+"479
+[; ;main.c: 479:                 ADC_StartConversion();
+[e ( _ADC_StartConversion ..  ]
+"480
+[; ;main.c: 480:                 break;
+[e $U 480  ]
+"481
+[; ;main.c: 481:             case WAITFOROPEN:
+[e :U 487 ]
+"482
+[; ;main.c: 482:                 if(ADC_IsConversionDone()) {
+[e $ ! != -> ( _ADC_IsConversionDone ..  `i -> 0 `i 488  ]
+{
+"483
+[; ;main.c: 483:                     uint8_t res = ADRESH;
+[v _res `uc ~T0 @X0 1 a ]
+[e = _res _ADRESH ]
+"484
+[; ;main.c: 484:                     if(door_status_changed(1, res)) {
+[e $ ! != -> ( _door_status_changed (2 , -> -> 1 `i `a -> _res `s `i -> 0 `i 489  ]
+{
+"485
+[; ;main.c: 485:                         working_state = WAITFORCLOSE;
+[e = _working_state . `E2906 3 ]
+"486
+[; ;main.c: 486:                     }
+}
+[e :U 489 ]
+"487
+[; ;main.c: 487:                     ADC_StartConversion();
+[e ( _ADC_StartConversion ..  ]
+"488
+[; ;main.c: 488:                 }
+}
+[e :U 488 ]
+"489
+[; ;main.c: 489:                 break;
+[e $U 480  ]
+"490
+[; ;main.c: 490:             case WAITFORCLOSE:
+[e :U 490 ]
+"491
+[; ;main.c: 491:                 if(ADC_IsConversionDone()) {
+[e $ ! != -> ( _ADC_IsConversionDone ..  `i -> 0 `i 491  ]
+{
+"492
+[; ;main.c: 492:                     uint8_t res = ADRESH;
+[v _res `uc ~T0 @X0 1 a ]
+[e = _res _ADRESH ]
+"493
+[; ;main.c: 493:                     if(door_status_changed(0, res)) {
+[e $ ! != -> ( _door_status_changed (2 , -> -> 0 `i `a -> _res `s `i -> 0 `i 492  ]
+{
+"494
+[; ;main.c: 494:                         send_stat(LOCK_CLOSED);
+[e ( _send_stat (1 -> . `E2934 6 `uc ]
+"495
+[; ;main.c: 495:                         lock_status = 0;
+[e = _lock_status -> -> 0 `i `a ]
+"496
+[; ;main.c: 496:                         working_state = IDLE;
+[e = _working_state . `E2906 0 ]
+"497
+[; ;main.c: 497:                         do { LATAbits.LATA0 = 0; } while(0);
+[e :U 495 ]
+{
+[e = . . _LATAbits 0 0 -> -> 0 `i `uc ]
+}
+[e :U 494 ]
+"498
+[; ;main.c: 498:                     }
+}
+[e :U 492 ]
+"499
+[; ;main.c: 499:                     ADC_StartConversion();
+[e ( _ADC_StartConversion ..  ]
+"500
+[; ;main.c: 500:                 }
+}
+[e :U 491 ]
+"501
+[; ;main.c: 501:                 break;
+[e $U 480  ]
+"502
+[; ;main.c: 502:         }
+}
+[e $U 480  ]
+[e :U 481 ]
+[e [\ -> _working_state `ui , $ -> . `E2906 0 `ui 482
+ , $ -> . `E2906 1 `ui 483
+ , $ -> . `E2906 2 `ui 487
+ , $ -> . `E2906 3 `ui 490
+ 480 ]
+[e :U 480 ]
+"503
+[; ;main.c: 503:     }
+}
+[e :U 364 ]
+[e $U 365  ]
+[e :U 366 ]
+"504
+[; ;main.c: 504: }
+[e :UE 363 ]
+}
+"506
+[; ;main.c: 506: void del_array(uint8_t *array, int16_t len) {
+[v _del_array `(v ~T0 @X0 1 ef2`*uc`s ]
+{
+[e :U _del_array ]
+[v _array `*uc ~T0 @X0 1 r1 ]
+[v _len `s ~T0 @X0 1 r2 ]
+[f ]
+"507
+[; ;main.c: 507:     for (int16_t x = 0; x < len; x++) *(array + x) = 0;
+{
+[v _x `s ~T0 @X0 1 a ]
+[e = _x -> -> 0 `i `s ]
+[e $U 500  ]
+[e :U 497 ]
+[e = *U + _array * -> -> _x `i `x -> -> # *U _array `i `x -> -> 0 `i `uc ]
+[e ++ _x -> -> 1 `i `s ]
+[e :U 500 ]
+[e $ < -> _x `i -> _len `i 497  ]
+[e :U 498 ]
+}
+"508
+[; ;main.c: 508: }
+[e :UE 496 ]
+}
+"510
+[; ;main.c: 510: void send_msg_stopping(uint8_t *msg, uint8_t len) {
+[v _send_msg_stopping `(v ~T0 @X0 1 ef2`*uc`uc ]
+{
+[e :U _send_msg_stopping ]
+[v _msg `*uc ~T0 @X0 1 r1 ]
+[v _len `uc ~T0 @X0 1 r2 ]
+[f ]
+"511
+[; ;main.c: 511:     for (int x = 0; x < len; x++) {
+{
+[v _x `i ~T0 @X0 1 a ]
+[e = _x -> 0 `i ]
+[e $U 505  ]
+[e :U 502 ]
+{
+"512
+[; ;main.c: 512:         while (!EUSART_is_tx_done());
+[e $U 506  ]
+[e :U 507 ]
+[e :U 506 ]
+[e $ ! != -> ( _EUSART_is_tx_done ..  `i -> 0 `i 507  ]
+[e :U 508 ]
+"513
+[; ;main.c: 513:         EUSART_Write(*(msg + x));
+[e ( _EUSART_Write (1 *U + _msg * -> _x `x -> -> # *U _msg `i `x ]
+"514
+[; ;main.c: 514:     }
+}
+[e ++ _x -> 1 `i ]
+[e :U 505 ]
+[e $ < _x -> _len `i 502  ]
+[e :U 503 ]
+}
+"515
+[; ;main.c: 515: }
+[e :UE 501 ]
+}
+"517
+[; ;main.c: 517: void send_cmd(uint8_t cmd) {
+[v _send_cmd `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _send_cmd ]
+[v _cmd `uc ~T0 @X0 1 r1 ]
+[f ]
+[v F3018 `uc ~T0 @X0 -> 3 `i s ]
+[i F3018
+:U ..
+"518
+[; ;main.c: 518:     uint8_t command_protocol[] = {0b10000001, cmd, 0};
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+]
+[v _command_protocol `uc ~T0 @X0 -> 3 `i a ]
+[e = _command_protocol F3018 ]
+[e ; = *U + &U _command_protocol * -> -> -> 0 `i `ui `ux -> -> # *U &U _command_protocol `ui `ux -> -> 129 `i `uc ; = *U + &U _command_protocol * -> -> -> 1 `i `ui `ux -> -> # *U &U _command_protocol `ui `ux _cmd = *U + &U _command_protocol * -> -> -> 2 `i `ui `ux -> -> # *U &U _command_protocol `ui `ux -> -> 0 `i `uc ]
+"519
+[; ;main.c: 519:     command_protocol[2] = command_protocol[0] ^ command_protocol[1];
+[e = *U + &U _command_protocol * -> -> -> 2 `i `ui `ux -> -> # *U &U _command_protocol `ui `ux -> ^ -> *U + &U _command_protocol * -> -> -> 0 `i `ui `ux -> -> # *U &U _command_protocol `ui `ux `i -> *U + &U _command_protocol * -> -> -> 1 `i `ui `ux -> -> # *U &U _command_protocol `ui `ux `i `uc ]
+"520
+[; ;main.c: 520:     send_msg_stopping(command_protocol, 3);
+[e ( _send_msg_stopping (2 , &U _command_protocol -> -> 3 `i `uc ]
+"521
+[; ;main.c: 521:     status_storage = 0;
+[e = _status_storage -> -> 0 `i `uc ]
+"522
+[; ;main.c: 522: }
+[e :UE 509 ]
+}
+"524
+[; ;main.c: 524: void send_req(uint8_t var) {
+[v _send_req `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _send_req ]
+[v _var `uc ~T0 @X0 1 r1 ]
+[f ]
+"525
+[; ;main.c: 525:     del_array(data_storage, 127 + 2);
+[e ( _del_array (2 , &U _data_storage -> + -> 127 `i -> 2 `i `s ]
+[v F3022 `uc ~T0 @X0 -> 3 `i s ]
+[i F3022
+:U ..
+"526
+[; ;main.c: 526:     uint8_t request_protocol[] = {0b01000010, var, 0};
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+]
+[v _request_protocol `uc ~T0 @X0 -> 3 `i a ]
+[e = _request_protocol F3022 ]
+[e ; = *U + &U _request_protocol * -> -> -> 0 `i `ui `ux -> -> # *U &U _request_protocol `ui `ux -> -> 66 `i `uc ; = *U + &U _request_protocol * -> -> -> 1 `i `ui `ux -> -> # *U &U _request_protocol `ui `ux _var = *U + &U _request_protocol * -> -> -> 2 `i `ui `ux -> -> # *U &U _request_protocol `ui `ux -> -> 0 `i `uc ]
+"527
+[; ;main.c: 527:     request_protocol[2] = request_protocol[0] ^ request_protocol[1];
+[e = *U + &U _request_protocol * -> -> -> 2 `i `ui `ux -> -> # *U &U _request_protocol `ui `ux -> ^ -> *U + &U _request_protocol * -> -> -> 0 `i `ui `ux -> -> # *U &U _request_protocol `ui `ux `i -> *U + &U _request_protocol * -> -> -> 1 `i `ui `ux -> -> # *U &U _request_protocol `ui `ux `i `uc ]
+"528
+[; ;main.c: 528:     send_msg_stopping(request_protocol, 3);
+[e ( _send_msg_stopping (2 , &U _request_protocol -> -> 3 `i `uc ]
+"529
+[; ;main.c: 529:     status_storage = 0;
+[e = _status_storage -> -> 0 `i `uc ]
+"530
+[; ;main.c: 530: }
+[e :UE 510 ]
+}
+"532
+[; ;main.c: 532: void send_dat(uint8_t *dat, uint8_t len, uint8_t var) {
+[v _send_dat `(v ~T0 @X0 1 ef3`*uc`uc`uc ]
+{
+[e :U _send_dat ]
+[v _dat `*uc ~T0 @X0 1 r1 ]
+[v _len `uc ~T0 @X0 1 r2 ]
+[v _var `uc ~T0 @X0 1 r3 ]
+[f ]
+"533
+[; ;main.c: 533:     uint8_t control_byte = 0b00100100;
+[v _control_byte `uc ~T0 @X0 1 a ]
+[e = _control_byte -> -> 36 `i `uc ]
+"534
+[; ;main.c: 534:     control_byte = (control_byte ^ len) ^ var;
+[e = _control_byte -> ^ ^ -> _control_byte `i -> _len `i -> _var `i `uc ]
+"535
+[; ;main.c: 535:     send_msg_stopping(0b00100100, 1);
+[e ( _send_msg_stopping (2 , -> -> 36 `i `*uc -> -> 1 `i `uc ]
+"536
+[; ;main.c: 536:     for (int x = 0; x < len; x++) {
+{
+[v _x `i ~T0 @X0 1 a ]
+[e = _x -> 0 `i ]
+[e $U 515  ]
+[e :U 512 ]
+{
+"537
+[; ;main.c: 537:         control_byte = control_byte ^ *(dat + x);
+[e = _control_byte -> ^ -> _control_byte `i -> *U + _dat * -> _x `x -> -> # *U _dat `i `x `i `uc ]
+"538
+[; ;main.c: 538:     }
+}
+[e ++ _x -> 1 `i ]
+[e :U 515 ]
+[e $ < _x -> _len `i 512  ]
+[e :U 513 ]
+}
+"539
+[; ;main.c: 539:     send_msg_stopping(&len, 1);
+[e ( _send_msg_stopping (2 , &U _len -> -> 1 `i `uc ]
+"540
+[; ;main.c: 540:     send_msg_stopping(&var, 1);
+[e ( _send_msg_stopping (2 , &U _var -> -> 1 `i `uc ]
+"541
+[; ;main.c: 541:     send_msg_stopping(dat, len);
+[e ( _send_msg_stopping (2 , _dat _len ]
+"542
+[; ;main.c: 542:     send_msg_stopping(&control_byte, 1);
+[e ( _send_msg_stopping (2 , &U _control_byte -> -> 1 `i `uc ]
+"543
+[; ;main.c: 543:     status_storage = 0;
+[e = _status_storage -> -> 0 `i `uc ]
+"544
+[; ;main.c: 544: }
+[e :UE 511 ]
+}
+"546
+[; ;main.c: 546: void send_stat(uint8_t stat) {
+[v _send_stat `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _send_stat ]
+[v _stat `uc ~T0 @X0 1 r1 ]
+[f ]
+[v F3032 `uc ~T0 @X0 -> 2 `i s ]
+[i F3032
+:U ..
+"547
+[; ;main.c: 547:     uint8_t status_protocol[] = {0b00011000, stat};
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+]
+[v _status_protocol `uc ~T0 @X0 -> 2 `i a ]
+[e = _status_protocol F3032 ]
+[e ; = *U + &U _status_protocol * -> -> -> 0 `i `ui `ux -> -> # *U &U _status_protocol `ui `ux -> -> 24 `i `uc = *U + &U _status_protocol * -> -> -> 1 `i `ui `ux -> -> # *U &U _status_protocol `ui `ux _stat ]
+"548
+[; ;main.c: 548:     send_msg_stopping(status_protocol, 2);
+[e ( _send_msg_stopping (2 , &U _status_protocol -> -> 2 `i `uc ]
+"549
+[; ;main.c: 549: }
+[e :UE 516 ]
+}
+"551
+[; ;main.c: 551: _Bool compare_pw(uint8_t *pw, uint8_t len) {
+[v _compare_pw `(a ~T0 @X0 1 ef2`*uc`uc ]
+{
+[e :U _compare_pw ]
+[v _pw `*uc ~T0 @X0 1 r1 ]
+[v _len `uc ~T0 @X0 1 r2 ]
+[f ]
+"552
+[; ;main.c: 552:     _Bool res = 1;
+[v _res `a ~T0 @X0 1 a ]
+[e = _res -> -> 1 `i `a ]
+"553
+[; ;main.c: 553:     uint8_t eedata = DATAEE_ReadByte(4);
+[v _eedata `uc ~T0 @X0 1 a ]
+[e = _eedata ( _DATAEE_ReadByte (1 -> -> 4 `i `uc ]
+"554
+[; ;main.c: 554:     if (eedata != len) {
+[e $ ! != -> _eedata `i -> _len `i 518  ]
+{
+"555
+[; ;main.c: 555:         res = 0;
+[e = _res -> -> 0 `i `a ]
+"556
+[; ;main.c: 556:     } else {
+}
+[e $U 519  ]
+[e :U 518 ]
+{
+"557
+[; ;main.c: 557:         for (int x = 0; x < len; x++) {
+{
+[v _x `i ~T0 @X0 1 a ]
+[e = _x -> 0 `i ]
+[e $U 523  ]
+[e :U 520 ]
+{
+"558
+[; ;main.c: 558:             eedata = DATAEE_ReadByte(x + 4 + 1);
+[e = _eedata ( _DATAEE_ReadByte (1 -> + + _x -> 4 `i -> 1 `i `uc ]
+"559
+[; ;main.c: 559:             uint8_t indata = *(pw + x);
+[v _indata `uc ~T0 @X0 1 a ]
+[e = _indata *U + _pw * -> _x `x -> -> # *U _pw `i `x ]
+"560
+[; ;main.c: 560:             if (eedata != indata) {
+[e $ ! != -> _eedata `i -> _indata `i 524  ]
+{
+"561
+[; ;main.c: 561:                 res = 0;
+[e = _res -> -> 0 `i `a ]
+"562
+[; ;main.c: 562:                 break;
+[e $U 521  ]
+"563
+[; ;main.c: 563:             }
+}
+[e :U 524 ]
+"564
+[; ;main.c: 564:         }
+}
+[e ++ _x -> 1 `i ]
+[e :U 523 ]
+[e $ < _x -> _len `i 520  ]
+[e :U 521 ]
+}
+"565
+[; ;main.c: 565:     }
+}
+[e :U 519 ]
+"566
+[; ;main.c: 566:     return res;
+[e ) _res ]
+[e $UE 517  ]
+"567
+[; ;main.c: 567: }
+[e :UE 517 ]
+}
+"569
+[; ;main.c: 569: void save_pw(uint8_t *pw, uint8_t len) {
+[v _save_pw `(v ~T0 @X0 1 ef2`*uc`uc ]
+{
+[e :U _save_pw ]
+[v _pw `*uc ~T0 @X0 1 r1 ]
+[v _len `uc ~T0 @X0 1 r2 ]
+[f ]
+"570
+[; ;main.c: 570:     if (DATAEE_ReadByte(4) != len) DATAEE_WriteByte(4, len);
+[e $ ! != -> ( _DATAEE_ReadByte (1 -> -> 4 `i `uc `i -> _len `i 526  ]
+[e ( _DATAEE_WriteByte (2 , -> -> 4 `i `uc _len ]
+[e :U 526 ]
+"571
+[; ;main.c: 571:     for (int x = 0; x < len; x++) if (DATAEE_ReadByte(x + 4 + 1) != *(pw + x)) DATAEE_WriteByte(x + 4 + 1, *(pw + x));
+{
+[v _x `i ~T0 @X0 1 a ]
+[e = _x -> 0 `i ]
+[e $U 530  ]
+[e :U 527 ]
+[e $ ! != -> ( _DATAEE_ReadByte (1 -> + + _x -> 4 `i -> 1 `i `uc `i -> *U + _pw * -> _x `x -> -> # *U _pw `i `x `i 531  ]
+[e ( _DATAEE_WriteByte (2 , -> + + _x -> 4 `i -> 1 `i `uc *U + _pw * -> _x `x -> -> # *U _pw `i `x ]
+[e :U 531 ]
+[e ++ _x -> 1 `i ]
+[e :U 530 ]
+[e $ < _x -> _len `i 527  ]
+[e :U 528 ]
+}
+"572
+[; ;main.c: 572: }
+[e :UE 525 ]
+}
+"574
+[; ;main.c: 574: void read_hall_codes(void) {
+[v _read_hall_codes `(v ~T0 @X0 1 ef ]
+{
+[e :U _read_hall_codes ]
+[f ]
+"575
+[; ;main.c: 575:     hall_codes[0] = (uint8_t) DATAEE_ReadByte(0);
+[e = *U + &U _hall_codes * -> -> -> 0 `i `ui `ux -> -> # *U &U _hall_codes `ui `ux ( _DATAEE_ReadByte (1 -> -> 0 `i `uc ]
+"576
+[; ;main.c: 576:     hall_codes[1] = (uint8_t) DATAEE_ReadByte(1);
+[e = *U + &U _hall_codes * -> -> -> 1 `i `ui `ux -> -> # *U &U _hall_codes `ui `ux ( _DATAEE_ReadByte (1 -> -> 1 `i `uc ]
+"577
+[; ;main.c: 577: }
+[e :UE 532 ]
+}
+"579
+[; ;main.c: 579: void save_hall_codes(uint8_t open, uint8_t close) {
+[v _save_hall_codes `(v ~T0 @X0 1 ef2`uc`uc ]
+{
+[e :U _save_hall_codes ]
+[v _open `uc ~T0 @X0 1 r1 ]
+[v _close `uc ~T0 @X0 1 r2 ]
+[f ]
+"580
+[; ;main.c: 580:     if (DATAEE_ReadByte(0) != open) DATAEE_WriteByte(0, open);
+[e $ ! != -> ( _DATAEE_ReadByte (1 -> -> 0 `i `uc `i -> _open `i 534  ]
+[e ( _DATAEE_WriteByte (2 , -> -> 0 `i `uc _open ]
+[e :U 534 ]
+"581
+[; ;main.c: 581:     if (DATAEE_ReadByte(1) != close) DATAEE_WriteByte(1, close);
+[e $ ! != -> ( _DATAEE_ReadByte (1 -> -> 1 `i `uc `i -> _close `i 535  ]
+[e ( _DATAEE_WriteByte (2 , -> -> 1 `i `uc _close ]
+[e :U 535 ]
+"582
+[; ;main.c: 582: }
+[e :UE 533 ]
+}
+"584
+[; ;main.c: 584: int seek_confirmation(int wait_num, int continue_num, int retry_num, int cancel_num) {
+[v _seek_confirmation `(i ~T0 @X0 1 ef4`i`i`i`i ]
+{
+[e :U _seek_confirmation ]
+[v _wait_num `i ~T0 @X0 1 r1 ]
+[v _continue_num `i ~T0 @X0 1 r2 ]
+[v _retry_num `i ~T0 @X0 1 r3 ]
+[v _cancel_num `i ~T0 @X0 1 r4 ]
+[f ]
+"585
+[; ;main.c: 585:     if((status_storage & (1<<7)) > 0) {
+[e $ ! > & -> _status_storage `i << -> 1 `i -> 7 `i -> 0 `i 537  ]
+{
+"586
+[; ;main.c: 586:         switch(status_storage & (~(1<<7))) {
+[e $U 539  ]
+{
+"587
+[; ;main.c: 587:             case 0b00000010:
+[e :U 540 ]
+"588
+[; ;main.c: 588:                 return continue_num;
+[e ) _continue_num ]
+[e $UE 536  ]
+"589
+[; ;main.c: 589:                 break;
+[e $U 538  ]
+"590
+[; ;main.c: 590:             case 0b00000100:
+[e :U 541 ]
+"591
+[; ;main.c: 591:                 return cancel_num;
+[e ) _cancel_num ]
+[e $UE 536  ]
+"592
+[; ;main.c: 592:                 break;
+[e $U 538  ]
+"593
+[; ;main.c: 593:             case 0b00000101:
+[e :U 542 ]
+"594
+[; ;main.c: 594:                 return retry_num;
+[e ) _retry_num ]
+[e $UE 536  ]
+"595
+[; ;main.c: 595:                 break;
+[e $U 538  ]
+"596
+[; ;main.c: 596:         }
+}
+[e $U 538  ]
+[e :U 539 ]
+[e [\ & -> _status_storage `i ~ << -> 1 `i -> 7 `i , $ -> 2 `i 540
+ , $ -> 4 `i 541
+ , $ -> 5 `i 542
+ 538 ]
+[e :U 538 ]
+"597
+[; ;main.c: 597:         status_storage = status_storage & (~(1<<7));
+[e = _status_storage -> & -> _status_storage `i ~ << -> 1 `i -> 7 `i `uc ]
+"598
+[; ;main.c: 598:     }
+}
+[e :U 537 ]
+"599
+[; ;main.c: 599:     return wait_num;
+[e ) _wait_num ]
+[e $UE 536  ]
+"600
+[; ;main.c: 600: }
+[e :UE 536 ]
+}
+"602
+[; ;main.c: 602: _Bool wait_for_requested(uint8_t req) {
+[v _wait_for_requested `(a ~T0 @X0 1 ef1`uc ]
+{
+[e :U _wait_for_requested ]
+[v _req `uc ~T0 @X0 1 r1 ]
+[f ]
+"603
+[; ;main.c: 603:     if(((data_storage[0] & (1<<7)) > 0) && (req == (data_storage[0] & (~(1<<7))))) {
+[e $ ! && > & -> *U + &U _data_storage * -> -> -> 0 `i `ui `ux -> -> # *U &U _data_storage `ui `ux `i << -> 1 `i -> 7 `i -> 0 `i == -> _req `i & -> *U + &U _data_storage * -> -> -> 0 `i `ui `ux -> -> # *U &U _data_storage `ui `ux `i ~ << -> 1 `i -> 7 `i 544  ]
+{
+"604
+[; ;main.c: 604:         return 1;
+[e ) -> -> 1 `i `a ]
+[e $UE 543  ]
+"605
+[; ;main.c: 605:     }
+}
+[e :U 544 ]
+"606
+[; ;main.c: 606:     return 0;
+[e ) -> -> 0 `i `a ]
+[e $UE 543  ]
+"607
+[; ;main.c: 607: }
+[e :UE 543 ]
+}
+"609
+[; ;main.c: 609: void stop_cmd(void) {
+[v _stop_cmd `(v ~T0 @X0 1 ef ]
+{
+[e :U _stop_cmd ]
+[f ]
+"610
+[; ;main.c: 610:     cmd_time = 0;
+[e = _cmd_time -> -> 0 `i `l ]
+"611
+[; ;main.c: 611:     cmd_timer_len = 0;
+[e = _cmd_timer_len -> -> 0 `i `l ]
+"612
+[; ;main.c: 612:     cmd_exe_counter = 0;
+[e = _cmd_exe_counter -> 0 `i ]
+"613
+[; ;main.c: 613:     cmd_exe = WAITTOSTART;
+[e = _cmd_exe . `E2922 0 ]
+"614
+[; ;main.c: 614: }
+[e :UE 545 ]
+}
+"616
+[; ;main.c: 616: _Bool door_status_changed(_Bool open_or_close, int16_t val) {
+[v _door_status_changed `(a ~T0 @X0 1 ef2`a`s ]
+{
+[e :U _door_status_changed ]
+[v _open_or_close `a ~T0 @X0 1 r1 ]
+[v _val `s ~T0 @X0 1 r2 ]
+[f ]
+"617
+[; ;main.c: 617:     if(open_or_close) {
+[e $ ! != -> _open_or_close `i -> 0 `i 547  ]
+{
+"618
+[; ;main.c: 618:         if((hall_codes[0] > hall_codes[1] && val >= hall_codes[1] + ((hall_codes[0] - hall_codes[1]) * 9 / 10)) || (hall_codes[0] < hall_codes[1] && val <= hall_codes[1] - ((hall_codes[1] - hall_codes[0]) * 9 / 10))) return 1;
+[e $ ! || && > -> *U + &U _hall_codes * -> -> -> 0 `i `ui `ux -> -> # *U &U _hall_codes `ui `ux `i -> *U + &U _hall_codes * -> -> -> 1 `i `ui `ux -> -> # *U &U _hall_codes `ui `ux `i >= -> _val `i + -> *U + &U _hall_codes * -> -> -> 1 `i `ui `ux -> -> # *U &U _hall_codes `ui `ux `i / * - -> *U + &U _hall_codes * -> -> -> 0 `i `ui `ux -> -> # *U &U _hall_codes `ui `ux `i -> *U + &U _hall_codes * -> -> -> 1 `i `ui `ux -> -> # *U &U _hall_codes `ui `ux `i -> 9 `i -> 10 `i && < -> *U + &U _hall_codes * -> -> -> 0 `i `ui `ux -> -> # *U &U _hall_codes `ui `ux `i -> *U + &U _hall_codes * -> -> -> 1 `i `ui `ux -> -> # *U &U _hall_codes `ui `ux `i <= -> _val `i - -> *U + &U _hall_codes * -> -> -> 1 `i `ui `ux -> -> # *U &U _hall_codes `ui `ux `i / * - -> *U + &U _hall_codes * -> -> -> 1 `i `ui `ux -> -> # *U &U _hall_codes `ui `ux `i -> *U + &U _hall_codes * -> -> -> 0 `i `ui `ux -> -> # *U &U _hall_codes `ui `ux `i -> 9 `i -> 10 `i 548  ]
+[e ) -> -> 1 `i `a ]
+[e $UE 546  ]
+[e :U 548 ]
+"619
+[; ;main.c: 619:     }else {
+}
+[e $U 549  ]
+[e :U 547 ]
+{
+"620
+[; ;main.c: 620:         if((hall_codes[1] > hall_codes[0] && val >= hall_codes[0] + ((hall_codes[1] - hall_codes[0]) * 9 / 10)) || (hall_codes[1] < hall_codes[0] && val <= hall_codes[0] - ((hall_codes[0] - hall_codes[1]) * 9 / 10))) return 1;
+[e $ ! || && > -> *U + &U _hall_codes * -> -> -> 1 `i `ui `ux -> -> # *U &U _hall_codes `ui `ux `i -> *U + &U _hall_codes * -> -> -> 0 `i `ui `ux -> -> # *U &U _hall_codes `ui `ux `i >= -> _val `i + -> *U + &U _hall_codes * -> -> -> 0 `i `ui `ux -> -> # *U &U _hall_codes `ui `ux `i / * - -> *U + &U _hall_codes * -> -> -> 1 `i `ui `ux -> -> # *U &U _hall_codes `ui `ux `i -> *U + &U _hall_codes * -> -> -> 0 `i `ui `ux -> -> # *U &U _hall_codes `ui `ux `i -> 9 `i -> 10 `i && < -> *U + &U _hall_codes * -> -> -> 1 `i `ui `ux -> -> # *U &U _hall_codes `ui `ux `i -> *U + &U _hall_codes * -> -> -> 0 `i `ui `ux -> -> # *U &U _hall_codes `ui `ux `i <= -> _val `i - -> *U + &U _hall_codes * -> -> -> 0 `i `ui `ux -> -> # *U &U _hall_codes `ui `ux `i / * - -> *U + &U _hall_codes * -> -> -> 0 `i `ui `ux -> -> # *U &U _hall_codes `ui `ux `i -> *U + &U _hall_codes * -> -> -> 1 `i `ui `ux -> -> # *U &U _hall_codes `ui `ux `i -> 9 `i -> 10 `i 550  ]
+[e ) -> -> 1 `i `a ]
+[e $UE 546  ]
+[e :U 550 ]
+"621
+[; ;main.c: 621:     }
+}
+[e :U 549 ]
+"622
+[; ;main.c: 622:     return 0;
+[e ) -> -> 0 `i `a ]
+[e $UE 546  ]
+"623
+[; ;main.c: 623: }
+[e :UE 546 ]
+}
