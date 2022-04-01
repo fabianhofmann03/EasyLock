@@ -1,4 +1,4 @@
-package com.example.easylock;
+package com.hofmann.easylock;
 
 public abstract class Result<T> {
     private Result() {}

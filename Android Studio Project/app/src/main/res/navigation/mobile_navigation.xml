@@ -7,29 +7,29 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.example.easylock.ui.home.HomeFragment"
+        android:name="com.hofmann.easylock.ui.home.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_info"
-        android:name="com.example.easylock.ui.info.InfoFragment"
+        android:name="com.hofmann.easylock.ui.info.InfoFragment"
         android:label="@string/menu_info"
         tools:layout="@layout/fragment_info" />
 
     <fragment
         android:id="@+id/nav_terminal"
-        android:name="com.example.easylock.ui.terminal.TerminalFragment"
+        android:name="com.hofmann.easylock.ui.terminal.TerminalFragment"
         android:label="@string/menu_terminal"
         tools:layout="@layout/fragment_terminal" />
     <fragment
         android:id="@+id/nav_devices"
-        android:name="com.example.easylock.ui.devices.DevicesFragment"
+        android:name="com.hofmann.easylock.ui.devices.DevicesFragment"
         android:label="@string/menu_devices"
         tools:layout="@layout/fragment_devices" />
     <fragment
         android:id="@+id/nav_settings"
-        android:name="com.example.easylock.ui.settings.SettingsFragment"
+        android:name="com.hofmann.easylock.ui.settings.SettingsFragment"
         android:label="@string/menu_settings"
         />
 </navigation>

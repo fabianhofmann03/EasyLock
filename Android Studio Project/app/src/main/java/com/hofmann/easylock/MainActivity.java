@@ -1,4 +1,4 @@
-package com.example.easylock;
+package com.hofmann.easylock;
 
 import android.Manifest;
 import android.app.Activity;
@@ -16,9 +16,10 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.easylock.R;
 import com.example.easylock.databinding.FragmentDevicesBinding;
-import com.example.easylock.ui.devices.DevicesFragment;
-import com.example.easylock.ui.settings.SettingsFragment;
+import com.hofmann.easylock.ui.devices.DevicesFragment;
+import com.hofmann.easylock.ui.settings.SettingsFragment;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.activity.result.ActivityResult;
@@ -83,9 +84,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         Singleton.set_bluetooth_permission_granted(true);
-        if (ContextCompat.checkSelfPermission(binding.getRoot().getContext(), Manifest.permission.BLUETOOTH_CONNECT) == PackageManager.PERMISSION_DENIED) {
-            requestPermissionLauncher.launch(Manifest.permission.BLUETOOTH_CONNECT);
-        }
+
         intentFilter.addAction(BluetoothDevice.ACTION_ACL_CONNECTED);
         intentFilter.addAction(BluetoothDevice.ACTION_ACL_DISCONNECTED);
         registerReceiver(bluetooth_status, intentFilter);
@@ -163,14 +162,37 @@ public class MainActivity extends AppCompatActivity {
     private ActivityResultLauncher<String> requestPermissionLauncher =
             registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
                 if (isGranted) {
+                    String wanted_adress = sharedPreferences.getString(getResources().getString(R.string.auto_select_device), null);
+                    if(wanted_adress != null && bluetooth_check()) {
+                        Log.d("Device", wanted_adress);
+                        ArrayList<BluetoothDevice> bluetoothDevices = Bluetooth.refresh_devices();
+                        for(int x = 0; x < bluetoothDevices.size(); x++) {
+                            if(bluetoothDevices.get(x).getAddress().equals(wanted_adress)) {
+                                Bluetooth.setBluetoothDevice(bluetoothDevices.get(x));
+                            }
+                        }
+                    }
+                    if(sharedPreferences.getBoolean("settings_start_automatic_connection", false) && bluetooth_check_without_consequenz() && Bluetooth.getBluetoothDevice() != null) {
+                        if(Bluetooth.is_connected()) {
+                            btn_connect.setTitle(getResources().getString(R.string.toolbox_disconnect));
+                        }else {
+                            Bluetooth.startConnection();
+                        }
+                    }
                 } else {
                     Snackbar.make(binding.getRoot(), getResources().getString(R.string.bluetooth_permission_message), getResources().getInteger(R.integer.snackbar_time)).show();
                     Singleton.set_bluetooth_permission_granted(false);
                 }
             });
 
+    private ActivityResultLauncher<String> scanPermissionLauncher = registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
+        if (isGranted) {
+        } else {
+        }
+    });
+
     private boolean bluetooth_check() {
-        if (ContextCompat.checkSelfPermission(binding.getRoot().getContext(), Manifest.permission.BLUETOOTH_CONNECT) == PackageManager.PERMISSION_GRANTED) {
+        if (ContextCompat.checkSelfPermission(binding.getRoot().getContext(), Manifest.permission.BLUETOOTH_CONNECT) == PackageManager.PERMISSION_GRANTED && ContextCompat.checkSelfPermission(binding.getRoot().getContext(), Manifest.permission.BLUETOOTH_SCAN) == PackageManager.PERMISSION_GRANTED ) {
             if (bluetoothAdapter.isEnabled()) {
                 return true;
             } else {
@@ -179,12 +201,13 @@ public class MainActivity extends AppCompatActivity {
             }
         } else {
             requestPermissionLauncher.launch(Manifest.permission.BLUETOOTH_CONNECT);
+            scanPermissionLauncher.launch(Manifest.permission.BLUETOOTH_SCAN);
         }
         return false;
     }
 
     private boolean bluetooth_check_without_consequenz() {
-        if (ContextCompat.checkSelfPermission(binding.getRoot().getContext(), Manifest.permission.BLUETOOTH_CONNECT) == PackageManager.PERMISSION_GRANTED) {
+        if (ContextCompat.checkSelfPermission(binding.getRoot().getContext(), Manifest.permission.BLUETOOTH_CONNECT) == PackageManager.PERMISSION_GRANTED && ContextCompat.checkSelfPermission(binding.getRoot().getContext(), Manifest.permission.BLUETOOTH_SCAN) == PackageManager.PERMISSION_GRANTED) {
             if (bluetoothAdapter.isEnabled()) {
                 return true;
             }

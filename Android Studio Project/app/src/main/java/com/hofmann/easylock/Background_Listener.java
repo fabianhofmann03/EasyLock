@@ -1,5 +1,4 @@
-package com.example.easylock;
-
+package com.hofmann.easylock;
 
 import android.Manifest;
 import android.content.Context;
@@ -9,9 +8,9 @@ import android.util.Log;
 import android.view.View;
 
 import androidx.core.app.ActivityCompat;
-
-import com.example.easylock.ui.home.HomeFragment;
-import com.example.easylock.ui.settings.SettingsFragment;
+import com.example.easylock.R;
+import com.hofmann.easylock.ui.home.HomeFragment;
+import com.hofmann.easylock.ui.settings.SettingsFragment;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.HashMap;

@@ -1,4 +1,4 @@
-package com.example.easylock.ui.home;
+package com.hofmann.easylock.ui.home;
 
 import android.Manifest;
 import android.app.Activity;
@@ -8,8 +8,6 @@ import android.content.pm.PackageManager;
 import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,7 +15,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
@@ -28,10 +25,10 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.easylock.Background_Listener;
-import com.example.easylock.Bluetooth;
+import com.hofmann.easylock.Background_Listener;
+import com.hofmann.easylock.Bluetooth;
 import com.example.easylock.R;
-import com.example.easylock.Singleton;
+import com.hofmann.easylock.Singleton;
 import com.example.easylock.databinding.FragmentHomeBinding;
 import com.google.android.material.snackbar.Snackbar;
 

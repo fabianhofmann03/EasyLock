@@ -1,4 +1,4 @@
-package com.example.easylock;
+package com.hofmann.easylock;
 
 public class Timer {
     private long saved_time;

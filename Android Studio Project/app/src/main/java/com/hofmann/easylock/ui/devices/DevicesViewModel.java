@@ -1,4 +1,4 @@
-package com.example.easylock.ui.devices;
+package com.hofmann.easylock.ui.devices;
 
 import androidx.lifecycle.ViewModel;
 

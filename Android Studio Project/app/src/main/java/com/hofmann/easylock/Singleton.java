@@ -1,8 +1,8 @@
-package com.example.easylock;
+package com.hofmann.easylock;
 import android.bluetooth.BluetoothDevice;
 import android.content.Context;
 import android.content.res.Resources;
-
+import com.example.easylock.R;
 import androidx.annotation.NonNull;
 
 import pl.droidsonroids.gif.InputSource;

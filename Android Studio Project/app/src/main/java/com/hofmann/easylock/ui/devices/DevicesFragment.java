@@ -1,4 +1,4 @@
-package com.example.easylock.ui.devices;
+package com.hofmann.easylock.ui.devices;
 
 import android.Manifest;
 import android.Manifest.permission;
@@ -29,16 +29,13 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.preference.PreferenceManager;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-import com.example.easylock.Bluetooth;
+import com.hofmann.easylock.Bluetooth;
 import com.example.easylock.R;
-import com.example.easylock.Singleton;
+import com.hofmann.easylock.Singleton;
 import com.example.easylock.databinding.FragmentDevicesBinding;
-import com.example.easylock.ui.settings.SettingsFragment;
 import com.google.android.material.snackbar.Snackbar;
 
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Set;
 
 
 public class DevicesFragment extends Fragment {
@@ -132,7 +129,7 @@ public class DevicesFragment extends Fragment {
             });
 
     private boolean bluetooth_check() {
-        if (ContextCompat.checkSelfPermission(binding.getRoot().getContext(), Manifest.permission.BLUETOOTH_CONNECT) == PackageManager.PERMISSION_GRANTED) {
+        if (ContextCompat.checkSelfPermission(binding.getRoot().getContext(), Manifest.permission.BLUETOOTH) == PackageManager.PERMISSION_GRANTED) {
             if (btAdapter.isEnabled()) {
                 return true;
             } else {
@@ -140,7 +137,7 @@ public class DevicesFragment extends Fragment {
                 mGetContent.launch(enableBtIntent);
             }
         } else {
-            requestPermissionLauncher.launch(Manifest.permission.BLUETOOTH_CONNECT);
+            requestPermissionLauncher.launch(Manifest.permission.BLUETOOTH);
         }
         return false;
     }

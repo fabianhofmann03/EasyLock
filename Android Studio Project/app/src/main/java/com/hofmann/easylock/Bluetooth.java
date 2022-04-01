@@ -1,21 +1,19 @@
-package com.example.easylock;
+package com.hofmann.easylock;
 
 import android.Manifest;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
 import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.google.android.material.snackbar.Snackbar;
-
+import com.example.easylock.R;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -24,7 +22,6 @@ import java.util.ArrayList;
 import java.util.Set;
 import java.util.UUID;
 import java.util.concurrent.ExecutorService;
-import java.util.logging.Handler;
 
 import io.reactivex.exceptions.Exceptions;
 
@@ -163,7 +160,7 @@ public class Bluetooth {
         handler.post(new Runnable() {
             @Override
             public void run() {
-                if (ActivityCompat.checkSelfPermission(context, Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
+                if (ContextCompat.checkSelfPermission(context, Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
                     return;
                 }
                 if (result == BLUETOOTH_CONNECTION.CONNECTED) {
@@ -185,21 +182,25 @@ public class Bluetooth {
             }
         });
     }
-
     public static void startConnection() {
         if (executorService != null) {
+            Log.d("Bluetooth", "Starting Connection");
             if(MainActivity.btn_connect != null) MainActivity.btn_connect.setEnabled(false);
             executorService.execute(new Runnable() {
                 @Override
                 public void run() {
                     /* * Establish Bluetooth connection * */
-                    if (ActivityCompat.checkSelfPermission(context, Manifest.permission.BLUETOOTH_SCAN) != PackageManager.PERMISSION_GRANTED) {
+                    if (ContextCompat.checkSelfPermission(context, Manifest.permission.BLUETOOTH_SCAN) != PackageManager.PERMISSION_GRANTED) {
+                        Log.d("Bluetooth", "No Permission");
+                        if(MainActivity.btn_connect != null) MainActivity.btn_connect.setEnabled(true);
                         return;
                     }
                     bluetoothAdapter.cancelDiscovery();
                     try {
                         sock = bluetoothDevice.createRfcommSocketToServiceRecord(MY_UUID);
+                        Log.d("Bluetooth", "First Try Connecting");
                         sock.connect();
+                        Log.d("Bluetooth", "First Try Worked");
                         connection_callback(BLUETOOTH_CONNECTION.CONNECTED);
                     } catch (Exception e1) {
                         Class<?> clazz = sock.getRemoteDevice().getClass();
@@ -216,10 +217,13 @@ public class Bluetooth {
                                     sock.getRemoteDevice()
                                     , params
                             );
+                            Log.d("Bluetooth", "Second Try Connecting");
                             sockFallback.connect();
+                            Log.d("Bluetooth", "Second Try Worked");
                             sock = sockFallback;
                             connection_callback(BLUETOOTH_CONNECTION.CONNECTED);
                         } catch (Exception e2) {
+                            Log.d("Bluetooth", "Didnt work");
                             connection_callback(BLUETOOTH_CONNECTION.ERROR);
                         }
                     }

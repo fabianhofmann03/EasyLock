@@ -1,4 +1,4 @@
-package com.example.easylock.ui.terminal;
+package com.hofmann.easylock.ui.terminal;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

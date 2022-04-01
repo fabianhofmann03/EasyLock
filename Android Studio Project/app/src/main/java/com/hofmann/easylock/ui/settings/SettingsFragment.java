@@ -1,4 +1,4 @@
-package com.example.easylock.ui.settings;
+package com.hofmann.easylock.ui.settings;
 
 import android.Manifest;
 import android.app.Activity;
@@ -8,25 +8,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
-import android.os.Debug;
-import android.text.Editable;
-import android.transition.Transition;
-import android.transition.TransitionInflater;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
@@ -43,13 +33,12 @@ import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceManager;
 import androidx.preference.SwitchPreference;
 
-import com.example.easylock.Background_Listener;
-import com.example.easylock.Bluetooth;
+import com.hofmann.easylock.Background_Listener;
+import com.hofmann.easylock.Bluetooth;
 import com.example.easylock.R;
-import com.example.easylock.Singleton;
+import com.hofmann.easylock.Singleton;
 import com.google.android.material.snackbar.Snackbar;
 
-import java.io.CharArrayReader;
 import java.util.ArrayList;
 
 public class SettingsFragment extends PreferenceFragmentCompat {
@@ -349,7 +338,7 @@ public class SettingsFragment extends PreferenceFragmentCompat {
     }
 
     private boolean bluetooth_check() {
-        if (ContextCompat.checkSelfPermission(context, Manifest.permission.BLUETOOTH_CONNECT) == PackageManager.PERMISSION_GRANTED) {
+        if (ContextCompat.checkSelfPermission(context, Manifest.permission.BLUETOOTH) == PackageManager.PERMISSION_GRANTED) {
             if (btAdapter.isEnabled()) {
                 return true;
             } else {
@@ -357,7 +346,7 @@ public class SettingsFragment extends PreferenceFragmentCompat {
                 mGetContent.launch(enableBtIntent);
             }
         } else {
-            requestPermissionLauncher.launch(Manifest.permission.BLUETOOTH_CONNECT);
+            requestPermissionLauncher.launch(Manifest.permission.BLUETOOTH);
         }
         return false;
     }

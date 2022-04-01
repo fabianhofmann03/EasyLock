@@ -1,16 +1,16 @@
-package com.example.easylock.ui.terminal;
+package com.hofmann.easylock.ui.info;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class TerminalViewModel extends ViewModel {
+public class InfoViewModel extends ViewModel {
 
     private final MutableLiveData<String> mText;
 
-    public TerminalViewModel() {
+    public InfoViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is slideshow fragment");
+        mText.setValue("This is gallery fragment");
     }
 
     public LiveData<String> getText() {

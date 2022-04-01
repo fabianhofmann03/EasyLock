@@ -1,14 +1,11 @@
-package com.example.easylock.ui.info;
+package com.hofmann.easylock.ui.info;
 
 import android.os.Bundle;
 import android.text.Spannable;
 import android.text.SpannableString;
-import android.text.method.MovementMethod;
 import android.text.method.ScrollingMovementMethod;
 import android.text.style.AbsoluteSizeSpan;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -18,7 +15,6 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.easylock.R;
-import com.example.easylock.databinding.FragmentInfoBinding;
 import com.example.easylock.databinding.FragmentInfoBinding;
 
 import java.util.regex.Matcher;

@@ -1,4 +1,4 @@
-package com.example.easylock;
+package com.hofmann.easylock;
 
 import android.content.Context;
 

@@ -1,4 +1,4 @@
-package com.example.easylock.ui.home;
+package com.hofmann.easylock.ui.home;
 
 import androidx.lifecycle.ViewModel;
 

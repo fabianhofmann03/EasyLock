@@ -34,7 +34,7 @@
     <string name="bluetooth_messages_10">Roses are red, violets are blue, I\'ve got 5 fingers, the middle one is for you</string>
     <string name="bluetooth_messages_11">*intense crying*</string>
 
-    <string name="bluetooth_permission_message">No permission for the use of Bluetooth found</string>
+    <string name="bluetooth_permission_message">No permission for the use of Bluetooth® technology found</string>
 
     <string name="bluetooth_device_message">No device selected</string>
     <string name="bluetooth_not_connected">No compatible device connected</string>

@@ -17,7 +17,7 @@
     <PreferenceCategory app:title="@string/settings_title_start">
 
         <ListPreference
-            app:defaultValue="false"
+            app:defaultValue="true"
             app:entries="@array/device_entries"
             app:entryValues="@array/device_values"
             app:key="settings_start_automatic_device"
