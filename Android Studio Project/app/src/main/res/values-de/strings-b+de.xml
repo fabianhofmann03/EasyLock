@@ -3,9 +3,6 @@
     <string name="app_name">EasyLock</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
-    <string name="nav_header_desc">Navigation header</string>
 
     <string name="menu_home">Start</string>
     <string name="menu_terminal">Terminal</string>
@@ -41,6 +38,7 @@
     <string name="connected">Verbunden mit</string>
     <string name="not_connected_1">Verbindung mit</string>
     <string name="not_connected_2">nicht möglich</string>
+    <string name="not_connected_not_responding">weil das Gerät nicht reagiert</string>
 
     <string name="error_data">Fehler, zu viele Daten wurden gesendet</string>
     <string name="pw_too_long">Passwort ist zu lang. Maximal 127 Zeichen sind erlaubt</string>
@@ -49,6 +47,8 @@
     <string name="device_disconnected">Die Bluetooth® Verbindung wurde unterbrochen</string>
     <string name="password_changed">Passwort geändert</string>
     <string name="inactivity">Aktivität wurde wegen Inaktivität beendet</string>
+
+    <string name="info">1. Mit Gerät verbinden\n2. Setup des Schlosses\n3. Öffnen des Schlosses\n4. Einstellungen\n\n1. Mit Gerät verbinden\nUm das Gerät zu verwenden, musst du dich natürlich zuerst damit verbinden. Dafür gehst du auf den Geräten und wählst das Gerät, mit dem du dich verbinden möchtest, aus der Liste an gekoppelten Geräten (meistens HC-05). Ist das Gerät noch nicht gekoppelt muss das zuerst in den Bluetooth® Einstellungen getan werden. Damit du dich mit dem ausgewählten Gerät verbindest musst du nur noch auf den „Verbinden“-Knopf oben rechts drücken.\n2. Setup des Schlosses\nBeim Konfigurieren des Schlosses wird das Passwort eingestellt und der Sensor, der den Türzustand überwacht, konfiguriert. \nUm das Passwort einzustellen geh zu den Einstellungen und drück auf „Passwort ändern“. Jetzt öffnet sich ein Fenster. Hier musst du das alte und das neue Passwort eingeben. Um das Passwort zu ändern, musst du den „Passwort ändern“-Knopf drücken. Wurde vorher noch kein Passwort eingestellt musst du Knopf auf dem Gerät gedrückt werden, während man auf den „Passwort ändern“-Knopf drückt. Wenn du diese Schritte befolgt hast, sollte das Passwort des Geräts nun verändert sein.\nAls nächstes muss der Sensor des Türzustandes konfiguriert werden. Dafür musst du wieder zu den Einstellungen gehen, diesmal jedoch drückst du auf „Auf-Zu-Erkennung konfigurieren“. Hier muss man wieder das Passwort eingeben (oder den Knopf am Gerät gedrückt halten) und dann auf „Starte Konfiguration“. Jetzt musst du nur noch den angezeigten Instruktionen folgen, um die Konfiguration zu beenden.\n3. Öffnen des Schlosses\nUm das Schloss zu öffnen, musst du zuerst auf die Start-Seite der App. Unter „Passwort“ musst du das Passwort des Geräts eingeben. Um das Schloss zu öffnen, musst du nur noch auf den Knopf mit dem Schloss-Symbol drücken. \nFalls du gerade kein Smartphone dabeihast, kannst du auch einfach den Knopf am Gerät weniger als 0,5s drücken.\n4. Einstellungen\n„Auf-Zu-Erkennung konfigurieren“ – Sensor für Türstatus wird neu konfiguriert um dafür zu sorgen, dass das Schloss sich wieder zusperrt, nachdem die Tür geschlossen wurde.\n„Passwort ändern“ – Passwort des Geräts wird geändert.\n„Geräteauswahl nach Start“ – Nach dem Starten der App wird ein Gerät automatisch ausgewählt. Hier kann man einstellen, ob das letzte ausgewählte Gerät beim nächsten Start automatisch ausgewählt werden soll oder sein spezifisches Gerät. \n„Standart Gerät“ – Falls ein spezifisches Gerät beim Start ausgewählt werden soll kann dieses Gerät hier ausgewählt werden.\n„Automatische Verbindung“ – Ob sich die App beim Start automatisch mit dem Gerät verbinden soll.</string>
 
     <!-- Configuration -->
     <string name="start_configuration">Starte Konfiguration</string>
@@ -64,7 +64,7 @@
 
     <!-- Device Preferences -->
     <string name="settings_device_change_password">Passwort ändern</string>
-    <string name="settings_device_config_device">Auf-Zu Erkennung konfigurieren</string>
+    <string name="settings_device_config_device">Auf-Zu-Erkennung konfigurieren</string>
 
     <!-- Start Preferences -->
     <string name="settings_start_automatic_device">Geräteauswahl nach Start</string>

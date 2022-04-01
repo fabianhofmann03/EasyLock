@@ -322,7 +322,7 @@ public class SettingsFragment extends PreferenceFragmentCompat {
             registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
                 if (isGranted) {
                 } else {
-                    Snackbar.make(view, getResources().getString(R.string.bluetooth_permission_message), 5000).show();
+                    Snackbar.make(view, getResources().getString(R.string.bluetooth_permission_message), getResources().getInteger(R.integer.snackbar_time)).show();
                     Singleton.set_bluetooth_permission_granted(false);
                 }
             });
@@ -366,7 +366,7 @@ public class SettingsFragment extends PreferenceFragmentCompat {
         @Override
         public void onActivityResult(ActivityResult result) {
             if (result.getResultCode() != Activity.RESULT_OK) {
-                Snackbar snackbar = Snackbar.make(view, Singleton.get_bluetooth_message(), 5000);
+                Snackbar snackbar = Snackbar.make(view, Singleton.get_bluetooth_message(), getResources().getInteger(R.integer.snackbar_time));
                 snackbar.show();
             }
         }

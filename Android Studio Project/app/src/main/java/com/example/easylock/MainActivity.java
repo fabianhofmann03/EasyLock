@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-        //Snackbar.make(binding.getRoot(), Integer.toString(menuItem.getItemId()), 5000).show();
+        //Snackbar.make(binding.getRoot(), Integer.toString(menuItem.getItemId()), context.getResources().getInteger(R.integer.snackbar_time)).show();
 
         //INIT
         Singleton.get_resources(binding.getRoot().getContext());
@@ -142,7 +142,7 @@ public class MainActivity extends AppCompatActivity {
                 if (bluetooth_check()) {
                     Log.d("Connection Button","Connection possible");
                     if (Bluetooth.getBluetoothDevice() == null) {
-                        Snackbar.make(binding.getRoot(), getResources().getString(R.string.bluetooth_device_message), 5000).show();
+                        Snackbar.make(binding.getRoot(), getResources().getString(R.string.bluetooth_device_message), getResources().getInteger(R.integer.snackbar_time)).show();
                     } else {
                         if (Bluetooth.is_connected()) {
                             Bluetooth.closeConnection();
@@ -164,7 +164,7 @@ public class MainActivity extends AppCompatActivity {
             registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
                 if (isGranted) {
                 } else {
-                    Snackbar.make(binding.getRoot(), getResources().getString(R.string.bluetooth_permission_message), 5000).show();
+                    Snackbar.make(binding.getRoot(), getResources().getString(R.string.bluetooth_permission_message), getResources().getInteger(R.integer.snackbar_time)).show();
                     Singleton.set_bluetooth_permission_granted(false);
                 }
             });
@@ -196,7 +196,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onActivityResult(ActivityResult result) {
             if (result.getResultCode() != Activity.RESULT_OK) {
-                Snackbar snackbar = Snackbar.make(binding.getRoot(), Singleton.get_bluetooth_message(), 5000);
+                Snackbar snackbar = Snackbar.make(binding.getRoot(), Singleton.get_bluetooth_message(), getResources().getInteger(R.integer.snackbar_time));
                 snackbar.show();
             }
         }

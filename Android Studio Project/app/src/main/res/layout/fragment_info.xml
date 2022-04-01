@@ -5,4 +5,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/background"
-    tools:context=".ui.info.InfoFragment"/>
+    tools:context=".ui.info.InfoFragment">
+
+    <TextView
+        android:id="@+id/info_text"
+        android:layout_width="339dp"
+        android:layout_height="617dp"
+        android:isScrollContainer="true"
+        android:overScrollMode="always"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:scrollbars="vertical"
+        android:text="@string/info"
+        android:textColor="?attr/colorOnSecondary"
+        android:textSize="16sp"
+        android:verticalScrollbarPosition="right"
+        app:barrierMargin="@dimen/fab_margin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.631" />
+</androidx.constraintlayout.widget.ConstraintLayout>

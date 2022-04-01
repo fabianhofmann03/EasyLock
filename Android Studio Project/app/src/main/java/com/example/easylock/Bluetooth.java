@@ -137,6 +137,7 @@ public class Bluetooth {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+            MainActivity.btn_connect.setEnabled(true);
         }
     }
 
@@ -166,7 +167,7 @@ public class Bluetooth {
                     return;
                 }
                 if (result == BLUETOOTH_CONNECTION.CONNECTED) {
-                    Snackbar.make(view, context.getResources().getString(R.string.connected) + " " + bluetoothDevice.getName(), 5000).show();
+                    Snackbar.make(view, context.getResources().getString(R.string.connected) + " " + bluetoothDevice.getName(), context.getResources().getInteger(R.integer.snackbar_time)).show();
                     try {
                         outputStream = sock.getOutputStream();
                         inputStream = sock.getInputStream();
@@ -176,7 +177,7 @@ public class Bluetooth {
                         e.printStackTrace();
                     }
                 }else {
-                    Snackbar.make(view, context.getResources().getString(R.string.not_connected_1) + " " + bluetoothDevice.getName() + " " + context.getResources().getString(R.string.not_connected_2), 5000).show();
+                    Snackbar.make(view, context.getResources().getString(R.string.not_connected_1) + " " + bluetoothDevice.getName() + " " + context.getResources().getString(R.string.not_connected_2), context.getResources().getInteger(R.integer.snackbar_time)).show();
                     outputStream = null;
                     inputStream = null;
                 }

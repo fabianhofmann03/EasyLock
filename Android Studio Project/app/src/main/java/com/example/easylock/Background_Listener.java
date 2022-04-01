@@ -1,10 +1,14 @@
 package com.example.easylock;
 
 
+import android.Manifest;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
+
+import androidx.core.app.ActivityCompat;
 
 import com.example.easylock.ui.home.HomeFragment;
 import com.example.easylock.ui.settings.SettingsFragment;
@@ -143,9 +147,9 @@ public class Background_Listener {
     public static void set_send_data_storage(int var, String data) {
         int y = data.length();
         send_data_storage[var - 1] = new byte[y];
-        Log.d("set send data storage" ,"Start Writing");
+        Log.d("set send data storage", "Start Writing");
         for (int x = 0; x < y; x++) send_data_storage[var - 1][x] = (byte) data.toCharArray()[x];
-        Log.d("set send data storage" ,"Finish writing");
+        Log.d("set send data storage", "Finish writing");
     }
 
     public static sending_response send_cmd(byte cmd) {
@@ -323,7 +327,7 @@ public class Background_Listener {
                                         cmd_state = commandcontroll.COMP;
                                         break;
                                     case READDATVAR:
-                                        data_storage[0] = (byte) (input & (~(1<<7)));
+                                        data_storage[0] = (byte) (input & (~(1 << 7)));
                                         last_state = cmd_state;
                                         cmd_state = commandcontroll.READDATLEN;
                                         break;
@@ -473,7 +477,7 @@ public class Background_Listener {
                                         status_storage = (byte) (status_storage & (~(1 << 7)));
                                         break;
                                     case 9:
-                                        switch(curCom) {
+                                        switch (curCom) {
                                             case 3:
                                                 mainThreadHandler.post(new Runnable() {
                                                     @Override
@@ -508,7 +512,7 @@ public class Background_Listener {
             });
             boolean req_loop = true;
             while (req_loop) {
-                switch(send_req((byte) variable.LOCK_STATUS.num)) {
+                switch (send_req((byte) variable.LOCK_STATUS.num)) {
                     case WAIT:
                         break;
                     case CONTINUE:
@@ -517,6 +521,10 @@ public class Background_Listener {
                         break;
                     case CANCEL:
                         Bluetooth.closeConnection();
+                        if (ActivityCompat.checkSelfPermission(context, Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
+                            return;
+                        }
+                        Snackbar.make(view, context.getResources().getString(R.string.not_connected_1) + " " + Bluetooth.getBluetoothDevice().getName() + " " + context.getResources().getString(R.string.not_connected_2) + " " + context.getResources().getString(R.string.not_connected_not_responding), context.getResources().getInteger(R.integer.snackbar_time)).show();
                         req_loop = false;
                         break;
                 }

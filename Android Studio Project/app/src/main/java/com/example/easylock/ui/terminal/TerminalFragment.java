@@ -25,7 +25,7 @@ public class TerminalFragment extends Fragment {
         View root = binding.getRoot();
 
         final TextView textView = binding.textSlideshow;
-        slideshowViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        textView.setText("Under construction");
         return root;
     }
 

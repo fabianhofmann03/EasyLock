@@ -42,6 +42,7 @@
     <string name="connected">Connected with</string>
     <string name="not_connected_1">Connection with</string>
     <string name="not_connected_2">not possible</string>
+    <string name="not_connected_not_responding">because the device didn\'t respond</string>
 
     <string name="error_data">Error. Too much data sent</string>
     <string name="pw_too_long">Password is too long. A maximum of 127 characters is allowed</string>
@@ -51,6 +52,7 @@
     <string name="password_changed">Password changed</string>
     <string name="inactivity">Activity was canceled due to inactivity</string>
 
+    <string name="info">1. Connect with device\n2. Setup of the lock\n3. Opening the lock\n4. Settings\n\n1. Connect to device\nOf course, to use the device, you need to connect to it first. To do this, go to Devices and select the device you want to connect to from the list of paired devices (usually HC-05). If the device is not paired yet, you have to do that first in the Bluetooth® settings. To connect to the selected device you just have to press the "Connect" button in the upper right corner.\n2. Setup of the lock\nConfiguring the lock involves setting the password and configuring the sensor that monitors the door status. \nTo set the password go to the settings and press "Change password". Now a window will open. Here you have to enter the old and the new password. To change the password, press the "Change password" button. If no password has been set before, press the button on the device while pressing the "Change password" button. If you followed these steps, the password of the device should be changed now.\nNext, you need to configure the door status sensor. For this you need to go to the settings again, but this time press "Configure open-close detection". Here you have to enter the password again (or press and hold the button on the device) and then press "Start configuration". Now you just have to follow the displayed instructions to finish the configuration.\n3. Opening the lock\nTo open the lock, you must first go to the start page of the app. Under "Password" you need to enter the password of the device. To open the lock, you just need to press the button with the lock icon. \nIf you don\'t have a smartphone with you, you can just press the button on the device for less than 0.5s.\n4. Settings\n"Configure open-close detection" - door status sensor will be reconfigured to make the lock lock again after the door is closed.\n"Change Password" - Password of the device will be changed.\n"Device selection after start" - After starting the app, a device will be selected automatically. Here you can set whether the last selected device should be automatically selected at the next start or its specific device. \n"Default device" - If a specific device should be selected at startup, this device can be selected here.\n"Automatic connection" - Whether the app should automatically connect to the device at startup.</string>
 
     <!-- Configuration -->
     <string name="start_configuration">Start configuration</string>
@@ -66,7 +68,7 @@
 
     <!-- Device Preferences -->
     <string name="settings_device_change_password">Change password</string>
-    <string name="settings_device_config_device">Configure Open-Close Detection</string>
+    <string name="settings_device_config_device">Configure Open-Close-Detection</string>
 
     <!-- Start Preferences -->
     <string name="settings_start_automatic_device">Device selection after start</string>
