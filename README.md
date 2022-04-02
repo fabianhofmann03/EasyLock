@@ -3,6 +3,10 @@ EasyLock ist ein Schulprojekt von mir und 2 weiteren Kollegen.
 Es nutzt einen magnetischen Schieberiegler der die Tür auf und zu sperrt und einen Hallsensor um den aktuellen Zustand der Tür zu erkennen.
 Über eine App auf dem Handy kann das Schloss dann geöffnet, das Passwort geändert oder die Werte des Hallsensors konfiguriert werden.
 
+# Schaltplan & Platine
+
+
+
 # Protokoll
 
 Das Projekt nutzt 4 verschiedene Nachrichten zum kommunizieren. Commands, Requests, Data und Status. 
