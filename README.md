@@ -35,7 +35,15 @@ Der Knopf wird mit einem internen Weak-Pullup verwendet, desshalb ist der Knopf 
 
 <img src="https://github.com/fabianhofmann03/EasyLock/blob/main/Schaltung%20&%20Platine/Einzelschaltungen/Button.jpg?raw=true" width="428" height="251">
 
+## Schieberiegler
+
+Der Schieberiegler wird durch einen IRLZ44N
+
+<img src="https://github.com/fabianhofmann03/EasyLock/blob/main/Schaltung%20&%20Platine/Einzelschaltungen/Schieberiegler_mit_LED.jpg?raw=true" width="623" height="539">
+
 ## Spannungs Konvertierung
+
+Für die Spannungskonvertierung haben wir den L7805CV. Auch sind 2 100nF Kondensatoren vor und nach dem Spannungswandler eingebaut umd eventuelle Spannungsspitzen auszugleichen.
 
 <img src="https://github.com/fabianhofmann03/EasyLock/blob/main/Schaltung%20&%20Platine/Einzelschaltungen/Spannungswandlung.jpg?raw=true" width="640" height="437">
 
