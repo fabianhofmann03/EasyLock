@@ -11,7 +11,7 @@ Nun zu der Erklärung des Schaltplans. Falls du das Projekt selber nachbauen mö
 
 ## Microcontroller
 
-Als Microcontroller haben wir den PIC16F1827 verwendet. 
+Als Microcontroller haben wir den PIC16F1827 verwendet.
 <img src="https://raw.githubusercontent.com/fabianhofmann03/EasyLock/main/Schaltung%20%26%20Platine/Einzelschaltungen/Microcontoller.jpg" width="662" height="338">
 
 ## Hall-Effekt-Sensor
@@ -21,7 +21,23 @@ Wir haben den 49e verwendet, welcher ohne weitere Schaltung an den Microcontroll
 
 <img src="https://github.com/fabianhofmann03/EasyLock/blob/main/Schaltung%20&%20Platine/Einzelschaltungen/Hall_Sensor.jpg?raw=true" width="424" height="326">
 
+## Bluetooth Serial Modul
 
+Für die Bluetooth Verbindung haben wir das HC-05 Modul verwendet, da es für uns die einfachste Möglichkeit war um den PIC mit Bluetooth auszustatten. 
+
+Beim HC-05 muss man noch 2 Widerstände einzubauen. Der Widerstand R4 geht vom RX zu GND und soll wahrscheinlich als Pull-Down Widerstand wirken. Der Widerstand R3 geht vom RX zum RB2 vom Microcontroller, wahrscheinlich um den Strom zu begrenzen, der in den RX Pin fließt.
+
+<img src="https://github.com/fabianhofmann03/EasyLock/blob/main/Schaltung%20&%20Platine/Einzelschaltungen/HC05.jpg?raw=true" width="401" height="449">
+
+## Knopf
+
+Der Knopf wird mit einem internen Weak-Pullup verwendet, desshalb ist der Knopf auf der anderen Seite mit GND verbunden.
+
+<img src="https://github.com/fabianhofmann03/EasyLock/blob/main/Schaltung%20&%20Platine/Einzelschaltungen/Button.jpg?raw=true" width="428" height="251">
+
+## Spannungs Konvertierung
+
+<img src="https://github.com/fabianhofmann03/EasyLock/blob/main/Schaltung%20&%20Platine/Einzelschaltungen/Spannungswandlung.jpg?raw=true" width="640" height="437">
 
 # Protokoll
 
