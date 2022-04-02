@@ -31,6 +31,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.hofmann.easylock.Bluetooth;
 import com.example.easylock.R;
+import com.hofmann.easylock.MainActivity;
 import com.hofmann.easylock.Singleton;
 import com.example.easylock.databinding.FragmentDevicesBinding;
 import com.google.android.material.snackbar.Snackbar;
@@ -119,29 +120,6 @@ public class DevicesFragment extends Fragment {
         binding = null;
     }
 
-    private ActivityResultLauncher<String> requestPermissionLauncher =
-            registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
-                if (isGranted) {
-                } else {
-                    Snackbar.make(binding.getRoot(), getResources().getString(R.string.bluetooth_permission_message), getResources().getInteger(R.integer.snackbar_time)).show();
-                    Singleton.set_bluetooth_permission_granted(false);
-                }
-            });
-
-    private boolean bluetooth_check() {
-        if (ContextCompat.checkSelfPermission(binding.getRoot().getContext(), Manifest.permission.BLUETOOTH) == PackageManager.PERMISSION_GRANTED) {
-            if (btAdapter.isEnabled()) {
-                return true;
-            } else {
-                Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-                mGetContent.launch(enableBtIntent);
-            }
-        } else {
-            requestPermissionLauncher.launch(Manifest.permission.BLUETOOTH);
-        }
-        return false;
-    }
-
     ActivityResultLauncher<Intent> mGetContent = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
         @Override
         public void onActivityResult(ActivityResult result) {
@@ -153,24 +131,31 @@ public class DevicesFragment extends Fragment {
     });
 
     private void refresh_list() {
-        if (bluetooth_check()) {
+        binding.swiper.setRefreshing(false);
+        if (MainActivity.bluetooth_check_without_consequenz()) {
             bluetooth_devices = Bluetooth.refresh_devices();
             ArrayList<String> device_names = new ArrayList<>(0);
+            if (ActivityCompat.checkSelfPermission(binding.getRoot().getContext(), permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
+                return;
+            }
             for (int x = 0; x < bluetooth_devices.size(); x++) {
-                if (ActivityCompat.checkSelfPermission(binding.getRoot().getContext(), permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
-                    return;
-                }
                 device_names.add(bluetooth_devices.get(x).getName());
             }
             arrayAdapter = new ArrayAdapter(binding.getRoot().getContext(), android.R.layout.simple_list_item_single_choice, device_names);
             listView.setAdapter(arrayAdapter);
+            if(Bluetooth.getBluetoothDevice() != null) {
+                for (int x = 0; x < bluetooth_devices.size(); x++) {
+                    Log.d("Find Devices", bluetooth_devices.get(x).getAddress() + " | " + Bluetooth.getBluetoothDevice().getAddress());
+                    if (bluetooth_devices.get(x).equals(Bluetooth.getBluetoothDevice())) {
+                        listView.setItemChecked(x, true);
+                        break;
+                    }
+                }
+            }
         }else {
-            Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-            mGetContent.launch(enableBtIntent);
             final ArrayList<String> device_names = new ArrayList<>();
             arrayAdapter = new ArrayAdapter(binding.getRoot().getContext(), android.R.layout.simple_list_item_1, device_names);
             listView.setAdapter(arrayAdapter);
         }
-        binding.swiper.setRefreshing(false);
     }
 }

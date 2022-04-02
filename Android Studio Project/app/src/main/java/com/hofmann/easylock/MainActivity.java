@@ -28,6 +28,7 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -55,11 +56,14 @@ public class MainActivity extends AppCompatActivity {
     private IntentFilter intentFilter = new IntentFilter();
     private SharedPreferences sharedPreferences;
 
+    private static Context context;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
+        context = binding.getRoot().getContext();
         setContentView(binding.getRoot());
         setSupportActionBar(binding.appBarMain.toolbar);
         DrawerLayout drawer = binding.drawerLayout;
@@ -125,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
         btn_connect = menu.findItem(R.id.connect_btn);
         if(sharedPreferences.getBoolean("settings_start_automatic_connection", false) && bluetooth_check_without_consequenz() && Bluetooth.getBluetoothDevice() != null) {
             if(Bluetooth.is_connected()) {
-                btn_connect.setTitle(getResources().getString(R.string.toolbox_disconnect));
+                Bluetooth.setConnection_status(true);
             }else {
                 Bluetooth.startConnection();
             }
@@ -172,13 +176,6 @@ public class MainActivity extends AppCompatActivity {
                             }
                         }
                     }
-                    if(sharedPreferences.getBoolean("settings_start_automatic_connection", false) && bluetooth_check_without_consequenz() && Bluetooth.getBluetoothDevice() != null) {
-                        if(Bluetooth.is_connected()) {
-                            btn_connect.setTitle(getResources().getString(R.string.toolbox_disconnect));
-                        }else {
-                            Bluetooth.startConnection();
-                        }
-                    }
                 } else {
                     Snackbar.make(binding.getRoot(), getResources().getString(R.string.bluetooth_permission_message), getResources().getInteger(R.integer.snackbar_time)).show();
                     Singleton.set_bluetooth_permission_granted(false);
@@ -191,28 +188,67 @@ public class MainActivity extends AppCompatActivity {
         }
     });
 
-    private boolean bluetooth_check() {
-        if (ContextCompat.checkSelfPermission(binding.getRoot().getContext(), Manifest.permission.BLUETOOTH_CONNECT) == PackageManager.PERMISSION_GRANTED && ContextCompat.checkSelfPermission(binding.getRoot().getContext(), Manifest.permission.BLUETOOTH_SCAN) == PackageManager.PERMISSION_GRANTED ) {
-            if (bluetoothAdapter.isEnabled()) {
-                return true;
-            } else {
-                Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-                mGetContent.launch(enableBtIntent);
-            }
-        } else {
-            requestPermissionLauncher.launch(Manifest.permission.BLUETOOTH_CONNECT);
-            scanPermissionLauncher.launch(Manifest.permission.BLUETOOTH_SCAN);
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        if (requestCode != 1) {
+            super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+            return;
         }
-        return false;
+        if (grantResults.length != 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            Log.d("Request", "Request permission success");
+            return;
+        }
+        Log.e("Request", "Request permission failed");
     }
 
-    private boolean bluetooth_check_without_consequenz() {
-        if (ContextCompat.checkSelfPermission(binding.getRoot().getContext(), Manifest.permission.BLUETOOTH_CONNECT) == PackageManager.PERMISSION_GRANTED && ContextCompat.checkSelfPermission(binding.getRoot().getContext(), Manifest.permission.BLUETOOTH_SCAN) == PackageManager.PERMISSION_GRANTED) {
-            if (bluetoothAdapter.isEnabled()) {
-                return true;
-            }
+    private boolean bluetooth_check() {
+        boolean result = true;
+        //String[] permissions = new String[]{Manifest.permission.BLUETOOTH_CONNECT, Manifest.permission.BLUETOOTH, Manifest.permission.BLUETOOTH_SCAN, Manifest.permission.BLUETOOTH_ADMIN};
+        //ActivityCompat.requestPermissions(this, permissions, 1);
+
+        if(ActivityCompat.checkSelfPermission(binding.getRoot().getContext(), Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
+            requestPermissionLauncher.launch(Manifest.permission.BLUETOOTH_CONNECT);
+            result = false;
         }
-        return false;
+        if(ActivityCompat.checkSelfPermission(binding.getRoot().getContext(), Manifest.permission.BLUETOOTH_SCAN) != PackageManager.PERMISSION_GRANTED) {
+            requestPermissionLauncher.launch(Manifest.permission.BLUETOOTH_SCAN);
+            result = false;
+        }
+        if(ActivityCompat.checkSelfPermission(binding.getRoot().getContext(), Manifest.permission.BLUETOOTH_ADMIN) != PackageManager.PERMISSION_GRANTED) {
+            requestPermissionLauncher.launch(Manifest.permission.BLUETOOTH_ADMIN);
+            result = false;
+        }
+        if(ActivityCompat.checkSelfPermission(binding.getRoot().getContext(), Manifest.permission.BLUETOOTH) != PackageManager.PERMISSION_GRANTED) {
+            requestPermissionLauncher.launch(Manifest.permission.BLUETOOTH);
+            result = false;
+        }
+        if(!bluetoothAdapter.isEnabled() && result) {
+            Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+            mGetContent.launch(enableBtIntent);
+            result = false;
+        }
+
+        return result;
+    }
+
+    public static boolean bluetooth_check_without_consequenz() {
+        boolean result = true;
+        if(ActivityCompat.checkSelfPermission(context, Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
+            result = false;
+        }
+        if(ActivityCompat.checkSelfPermission(context, Manifest.permission.BLUETOOTH_SCAN) != PackageManager.PERMISSION_GRANTED) {
+            result = false;
+        }
+        if(ActivityCompat.checkSelfPermission(context, Manifest.permission.BLUETOOTH_ADMIN) != PackageManager.PERMISSION_GRANTED) {
+            result = false;
+        }
+        if(ActivityCompat.checkSelfPermission(context, Manifest.permission.BLUETOOTH) != PackageManager.PERMISSION_GRANTED) {
+            result = false;
+        }
+        if(!bluetoothAdapter.isEnabled()) {
+            result = false;
+        }
+        return result;
     }
 
     ActivityResultLauncher<Intent> mGetContent = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {

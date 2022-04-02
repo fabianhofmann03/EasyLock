@@ -36,6 +36,7 @@ import androidx.preference.SwitchPreference;
 import com.hofmann.easylock.Background_Listener;
 import com.hofmann.easylock.Bluetooth;
 import com.example.easylock.R;
+import com.hofmann.easylock.MainActivity;
 import com.hofmann.easylock.Singleton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -132,7 +133,7 @@ public class SettingsFragment extends PreferenceFragmentCompat {
                 if (config_password.getText().toString().length() > 127) {
                     Snackbar.make(view, getResources().getString(R.string.pw_too_long), getResources().getInteger(R.integer.snackbar_time)).show();
                 } else {
-                    if (bluetooth_check()) {
+                    if (MainActivity.bluetooth_check_without_consequenz()) {
                         if (Bluetooth.is_connected()) {
                             Background_Listener.set_send_data_storage(Background_Listener.variable.PASSWORD.num, config_password.getText().toString());
                             while (true) {
@@ -163,7 +164,7 @@ public class SettingsFragment extends PreferenceFragmentCompat {
                     if (text_new_password_changepw.getText().toString().length() > 127) {
                         Snackbar.make(view, getResources().getString(R.string.new_pw_too_long), getResources().getInteger(R.integer.snackbar_time)).show();
                     } else {
-                        if (bluetooth_check()) {
+                        if (MainActivity.bluetooth_check_without_consequenz()) {
                             if (Bluetooth.is_connected()) {
                                 Background_Listener.set_send_data_storage(Background_Listener.variable.PASSWORD.num, text_password_changepw.getText().toString());
                                 Background_Listener.set_send_data_storage(Background_Listener.variable.NEW_PASSWORD.num, text_new_password_changepw.getText().toString());
@@ -194,7 +195,7 @@ public class SettingsFragment extends PreferenceFragmentCompat {
         settings_start_specific_bluetooth_device.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             @Override
             public boolean onPreferenceClick(@NonNull Preference preference) {
-                if(bluetooth_check()) {
+                if(MainActivity.bluetooth_check_without_consequenz()) {
                     refresh_list();
                     return true;
                 }else {
@@ -307,17 +308,8 @@ public class SettingsFragment extends PreferenceFragmentCompat {
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
-    private ActivityResultLauncher<String> requestPermissionLauncher =
-            registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
-                if (isGranted) {
-                } else {
-                    Snackbar.make(view, getResources().getString(R.string.bluetooth_permission_message), getResources().getInteger(R.integer.snackbar_time)).show();
-                    Singleton.set_bluetooth_permission_granted(false);
-                }
-            });
-
     private void refresh_list() {
-        if (bluetooth_check()) {
+        if (MainActivity.bluetooth_check_without_consequenz()) {
             ArrayList<BluetoothDevice> bluetoothDevices = Bluetooth.refresh_devices();
             CharSequence[] bluetoothNames = new CharSequence[bluetoothDevices.size()];
             bluetoothAdress = new CharSequence[bluetoothDevices.size()];
@@ -335,20 +327,6 @@ public class SettingsFragment extends PreferenceFragmentCompat {
                 editor.apply();
             }
         }
-    }
-
-    private boolean bluetooth_check() {
-        if (ContextCompat.checkSelfPermission(context, Manifest.permission.BLUETOOTH) == PackageManager.PERMISSION_GRANTED) {
-            if (btAdapter.isEnabled()) {
-                return true;
-            } else {
-                Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-                mGetContent.launch(enableBtIntent);
-            }
-        } else {
-            requestPermissionLauncher.launch(Manifest.permission.BLUETOOTH);
-        }
-        return false;
     }
 
     ActivityResultLauncher<Intent> mGetContent = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
