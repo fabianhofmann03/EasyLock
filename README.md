@@ -5,7 +5,23 @@ Es nutzt einen magnetischen Schieberiegler der die Tür auf und zu sperrt und ei
 
 # Schaltplan & Platine
 
-![alt text](https://github.com/fabianhofmann03/EasyLock/blob/main/Schaltung%20&%20Platine/Platine.jpg?raw=true)
+Nun zu der Erklärung des Schaltplans. Falls du das Projekt selber nachbauen möchtest, findest du die [CAM-Daten](https://github.com/fabianhofmann03/EasyLock/blob/main/Schaltung%20%26%20Platine/CAM-Data.zip) hier.
+
+<img src="https://github.com/fabianhofmann03/EasyLock/blob/main/Schaltung%20&%20Platine/Platine.jpg?raw=true" width="500" height="500">
+
+## Microcontroller
+
+Als Microcontroller haben wir den PIC16F1827 verwendet. 
+<img src="https://raw.githubusercontent.com/fabianhofmann03/EasyLock/main/Schaltung%20%26%20Platine/Einzelschaltungen/Microcontoller.jpg" width="662" height="338">
+
+## Hall-Effekt-Sensor
+
+Der Hall-Effekt-Sensor misst das Magnetfeld des Magneten, der auf der Tür befestigt wird. Dadurch wird ermittelt ob die Tür gerade geöffnet oder geschlossen ist.
+Wir haben den 49e verwendet, welcher ohne weitere Schaltung an den Microcontroller angeschlossen werden kann.
+
+<img src="https://github.com/fabianhofmann03/EasyLock/blob/main/Schaltung%20&%20Platine/Einzelschaltungen/Hall_Sensor.jpg?raw=true" width="424" height="326">
+
+
 
 # Protokoll
 
