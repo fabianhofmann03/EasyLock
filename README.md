@@ -5,7 +5,7 @@ Es nutzt einen magnetischen Schieberiegler der die Tür auf und zu sperrt und ei
 
 # Schaltplan & Platine
 
-
+![alt text](https://github.com/fabianhofmann03/EasyLock/blob/main/Schaltung%20&%20Platine/Platine.jpg?raw=true)
 
 # Protokoll
 
