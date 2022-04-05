@@ -3,10 +3,6 @@ EasyLock ist ein Schulprojekt von mir und 2 weiteren Kollegen.
 Es nutzt einen magnetischen Schieberiegler der die Tür auf und zu sperrt und einen Hallsensor um den aktuellen Zustand der Tür zu erkennen.
 Über eine App auf dem Handy kann das Schloss dann geöffnet, das Passwort geändert oder die Werte des Hallsensors konfiguriert werden.
 
-# Schaltplan & Platine
-
-![alt text](https://github.com/fabianhofmann03/EasyLock/blob/main/Schaltung%20&%20Platine/Platine.jpg?raw=true)
-
 # Protokoll
 
 Das Projekt nutzt 4 verschiedene Nachrichten zum kommunizieren. Commands, Requests, Data und Status. 
@@ -97,3 +93,6 @@ Status-Messages die versendet werden können finden Sie hier:
 | Cancel            | 0     | 0     | 0     | 0     | 1     | 0     | 0     | 0     | Cancel Command                                             |
 | Continue          | 0     | 0     | 0     | 0     | 1     | 0     | 0     | 1     | Continue Command                                           |
 
+## Kommunikation
+
+Die Kommunikation verläuft ziemlich einfach. 
