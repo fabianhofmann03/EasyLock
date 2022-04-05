@@ -3,50 +3,6 @@ EasyLock ist ein Schulprojekt von mir und 2 weiteren Kollegen.
 Es nutzt einen magnetischen Schieberiegler der die Tür auf und zu sperrt und einen Hallsensor um den aktuellen Zustand der Tür zu erkennen.
 Über eine App auf dem Handy kann das Schloss dann geöffnet, das Passwort geändert oder die Werte des Hallsensors konfiguriert werden.
 
-# Schaltplan & Platine
-
-Nun zu der Erklärung des Schaltplans. Falls du das Projekt selber nachbauen möchtest, findest du die [CAM-Daten](https://github.com/fabianhofmann03/EasyLock/blob/main/Schaltung%20%26%20Platine/CAM-Data.zip) hier.
-
-<img src="https://github.com/fabianhofmann03/EasyLock/blob/main/Schaltung%20&%20Platine/Platine.jpg?raw=true" width="500" height="500">
-
-## Microcontroller
-
-Als Microcontroller haben wir den PIC16F1827 verwendet.
-<img src="https://raw.githubusercontent.com/fabianhofmann03/EasyLock/main/Schaltung%20%26%20Platine/Einzelschaltungen/Microcontoller.jpg" width="662" height="338">
-
-## Hall-Effekt-Sensor
-
-Der Hall-Effekt-Sensor misst das Magnetfeld des Magneten, der auf der Tür befestigt wird. Dadurch wird ermittelt ob die Tür gerade geöffnet oder geschlossen ist.
-Wir haben den 49e verwendet, welcher ohne weitere Schaltung an den Microcontroller angeschlossen werden kann.
-
-<img src="https://github.com/fabianhofmann03/EasyLock/blob/main/Schaltung%20&%20Platine/Einzelschaltungen/Hall_Sensor.jpg?raw=true" width="424" height="326">
-
-## Bluetooth Serial Modul
-
-Für die Bluetooth Verbindung haben wir das HC-05 Modul verwendet, da es für uns die einfachste Möglichkeit war um den PIC mit Bluetooth auszustatten. 
-
-Beim HC-05 muss man noch 2 Widerstände einzubauen. Der Widerstand R4 geht vom RX zu GND und soll wahrscheinlich als Pull-Down Widerstand wirken. Der Widerstand R3 geht vom RX zum RB2 vom Microcontroller, wahrscheinlich um den Strom zu begrenzen, der in den RX Pin fließt.
-
-<img src="https://github.com/fabianhofmann03/EasyLock/blob/main/Schaltung%20&%20Platine/Einzelschaltungen/HC05.jpg?raw=true" width="401" height="449">
-
-## Knopf
-
-Der Knopf wird mit einem internen Weak-Pullup verwendet, desshalb ist der Knopf auf der anderen Seite mit GND verbunden.
-
-<img src="https://github.com/fabianhofmann03/EasyLock/blob/main/Schaltung%20&%20Platine/Einzelschaltungen/Button.jpg?raw=true" width="428" height="251">
-
-## Schieberiegler
-
-Der Schieberiegler wird durch einen IRLZ44N
-
-<img src="https://github.com/fabianhofmann03/EasyLock/blob/main/Schaltung%20&%20Platine/Einzelschaltungen/Schieberiegler_mit_LED.jpg?raw=true" width="623" height="539">
-
-## Spannungs Konvertierung
-
-Für die Spannungskonvertierung haben wir den L7805CV. Auch sind 2 100nF Kondensatoren vor und nach dem Spannungswandler eingebaut umd eventuelle Spannungsspitzen auszugleichen.
-
-<img src="https://github.com/fabianhofmann03/EasyLock/blob/main/Schaltung%20&%20Platine/Einzelschaltungen/Spannungswandlung.jpg?raw=true" width="640" height="437">
-
 # Protokoll
 
 Das Projekt nutzt 4 verschiedene Nachrichten zum kommunizieren. Commands, Requests, Data und Status. 
@@ -137,3 +93,6 @@ Status-Messages die versendet werden können finden Sie hier:
 | Cancel            | 0     | 0     | 0     | 0     | 1     | 0     | 0     | 0     | Cancel Command                                             |
 | Continue          | 0     | 0     | 0     | 0     | 1     | 0     | 0     | 1     | Continue Command                                           |
 
+## Kommunikation
+
+Die Kommunikation verläuft ziemlich einfach. 
