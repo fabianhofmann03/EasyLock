@@ -1,0 +1,28 @@
+Partlist
+
+Exported from EasyLock.brd at 05.04.2022 14:36
+
+EAGLE Version 9.6.2 Copyright (c) 1988-2020 Autodesk, Inc.
+
+Assembly variant: 
+
+Part           Value          Package      Library      Position (mm)         Orientation
+
+49E                           1X03         pinhead      (5.08 44.45)          R270
+C1             100nF          C025-025X050 rcl          (44.45 62.23)         R0
+C2             100nF          C025-025X050 rcl          (44.45 66.04)         R0
+C3             100nF          C025-025X050 rcl          (53.34 55.88)         R180
+D1             1N4148DO35-7   DO35-7       diode        (16.51 54.61)         R180
+HC05                          1X06         HC05         (10.16 38.1)          R180
+IC1            PIC16F1826/27P DIL18        microchip    (57.15 48.26)         R0
+IC2                           78XXL        v-reg        (54.61 63.5)          R270
+IRFZ44N                       TO-220       IRFZ44N      (6.35 54.61)          R90
+LED1           GREEN          LED5MM       led          (27.94 44.45)         R0
+LED2           RED            LED5MM       led          (15.24 44.45)         R0
+R1             1k             0204/7       rcl          (34.29 44.45)         R90
+R2             1k             0204/7       rcl          (21.59 44.45)         R90
+R3             1k             0204/7       rcl          (25.4 33.02)          R0
+R4             2k             0204/7       rcl          (25.4 29.21)          R0
+S1                            B3F-40XX     switch-omron (59.69 27.94)         R0
+SCHIEBERIEGLER                1X02/90      pinhead      (11.43 64.77)         R90
+X1             1613_14        1613_14      con-lumberg  (72.546028125 7.704575) R90
