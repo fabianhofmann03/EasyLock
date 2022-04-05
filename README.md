@@ -95,4 +95,4 @@ Status-Messages die versendet werden können finden Sie hier:
 
 ## Kommunikation
 
-<img src="https://raw.githubusercontent.com/fabianhofmann03/EasyLock/6a38c9b108c59736d88052293e14f0487ecfcc34/Flussdiagramm_Message.svg">
+<img src="https://github.com/fabianhofmann03/EasyLock/blob/main/Flussdiagramm_Message.png?raw=true">
