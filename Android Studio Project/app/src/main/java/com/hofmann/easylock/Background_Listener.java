@@ -8,7 +8,7 @@ import android.util.Log;
 import android.view.View;
 
 import androidx.core.app.ActivityCompat;
-import com.example.easylock.R;
+import com.hofmann.easylock.R;
 import com.hofmann.easylock.ui.home.HomeFragment;
 import com.hofmann.easylock.ui.settings.SettingsFragment;
 import com.google.android.material.snackbar.Snackbar;
@@ -422,6 +422,14 @@ public class Background_Listener {
                                             case 1:
                                                 Snackbar.make(view, context.getResources().getString(R.string.password_changed), view.getResources().getInteger(R.integer.snackbar_time)).show();
                                                 break;
+                                            case 2:
+                                                mainThreadHandler.post(new Runnable() {
+                                                    @Override
+                                                    public void run() {
+                                                        HomeFragment.button_en = true;
+                                                    }
+                                                });
+                                                break;
                                             case 3:
                                                 Snackbar.make(view, context.getResources().getString(R.string.config_complete), view.getResources().getInteger(R.integer.snackbar_time)).show();
                                                 mainThreadHandler.post(new Runnable() {
@@ -440,7 +448,15 @@ public class Background_Listener {
                                         send_data_storage = new byte[2][];
                                         switch (curCom) {
                                             case 1:
+                                                Snackbar.make(view, context.getResources().getString(R.string.wrong_password), view.getResources().getInteger(R.integer.snackbar_time)).show();
+                                                break;
                                             case 2:
+                                                mainThreadHandler.post(new Runnable() {
+                                                    @Override
+                                                    public void run() {
+                                                        HomeFragment.button_en = true;
+                                                    }
+                                                });
                                                 Snackbar.make(view, context.getResources().getString(R.string.wrong_password), view.getResources().getInteger(R.integer.snackbar_time)).show();
                                                 break;
                                             case 3:

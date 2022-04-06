@@ -30,10 +30,10 @@ import androidx.preference.PreferenceManager;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.hofmann.easylock.Bluetooth;
-import com.example.easylock.R;
+import com.hofmann.easylock.R;
 import com.hofmann.easylock.MainActivity;
 import com.hofmann.easylock.Singleton;
-import com.example.easylock.databinding.FragmentDevicesBinding;
+import com.hofmann.easylock.databinding.FragmentDevicesBinding;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;

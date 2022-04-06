@@ -1,5 +1,6 @@
 package com.hofmann.easylock.ui.info;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Spannable;
 import android.text.SpannableString;
@@ -14,8 +15,8 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.easylock.R;
-import com.example.easylock.databinding.FragmentInfoBinding;
+import com.hofmann.easylock.R;
+import com.hofmann.easylock.databinding.FragmentInfoBinding;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

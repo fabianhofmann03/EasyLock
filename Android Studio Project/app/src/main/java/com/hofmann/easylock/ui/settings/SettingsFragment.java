@@ -35,7 +35,7 @@ import androidx.preference.SwitchPreference;
 
 import com.hofmann.easylock.Background_Listener;
 import com.hofmann.easylock.Bluetooth;
-import com.example.easylock.R;
+import com.hofmann.easylock.R;
 import com.hofmann.easylock.MainActivity;
 import com.hofmann.easylock.Singleton;
 import com.google.android.material.snackbar.Snackbar;

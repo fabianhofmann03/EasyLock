@@ -27,16 +27,18 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.hofmann.easylock.Background_Listener;
 import com.hofmann.easylock.Bluetooth;
-import com.example.easylock.R;
+import com.hofmann.easylock.R;
 import com.hofmann.easylock.Singleton;
-import com.example.easylock.databinding.FragmentHomeBinding;
+import com.hofmann.easylock.databinding.FragmentHomeBinding;
 import com.google.android.material.snackbar.Snackbar;
 
 public class HomeFragment extends Fragment {
-    public Button btn_open;
+    private Button btn_open;
     private static ImageView lock_view;
     private static AnimationDrawable lock_gif;
     private FragmentHomeBinding binding;
+
+    public static boolean button_en = true;
 
     public static void btn_animation(boolean new_status) {
         //lock_gif.setSpeed(30);
@@ -89,18 +91,21 @@ public class HomeFragment extends Fragment {
         btn_open.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (pwd.getText().toString().length() > 127) {
-                    Snackbar.make(view, getResources().getString(R.string.pw_too_long), getResources().getInteger(R.integer.snackbar_time)).show();
-                } else {
-                    if (bluetooth_check()) {
-                        if (Bluetooth.is_connected()) {
-                            Background_Listener.set_send_data_storage(Background_Listener.variable.PASSWORD.num, pwd.getText().toString());
-                            while (true) {
-                                if (Background_Listener.send_cmd((byte) Background_Listener.command.OPEN_LOCK.num) != Background_Listener.sending_response.WAIT)
-                                    break;
+                if(button_en) {
+                    if (pwd.getText().toString().length() > 127) {
+                        Snackbar.make(view, getResources().getString(R.string.pw_too_long), getResources().getInteger(R.integer.snackbar_time)).show();
+                    } else {
+                        if (bluetooth_check()) {
+                            if (Bluetooth.is_connected()) {
+                                button_en = false;
+                                Background_Listener.set_send_data_storage(Background_Listener.variable.PASSWORD.num, pwd.getText().toString());
+                                while (true) {
+                                    if (Background_Listener.send_cmd((byte) Background_Listener.command.OPEN_LOCK.num) != Background_Listener.sending_response.WAIT)
+                                        break;
+                                }
+                            } else {
+                                Snackbar.make(view, getResources().getString(R.string.bluetooth_not_connected), getResources().getInteger(R.integer.snackbar_time)).show();
                             }
-                        } else {
-                            Snackbar.make(view, getResources().getString(R.string.bluetooth_not_connected), getResources().getInteger(R.integer.snackbar_time)).show();
                         }
                     }
                 }
