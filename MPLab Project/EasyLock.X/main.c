@@ -122,18 +122,31 @@ void stop_cmd(void);
 int seek_confirmation(int wait_num, int continue_num, int retry_num, int cancel_num);
 bool door_status_changed(bool open_or_close, int16_t val);
 
-
 long receive_time = 0;
 long receive_timer_len = 0;
 long cmd_time = 0;
 long cmd_timer_len = 0;
 long button_time = 0;
 bool button_status = false;
+bool button = false;
 
 void timer_up() {
     if(receive_timer_len > 0) receive_time++;
     if(cmd_timer_len > 0) cmd_time++;
     if(button_status) button_time++;
+    button = !BUTTON_GetValue();
+    if(button != button_status) {
+        if(button_status && button_time < button_timer_time) {
+            if(lock_status) {
+                working_state = WAITFORCLOSE;
+            }else {
+                working_state = OPENLOCK;
+            }
+        }else {
+            button_time = 0;
+        }
+    }
+    button_status = button;
 }
 
 void main(void) {
@@ -158,20 +171,6 @@ void main(void) {
     read_hall_codes();
     
     while (1) {
-        bool new_button_status = !BUTTON_GetValue();
-        if(new_button_status != button_status) {
-            if(button_status && button_time < button_timer_time) {
-                if(lock_status) {
-                    working_state = WAITFORCLOSE;
-                }else {
-                    working_state = OPENLOCK;
-                }
-            }else {
-                button_time = 0;
-            }
-        }
-        button_status = new_button_status;
-        button_status = !BUTTON_GetValue();
         if(receive_timer_len > 0 && receive_time > receive_timer_len) {
             receive_time = 0;
             receive_timer_len = 0;

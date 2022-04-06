@@ -11,6 +11,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 74: enum commandexecution cmd_exe = WAITTOSTART;
 [c E2922 0 1 .. ]
 [n E2922 commandexecution WAITTOSTART EXECMD  ]
+"498 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 498:     struct {
+[s S36 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S36 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
+"497
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 497: typedef union {
+[u S35 `S36 1 ]
+[n S35 . . ]
+"509
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 509: extern volatile PORTBbits_t PORTBbits __attribute__((address(0x00D)));
+[v _PORTBbits `VS35 ~T0 @X0 0 e@13 ]
 [p mainexit ]
 "74 ./mcc_generated_files/mcc.h
 [; ;./mcc_generated_files/mcc.h: 74: void SYSTEM_Initialize(void);
@@ -46,29 +57,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 "344 ./mcc_generated_files/tmr2.h
 [; ;./mcc_generated_files/tmr2.h: 344:  void TMR2_SetInterruptHandler(void (* InterruptHandler)(void));
 [v _TMR2_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F2513 ]
-[v F2998 `(v ~T0 @X0 0 tf ]
+[v F2999 `(v ~T0 @X0 0 tf ]
 "118 main.c
 [; ;main.c: 118: void read_hall_codes(void);
 [v _read_hall_codes `(v ~T0 @X0 0 ef ]
-"498 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 498:     struct {
-[s S36 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S36 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
-"497
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 497: typedef union {
-[u S35 `S36 1 ]
-[n S35 . . ]
-"509
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h: 509: extern volatile PORTBbits_t PORTBbits __attribute__((address(0x00D)));
-[v _PORTBbits `VS35 ~T0 @X0 0 e@13 ]
-"121 main.c
+"121
 [; ;main.c: 121: void stop_cmd(void);
 [v _stop_cmd `(v ~T0 @X0 0 ef ]
 "115
 [; ;main.c: 115: void send_stat(uint8_t stat);
 [v _send_stat `(v ~T0 @X0 0 ef1`uc ]
-"183
-[; ;main.c: 183:             send_stat(CANCELD);
+"181
+[; ;main.c: 181:             send_stat(CANCELD);
 [c E2934 1 2 3 4 5 6 7 8 9 .. ]
 [n E2934 status_message COMMAND_EXECUTED RECEIVED DENY TOO_MUCH_DATA MESSAGE_CORRUPTED LOCK_OPEND LOCK_CLOSED CANCELD CONTINUE  ]
 "213 ./mcc_generated_files/eusart.h
@@ -77,8 +77,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "328
 [; ;./mcc_generated_files/eusart.h: 328: uint8_t EUSART_Read(void);
 [v _EUSART_Read `(uc ~T0 @X0 0 ef ]
-"312 main.c
-[; ;main.c: 312:             }
+"310 main.c
+[; ;main.c: 310:             }
 [c E2930 1 2 3 .. ]
 [n E2930 variable PASSWORD NEW_PASSWORD LOCK_STATUS  ]
 "113
@@ -116,8 +116,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "119 main.c
 [; ;main.c: 119: void save_hall_codes(uint8_t open, uint8_t close);
 [v _save_hall_codes `(v ~T0 @X0 0 ef2`uc`uc ]
-"466
-[; ;main.c: 466:                 }
+"464
+[; ;main.c: 464:                 }
 [c E2926 1 2 3 .. ]
 [n E2926 command CHANGE_PASSWORD OPEN_LOCK START_CONFIG  ]
 "1868 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h
@@ -675,40 +675,46 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _new_hall_code_close
 -> -> 0 `i `uc
 ]
-"126
-[; ;main.c: 126: long receive_time = 0;
+"125
+[; ;main.c: 125: long receive_time = 0;
 [v _receive_time `l ~T0 @X0 1 e ]
 [i _receive_time
 -> -> 0 `i `l
 ]
-"127
-[; ;main.c: 127: long receive_timer_len = 0;
+"126
+[; ;main.c: 126: long receive_timer_len = 0;
 [v _receive_timer_len `l ~T0 @X0 1 e ]
 [i _receive_timer_len
 -> -> 0 `i `l
 ]
-"128
-[; ;main.c: 128: long cmd_time = 0;
+"127
+[; ;main.c: 127: long cmd_time = 0;
 [v _cmd_time `l ~T0 @X0 1 e ]
 [i _cmd_time
 -> -> 0 `i `l
 ]
-"129
-[; ;main.c: 129: long cmd_timer_len = 0;
+"128
+[; ;main.c: 128: long cmd_timer_len = 0;
 [v _cmd_timer_len `l ~T0 @X0 1 e ]
 [i _cmd_timer_len
 -> -> 0 `i `l
 ]
-"130
-[; ;main.c: 130: long button_time = 0;
+"129
+[; ;main.c: 129: long button_time = 0;
 [v _button_time `l ~T0 @X0 1 e ]
 [i _button_time
 -> -> 0 `i `l
 ]
-"131
-[; ;main.c: 131: _Bool button_status = 0;
+"130
+[; ;main.c: 130: _Bool button_status = 0;
 [v _button_status `a ~T0 @X0 1 e ]
 [i _button_status
+-> -> 0 `i `a
+]
+"131
+[; ;main.c: 131: _Bool button = 0;
+[v _button `a ~T0 @X0 1 e ]
+[i _button
 -> -> 0 `i `a
 ]
 "133
@@ -733,191 +739,187 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ++ _button_time -> -> 1 `i `l ]
 [e :U 362 ]
 "137
-[; ;main.c: 137: }
+[; ;main.c: 137:     button = !PORTBbits.RB0;
+[e = _button -> -> ! != -> . . _PORTBbits 0 0 `i -> 0 `i `i `a ]
+"138
+[; ;main.c: 138:     if(button != button_status) {
+[e $ ! != -> _button `i -> _button_status `i 363  ]
+{
+"139
+[; ;main.c: 139:         if(button_status && button_time < 50) {
+[e $ ! && != -> _button_status `i -> 0 `i < _button_time -> -> 50 `i `l 364  ]
+{
+"140
+[; ;main.c: 140:             if(lock_status) {
+[e $ ! != -> _lock_status `i -> 0 `i 365  ]
+{
+"141
+[; ;main.c: 141:                 working_state = WAITFORCLOSE;
+[e = _working_state . `E2906 3 ]
+"142
+[; ;main.c: 142:             }else {
+}
+[e $U 366  ]
+[e :U 365 ]
+{
+"143
+[; ;main.c: 143:                 working_state = OPENLOCK;
+[e = _working_state . `E2906 1 ]
+"144
+[; ;main.c: 144:             }
+}
+[e :U 366 ]
+"145
+[; ;main.c: 145:         }else {
+}
+[e $U 367  ]
+[e :U 364 ]
+{
+"146
+[; ;main.c: 146:             button_time = 0;
+[e = _button_time -> -> 0 `i `l ]
+"147
+[; ;main.c: 147:         }
+}
+[e :U 367 ]
+"148
+[; ;main.c: 148:     }
+}
+[e :U 363 ]
+"149
+[; ;main.c: 149:     button_status = button;
+[e = _button_status _button ]
+"150
+[; ;main.c: 150: }
 [e :UE 359 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"139
-[; ;main.c: 139: void main(void) {
+"152
+[; ;main.c: 152: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"141
-[; ;main.c: 141:     SYSTEM_Initialize();
+"154
+[; ;main.c: 154:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"142
-[; ;main.c: 142:     EUSART_Initialize();
-[e ( _EUSART_Initialize ..  ]
-"143
-[; ;main.c: 143:     ADC_Initialize();
-[e ( _ADC_Initialize ..  ]
-"144
-[; ;main.c: 144:     TMR2_Initialize();
-[e ( _TMR2_Initialize ..  ]
-"150
-[; ;main.c: 150:     (INTCONbits.GIE = 1);
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"153
-[; ;main.c: 153:     (INTCONbits.PEIE = 1);
-[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
 "155
-[; ;main.c: 155:     ADC_StartConversion();
-[e ( _ADC_StartConversion ..  ]
+[; ;main.c: 155:     EUSART_Initialize();
+[e ( _EUSART_Initialize ..  ]
 "156
-[; ;main.c: 156:     TMR2_SetInterruptHandler(timer_up);
-[e ( _TMR2_SetInterruptHandler (1 -> &U _timer_up `*F2998 ]
-"158
-[; ;main.c: 158:     read_hall_codes();
-[e ( _read_hall_codes ..  ]
-"160
-[; ;main.c: 160:     while (1) {
-[e :U 365 ]
-{
-"162
-[; ;main.c: 162:         _Bool new_button_status = !PORTBbits.RB0;
-[v _new_button_status `a ~T0 @X0 1 a ]
-[e = _new_button_status -> -> ! != -> . . _PORTBbits 0 0 `i -> 0 `i `i `a ]
+[; ;main.c: 156:     ADC_Initialize();
+[e ( _ADC_Initialize ..  ]
+"157
+[; ;main.c: 157:     TMR2_Initialize();
+[e ( _TMR2_Initialize ..  ]
 "163
-[; ;main.c: 163:         if(new_button_status != button_status) {
-[e $ ! != -> _new_button_status `i -> _button_status `i 367  ]
-{
-"164
-[; ;main.c: 164:             if(button_status && button_time < 50) {
-[e $ ! && != -> _button_status `i -> 0 `i < _button_time -> -> 50 `i `l 368  ]
-{
-"165
-[; ;main.c: 165:                 if(lock_status) {
-[e $ ! != -> _lock_status `i -> 0 `i 369  ]
-{
+[; ;main.c: 163:     (INTCONbits.GIE = 1);
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
 "166
-[; ;main.c: 166:                     working_state = WAITFORCLOSE;
-[e = _working_state . `E2906 3 ]
-"167
-[; ;main.c: 167:                 }else {
-}
-[e $U 370  ]
-[e :U 369 ]
-{
+[; ;main.c: 166:     (INTCONbits.PEIE = 1);
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
 "168
-[; ;main.c: 168:                     working_state = OPENLOCK;
-[e = _working_state . `E2906 1 ]
+[; ;main.c: 168:     ADC_StartConversion();
+[e ( _ADC_StartConversion ..  ]
 "169
-[; ;main.c: 169:                 }
-}
-[e :U 370 ]
-"170
-[; ;main.c: 170:             }else {
-}
-[e $U 371  ]
-[e :U 368 ]
-{
+[; ;main.c: 169:     TMR2_SetInterruptHandler(timer_up);
+[e ( _TMR2_SetInterruptHandler (1 -> &U _timer_up `*F2999 ]
 "171
-[; ;main.c: 171:                 button_time = 0;
-[e = _button_time -> -> 0 `i `l ]
-"172
-[; ;main.c: 172:             }
-}
-[e :U 371 ]
+[; ;main.c: 171:     read_hall_codes();
+[e ( _read_hall_codes ..  ]
 "173
-[; ;main.c: 173:         }
-}
-[e :U 367 ]
+[; ;main.c: 173:     while (1) {
+[e :U 370 ]
+{
 "175
-[; ;main.c: 175:         button_status = new_button_status;
-[e = _button_status _new_button_status ]
-"176
-[; ;main.c: 176:         button_status = !PORTBbits.RB0;
-[e = _button_status -> -> ! != -> . . _PORTBbits 0 0 `i -> 0 `i `i `a ]
-"177
-[; ;main.c: 177:         if(receive_timer_len > 0 && receive_time > receive_timer_len) {
+[; ;main.c: 175:         if(receive_timer_len > 0 && receive_time > receive_timer_len) {
 [e $ ! && > _receive_timer_len -> -> 0 `i `l > _receive_time _receive_timer_len 372  ]
 {
-"178
-[; ;main.c: 178:             receive_time = 0;
+"176
+[; ;main.c: 176:             receive_time = 0;
 [e = _receive_time -> -> 0 `i `l ]
-"179
-[; ;main.c: 179:             receive_timer_len = 0;
+"177
+[; ;main.c: 177:             receive_timer_len = 0;
 [e = _receive_timer_len -> -> 0 `i `l ]
-"180
-[; ;main.c: 180:             stop_cmd();
+"178
+[; ;main.c: 178:             stop_cmd();
 [e ( _stop_cmd ..  ]
-"181
-[; ;main.c: 181:         }
+"179
+[; ;main.c: 179:         }
 }
 [e :U 372 ]
-"182
-[; ;main.c: 182:         if(cmd_timer_len > 0 && cmd_time > cmd_timer_len) {
+"180
+[; ;main.c: 180:         if(cmd_timer_len > 0 && cmd_time > cmd_timer_len) {
 [e $ ! && > _cmd_timer_len -> -> 0 `i `l > _cmd_time _cmd_timer_len 373  ]
 {
-"183
-[; ;main.c: 183:             send_stat(CANCELD);
+"181
+[; ;main.c: 181:             send_stat(CANCELD);
 [e ( _send_stat (1 -> . `E2934 7 `uc ]
-"184
-[; ;main.c: 184:             stop_cmd();
+"182
+[; ;main.c: 182:             stop_cmd();
 [e ( _stop_cmd ..  ]
-"185
-[; ;main.c: 185:         }
+"183
+[; ;main.c: 183:         }
 }
 [e :U 373 ]
-"186
-[; ;main.c: 186:         if (EUSART_is_rx_ready()) {
+"184
+[; ;main.c: 184:         if (EUSART_is_rx_ready()) {
 [e $ ! != -> ( _EUSART_is_rx_ready ..  `i -> 0 `i 374  ]
 {
-"187
-[; ;main.c: 187:             receive_timer_len = 50;
+"185
+[; ;main.c: 185:             receive_timer_len = 50;
 [e = _receive_timer_len -> -> 50 `i `l ]
-"188
-[; ;main.c: 188:             receive_time = 0;
+"186
+[; ;main.c: 186:             receive_time = 0;
 [e = _receive_time -> -> 0 `i `l ]
-"189
-[; ;main.c: 189:             uint8_t input = EUSART_Read();
+"187
+[; ;main.c: 187:             uint8_t input = EUSART_Read();
 [v _input `uc ~T0 @X0 1 a ]
 [e = _input ( _EUSART_Read ..  ]
-"190
-[; ;main.c: 190:             static uint8_t control_byte;
+"188
+[; ;main.c: 188:             static uint8_t control_byte;
 [v F3002 `uc ~T0 @X0 1 s control_byte ]
-"191
-[; ;main.c: 191:             static uint8_t data_storage_counter = 0;
+"189
+[; ;main.c: 189:             static uint8_t data_storage_counter = 0;
 [v F3003 `uc ~T0 @X0 1 s data_storage_counter ]
 [i F3003
 -> -> 0 `i `uc
 ]
-"192
-[; ;main.c: 192:             static enum commandcontroll last_state = WAITFORCMD;
+"190
+[; ;main.c: 190:             static enum commandcontroll last_state = WAITFORCMD;
 [v F3004 `E2912 ~T0 @X0 1 s last_state ]
 [i F3004
 . `E2912 0
 ]
-"193
-[; ;main.c: 193:             switch (cmd_state) {
+"191
+[; ;main.c: 191:             switch (cmd_state) {
 [e $U 376  ]
 {
-"194
-[; ;main.c: 194:                 case WAITFORCMD:
+"192
+[; ;main.c: 192:                 case WAITFORCMD:
 [e :U 377 ]
-"195
-[; ;main.c: 195:                     last_state = cmd_state;
+"193
+[; ;main.c: 193:                     last_state = cmd_state;
 [e = F3004 _cmd_state ]
-"196
-[; ;main.c: 196:                     if (input == 0b10000001) cmd_state = READCMD;
+"194
+[; ;main.c: 194:                     if (input == 0b10000001) cmd_state = READCMD;
 [e $ ! == -> _input `i -> 129 `i 378  ]
 [e = _cmd_state . `E2912 1 ]
 [e $U 379  ]
-"197
-[; ;main.c: 197:                     else if (input == 0b01000010) cmd_state = READREQ;
+"195
+[; ;main.c: 195:                     else if (input == 0b01000010) cmd_state = READREQ;
 [e :U 378 ]
 [e $ ! == -> _input `i -> 66 `i 380  ]
 [e = _cmd_state . `E2912 2 ]
 [e $U 381  ]
-"198
-[; ;main.c: 198:                     else if (input == 0b00100100) cmd_state = READDATVAR;
+"196
+[; ;main.c: 196:                     else if (input == 0b00100100) cmd_state = READDATVAR;
 [e :U 380 ]
 [e $ ! == -> _input `i -> 36 `i 382  ]
 [e = _cmd_state . `E2912 4 ]
 [e $U 383  ]
-"199
-[; ;main.c: 199:                     else if (input == 0b00011000) cmd_state = READSTAT;
+"197
+[; ;main.c: 197:                     else if (input == 0b00011000) cmd_state = READSTAT;
 [e :U 382 ]
 [e $ ! == -> _input `i -> 24 `i 384  ]
 [e = _cmd_state . `E2912 6 ]
@@ -925,283 +927,283 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 383 ]
 [e :U 381 ]
 [e :U 379 ]
-"200
-[; ;main.c: 200:                     control_byte = input;
+"198
+[; ;main.c: 198:                     control_byte = input;
 [e = F3002 _input ]
-"201
-[; ;main.c: 201:                     break;
+"199
+[; ;main.c: 199:                     break;
 [e $U 375  ]
-"202
-[; ;main.c: 202:                 case READCMD:
+"200
+[; ;main.c: 200:                 case READCMD:
 [e :U 385 ]
-"203
-[; ;main.c: 203:                     cmd = input;
+"201
+[; ;main.c: 201:                     cmd = input;
 [e = _cmd _input ]
+"202
+[; ;main.c: 202:                     last_state = cmd_state;
+[e = F3004 _cmd_state ]
+"203
+[; ;main.c: 203:                     cmd_state = COMP;
+[e = _cmd_state . `E2912 7 ]
 "204
-[; ;main.c: 204:                     last_state = cmd_state;
-[e = F3004 _cmd_state ]
+[; ;main.c: 204:                     break;
+[e $U 375  ]
 "205
-[; ;main.c: 205:                     cmd_state = COMP;
-[e = _cmd_state . `E2912 7 ]
-"206
-[; ;main.c: 206:                     break;
-[e $U 375  ]
-"207
-[; ;main.c: 207:                 case READREQ:
+[; ;main.c: 205:                 case READREQ:
 [e :U 386 ]
-"208
-[; ;main.c: 208:                     request_storage = input;
+"206
+[; ;main.c: 206:                     request_storage = input;
 [e = _request_storage _input ]
-"209
-[; ;main.c: 209:                     last_state = cmd_state;
+"207
+[; ;main.c: 207:                     last_state = cmd_state;
 [e = F3004 _cmd_state ]
-"210
-[; ;main.c: 210:                     cmd_state = COMP;
+"208
+[; ;main.c: 208:                     cmd_state = COMP;
 [e = _cmd_state . `E2912 7 ]
-"211
-[; ;main.c: 211:                     break;
+"209
+[; ;main.c: 209:                     break;
 [e $U 375  ]
-"212
-[; ;main.c: 212:                 case READDATVAR:
+"210
+[; ;main.c: 210:                 case READDATVAR:
 [e :U 387 ]
-"213
-[; ;main.c: 213:                     data_storage[0] = input;
+"211
+[; ;main.c: 211:                     data_storage[0] = input;
 [e = *U + &U _data_storage * -> -> -> 0 `i `ui `ux -> -> # *U &U _data_storage `ui `ux _input ]
-"214
-[; ;main.c: 214:                     last_state = cmd_state;
+"212
+[; ;main.c: 212:                     last_state = cmd_state;
 [e = F3004 _cmd_state ]
-"215
-[; ;main.c: 215:                     cmd_state = READDATLEN;
+"213
+[; ;main.c: 213:                     cmd_state = READDATLEN;
 [e = _cmd_state . `E2912 3 ]
-"216
-[; ;main.c: 216:                     break;
+"214
+[; ;main.c: 214:                     break;
 [e $U 375  ]
-"217
-[; ;main.c: 217:                 case READDATLEN:
+"215
+[; ;main.c: 215:                 case READDATLEN:
 [e :U 388 ]
-"218
-[; ;main.c: 218:                     data_storage[1] = input;
+"216
+[; ;main.c: 216:                     data_storage[1] = input;
 [e = *U + &U _data_storage * -> -> -> 1 `i `ui `ux -> -> # *U &U _data_storage `ui `ux _input ]
-"219
-[; ;main.c: 219:                     last_state = cmd_state;
+"217
+[; ;main.c: 217:                     last_state = cmd_state;
 [e = F3004 _cmd_state ]
-"220
-[; ;main.c: 220:                     cmd_state = READDAT;
+"218
+[; ;main.c: 218:                     cmd_state = READDAT;
 [e = _cmd_state . `E2912 5 ]
-"221
-[; ;main.c: 221:                     if(data_storage[1] == 0) cmd_state = COMP;
+"219
+[; ;main.c: 219:                     if(data_storage[1] == 0) cmd_state = COMP;
 [e $ ! == -> *U + &U _data_storage * -> -> -> 1 `i `ui `ux -> -> # *U &U _data_storage `ui `ux `i -> 0 `i 389  ]
 [e = _cmd_state . `E2912 7 ]
 [e :U 389 ]
-"222
-[; ;main.c: 222:                     break;
+"220
+[; ;main.c: 220:                     break;
 [e $U 375  ]
-"223
-[; ;main.c: 223:                 case READDAT:
+"221
+[; ;main.c: 221:                 case READDAT:
 [e :U 390 ]
-"224
-[; ;main.c: 224:                     if (data_storage[1] <= 127) data_storage[data_storage_counter + 2] = input;
+"222
+[; ;main.c: 222:                     if (data_storage[1] <= 127) data_storage[data_storage_counter + 2] = input;
 [e $ ! <= -> *U + &U _data_storage * -> -> -> 1 `i `ui `ux -> -> # *U &U _data_storage `ui `ux `i -> 127 `i 391  ]
 [e = *U + &U _data_storage * -> -> + -> F3003 `i -> 2 `i `ui `ux -> -> # *U &U _data_storage `ui `ux _input ]
 [e :U 391 ]
-"225
-[; ;main.c: 225:                     data_storage_counter++;
+"223
+[; ;main.c: 223:                     data_storage_counter++;
 [e ++ F3003 -> -> 1 `i `uc ]
-"226
-[; ;main.c: 226:                     if (data_storage_counter == (data_storage[1])) {
+"224
+[; ;main.c: 224:                     if (data_storage_counter == (data_storage[1])) {
 [e $ ! == -> F3003 `i -> *U + &U _data_storage * -> -> -> 1 `i `ui `ux -> -> # *U &U _data_storage `ui `ux `i 392  ]
 {
-"227
-[; ;main.c: 227:                         data_storage_counter = 0;
+"225
+[; ;main.c: 225:                         data_storage_counter = 0;
 [e = F3003 -> -> 0 `i `uc ]
-"228
-[; ;main.c: 228:                         last_state = cmd_state;
+"226
+[; ;main.c: 226:                         last_state = cmd_state;
 [e = F3004 _cmd_state ]
-"229
-[; ;main.c: 229:                         cmd_state = COMP;
+"227
+[; ;main.c: 227:                         cmd_state = COMP;
 [e = _cmd_state . `E2912 7 ]
-"230
-[; ;main.c: 230:                     }
+"228
+[; ;main.c: 228:                     }
 }
 [e :U 392 ]
-"231
-[; ;main.c: 231:                     break;
+"229
+[; ;main.c: 229:                     break;
 [e $U 375  ]
-"232
-[; ;main.c: 232:                 case READSTAT:
+"230
+[; ;main.c: 230:                 case READSTAT:
 [e :U 393 ]
-"233
-[; ;main.c: 233:                     status_storage = input;
+"231
+[; ;main.c: 231:                     status_storage = input;
 [e = _status_storage _input ]
-"234
-[; ;main.c: 234:                     last_state = cmd_state;
+"232
+[; ;main.c: 232:                     last_state = cmd_state;
 [e = F3004 _cmd_state ]
-"235
-[; ;main.c: 235:                     status_storage = status_storage | (1<<7);
+"233
+[; ;main.c: 233:                     status_storage = status_storage | (1<<7);
 [e = _status_storage -> | -> _status_storage `i << -> 1 `i -> 7 `i `uc ]
-"236
-[; ;main.c: 236:                     cmd_state = WAITFORCMD;
+"234
+[; ;main.c: 234:                     cmd_state = WAITFORCMD;
 [e = _cmd_state . `E2912 0 ]
-"237
-[; ;main.c: 237:                     receive_timer_len = 0;
+"235
+[; ;main.c: 235:                     receive_timer_len = 0;
 [e = _receive_timer_len -> -> 0 `i `l ]
-"238
-[; ;main.c: 238:                     break;
+"236
+[; ;main.c: 236:                     break;
 [e $U 375  ]
-"239
-[; ;main.c: 239:                 case COMP:
+"237
+[; ;main.c: 237:                 case COMP:
 [e :U 394 ]
-"240
-[; ;main.c: 240:                     if (control_byte == input) {
+"238
+[; ;main.c: 238:                     if (control_byte == input) {
 [e $ ! == -> F3002 `i -> _input `i 395  ]
 {
-"241
-[; ;main.c: 241:                         switch (last_state) {
+"239
+[; ;main.c: 239:                         switch (last_state) {
 [e $U 397  ]
 {
-"242
-[; ;main.c: 242:                             case READCMD:
+"240
+[; ;main.c: 240:                             case READCMD:
 [e :U 398 ]
-"243
-[; ;main.c: 243:                                 if (control_byte != input) {
+"241
+[; ;main.c: 241:                                 if (control_byte != input) {
 [e $ ! != -> F3002 `i -> _input `i 399  ]
 {
-"244
-[; ;main.c: 244:                                     send_stat(MESSAGE_CORRUPTED);
+"242
+[; ;main.c: 242:                                     send_stat(MESSAGE_CORRUPTED);
 [e ( _send_stat (1 -> . `E2934 4 `uc ]
-"245
-[; ;main.c: 245:                                 } else {
+"243
+[; ;main.c: 243:                                 } else {
 }
 [e $U 400  ]
 [e :U 399 ]
 {
-"246
-[; ;main.c: 246:                                     stop_cmd();
+"244
+[; ;main.c: 244:                                     stop_cmd();
 [e ( _stop_cmd ..  ]
-"247
-[; ;main.c: 247:                                     send_stat(RECEIVED);
+"245
+[; ;main.c: 245:                                     send_stat(RECEIVED);
 [e ( _send_stat (1 -> . `E2934 1 `uc ]
-"248
-[; ;main.c: 248:                                     cmd_exe = EXECMD;
+"246
+[; ;main.c: 246:                                     cmd_exe = EXECMD;
 [e = _cmd_exe . `E2922 1 ]
-"249
-[; ;main.c: 249:                                 }
+"247
+[; ;main.c: 247:                                 }
 }
 [e :U 400 ]
-"250
-[; ;main.c: 250:                                 break;
+"248
+[; ;main.c: 248:                                 break;
 [e $U 396  ]
-"251
-[; ;main.c: 251:                             case READREQ:
+"249
+[; ;main.c: 249:                             case READREQ:
 [e :U 401 ]
-"252
-[; ;main.c: 252:                                 if (control_byte != input) {
+"250
+[; ;main.c: 250:                                 if (control_byte != input) {
 [e $ ! != -> F3002 `i -> _input `i 402  ]
 {
-"253
-[; ;main.c: 253:                                     send_stat(MESSAGE_CORRUPTED);
+"251
+[; ;main.c: 251:                                     send_stat(MESSAGE_CORRUPTED);
 [e ( _send_stat (1 -> . `E2934 4 `uc ]
-"254
-[; ;main.c: 254:                                 } else {
+"252
+[; ;main.c: 252:                                 } else {
 }
 [e $U 403  ]
 [e :U 402 ]
 {
-"255
-[; ;main.c: 255:                                     send_stat(RECEIVED);
+"253
+[; ;main.c: 253:                                     send_stat(RECEIVED);
 [e ( _send_stat (1 -> . `E2934 1 `uc ]
-"256
-[; ;main.c: 256:                                     request_storage = request_storage | (1 << 7);
+"254
+[; ;main.c: 254:                                     request_storage = request_storage | (1 << 7);
 [e = _request_storage -> | -> _request_storage `i << -> 1 `i -> 7 `i `uc ]
-"257
-[; ;main.c: 257:                                 }
+"255
+[; ;main.c: 255:                                 }
 }
 [e :U 403 ]
-"258
-[; ;main.c: 258:                                 break;
+"256
+[; ;main.c: 256:                                 break;
 [e $U 396  ]
-"259
-[; ;main.c: 259:                             case READDAT:
+"257
+[; ;main.c: 257:                             case READDAT:
 [e :U 404 ]
-"260
-[; ;main.c: 260:                                 if (data_storage[1] > 127) {
+"258
+[; ;main.c: 258:                                 if (data_storage[1] > 127) {
 [e $ ! > -> *U + &U _data_storage * -> -> -> 1 `i `ui `ux -> -> # *U &U _data_storage `ui `ux `i -> 127 `i 405  ]
 {
-"261
-[; ;main.c: 261:                                     send_stat(TOO_MUCH_DATA);
+"259
+[; ;main.c: 259:                                     send_stat(TOO_MUCH_DATA);
 [e ( _send_stat (1 -> . `E2934 3 `uc ]
-"262
-[; ;main.c: 262:                                 } else if (control_byte != input) {
+"260
+[; ;main.c: 260:                                 } else if (control_byte != input) {
 }
 [e $U 406  ]
 [e :U 405 ]
 [e $ ! != -> F3002 `i -> _input `i 407  ]
 {
-"263
-[; ;main.c: 263:                                     send_stat(MESSAGE_CORRUPTED);
+"261
+[; ;main.c: 261:                                     send_stat(MESSAGE_CORRUPTED);
 [e ( _send_stat (1 -> . `E2934 4 `uc ]
-"264
-[; ;main.c: 264:                                 } else {
+"262
+[; ;main.c: 262:                                 } else {
 }
 [e $U 408  ]
 [e :U 407 ]
 {
-"265
-[; ;main.c: 265:                                     send_stat(RECEIVED);
+"263
+[; ;main.c: 263:                                     send_stat(RECEIVED);
 [e ( _send_stat (1 -> . `E2934 1 `uc ]
-"266
-[; ;main.c: 266:                                     data_storage[0] = data_storage[0] | (1 << 7);
+"264
+[; ;main.c: 264:                                     data_storage[0] = data_storage[0] | (1 << 7);
 [e = *U + &U _data_storage * -> -> -> 0 `i `ui `ux -> -> # *U &U _data_storage `ui `ux -> | -> *U + &U _data_storage * -> -> -> 0 `i `ui `ux -> -> # *U &U _data_storage `ui `ux `i << -> 1 `i -> 7 `i `uc ]
-"267
-[; ;main.c: 267:                                 }
+"265
+[; ;main.c: 265:                                 }
 }
 [e :U 408 ]
 [e :U 406 ]
-"268
-[; ;main.c: 268:                                 break;
+"266
+[; ;main.c: 266:                                 break;
 [e $U 396  ]
-"269
-[; ;main.c: 269:                             case READDATLEN:
+"267
+[; ;main.c: 267:                             case READDATLEN:
 [e :U 409 ]
-"270
-[; ;main.c: 270:                                 if (data_storage[1] > 127) {
+"268
+[; ;main.c: 268:                                 if (data_storage[1] > 127) {
 [e $ ! > -> *U + &U _data_storage * -> -> -> 1 `i `ui `ux -> -> # *U &U _data_storage `ui `ux `i -> 127 `i 410  ]
 {
-"271
-[; ;main.c: 271:                                     send_stat(TOO_MUCH_DATA);
+"269
+[; ;main.c: 269:                                     send_stat(TOO_MUCH_DATA);
 [e ( _send_stat (1 -> . `E2934 3 `uc ]
-"272
-[; ;main.c: 272:                                 } else if (control_byte != input) {
+"270
+[; ;main.c: 270:                                 } else if (control_byte != input) {
 }
 [e $U 411  ]
 [e :U 410 ]
 [e $ ! != -> F3002 `i -> _input `i 412  ]
 {
-"273
-[; ;main.c: 273:                                     send_stat(MESSAGE_CORRUPTED);
+"271
+[; ;main.c: 271:                                     send_stat(MESSAGE_CORRUPTED);
 [e ( _send_stat (1 -> . `E2934 4 `uc ]
-"274
-[; ;main.c: 274:                                 } else {
+"272
+[; ;main.c: 272:                                 } else {
 }
 [e $U 413  ]
 [e :U 412 ]
 {
-"275
-[; ;main.c: 275:                                     send_stat(RECEIVED);
+"273
+[; ;main.c: 273:                                     send_stat(RECEIVED);
 [e ( _send_stat (1 -> . `E2934 1 `uc ]
-"276
-[; ;main.c: 276:                                     data_storage[0] = data_storage[0] | (1 << 7);
+"274
+[; ;main.c: 274:                                     data_storage[0] = data_storage[0] | (1 << 7);
 [e = *U + &U _data_storage * -> -> -> 0 `i `ui `ux -> -> # *U &U _data_storage `ui `ux -> | -> *U + &U _data_storage * -> -> -> 0 `i `ui `ux -> -> # *U &U _data_storage `ui `ux `i << -> 1 `i -> 7 `i `uc ]
-"277
-[; ;main.c: 277:                                 }
+"275
+[; ;main.c: 275:                                 }
 }
 [e :U 413 ]
 [e :U 411 ]
-"278
-[; ;main.c: 278:                                 break;
+"276
+[; ;main.c: 276:                                 break;
 [e $U 396  ]
-"279
-[; ;main.c: 279:                         }
+"277
+[; ;main.c: 277:                         }
 }
 [e $U 396  ]
 [e :U 397 ]
@@ -1211,27 +1213,27 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> . `E2912 3 `ui 409
  396 ]
 [e :U 396 ]
-"280
-[; ;main.c: 280:                     }
+"278
+[; ;main.c: 278:                     }
 }
 [e :U 395 ]
-"281
-[; ;main.c: 281:                     last_state = cmd_state;
+"279
+[; ;main.c: 279:                     last_state = cmd_state;
 [e = F3004 _cmd_state ]
-"282
-[; ;main.c: 282:                     cmd_state = WAITFORCMD;
+"280
+[; ;main.c: 280:                     cmd_state = WAITFORCMD;
 [e = _cmd_state . `E2912 0 ]
-"283
-[; ;main.c: 283:                     receive_timer_len = 0;
+"281
+[; ;main.c: 281:                     receive_timer_len = 0;
 [e = _receive_timer_len -> -> 0 `i `l ]
-"284
-[; ;main.c: 284:                     receive_time = 0;
+"282
+[; ;main.c: 282:                     receive_time = 0;
 [e = _receive_time -> -> 0 `i `l ]
-"285
-[; ;main.c: 285:                     break;
+"283
+[; ;main.c: 283:                     break;
 [e $U 375  ]
-"286
-[; ;main.c: 286:             }
+"284
+[; ;main.c: 284:             }
 }
 [e $U 375  ]
 [e :U 376 ]
@@ -1245,276 +1247,276 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> . `E2912 7 `ui 394
  375 ]
 [e :U 375 ]
-"287
-[; ;main.c: 287:             if (last_state != WAITFORCMD) control_byte = control_byte ^ input;
+"285
+[; ;main.c: 285:             if (last_state != WAITFORCMD) control_byte = control_byte ^ input;
 [e $ ! != -> F3004 `ui -> . `E2912 0 `ui 414  ]
 [e = F3002 -> ^ -> F3002 `i -> _input `i `uc ]
 [e :U 414 ]
-"288
-[; ;main.c: 288:         }
+"286
+[; ;main.c: 286:         }
 }
 [e :U 374 ]
-"290
-[; ;main.c: 290:         if((status_storage & (1<<7)) > 0) {
+"288
+[; ;main.c: 288:         if((status_storage & (1<<7)) > 0) {
 [e $ ! > & -> _status_storage `i << -> 1 `i -> 7 `i -> 0 `i 415  ]
 {
-"291
-[; ;main.c: 291:             switch(status_storage & (~(1<<7))) {
+"289
+[; ;main.c: 289:             switch(status_storage & (~(1<<7))) {
 [e $U 417  ]
 {
-"292
-[; ;main.c: 292:                 case CANCELD:
+"290
+[; ;main.c: 290:                 case CANCELD:
 [e :U 418 ]
-"293
-[; ;main.c: 293:                     if(lock_status == 1) {
+"291
+[; ;main.c: 291:                     if(lock_status == 1) {
 [e $ ! == -> _lock_status `i -> 1 `i 419  ]
 {
-"294
-[; ;main.c: 294:                         ADC_StartConversion();
+"292
+[; ;main.c: 292:                         ADC_StartConversion();
 [e ( _ADC_StartConversion ..  ]
-"295
-[; ;main.c: 295:                         working_state = WAITFORCLOSE;
+"293
+[; ;main.c: 293:                         working_state = WAITFORCLOSE;
 [e = _working_state . `E2906 3 ]
-"296
-[; ;main.c: 296:                     }
+"294
+[; ;main.c: 294:                     }
 }
 [e :U 419 ]
-"297
-[; ;main.c: 297:                     stop_cmd();
+"295
+[; ;main.c: 295:                     stop_cmd();
 [e ( _stop_cmd ..  ]
-"298
-[; ;main.c: 298:                     status_storage = status_storage & (~(1<<7));
+"296
+[; ;main.c: 296:                     status_storage = status_storage & (~(1<<7));
 [e = _status_storage -> & -> _status_storage `i ~ << -> 1 `i -> 7 `i `uc ]
-"299
-[; ;main.c: 299:                     break;
+"297
+[; ;main.c: 297:                     break;
 [e $U 416  ]
-"300
-[; ;main.c: 300:             }
+"298
+[; ;main.c: 298:             }
 }
 [e $U 416  ]
 [e :U 417 ]
 [e [\ & -> _status_storage `i ~ << -> 1 `i -> 7 `i , $ . `E2934 7 418
  416 ]
 [e :U 416 ]
-"301
-[; ;main.c: 301:         }
+"299
+[; ;main.c: 299:         }
 }
 [e :U 415 ]
-"302
-[; ;main.c: 302:         if((request_storage & (1<<7)) > 0) {
+"300
+[; ;main.c: 300:         if((request_storage & (1<<7)) > 0) {
 [e $ ! > & -> _request_storage `i << -> 1 `i -> 7 `i -> 0 `i 420  ]
 {
-"303
-[; ;main.c: 303:             switch(request_storage & (~(1<<7))) {
+"301
+[; ;main.c: 301:             switch(request_storage & (~(1<<7))) {
 [e $U 422  ]
 {
-"304
-[; ;main.c: 304:                 case LOCK_STATUS:
+"302
+[; ;main.c: 302:                 case LOCK_STATUS:
 [e :U 423 ]
-"305
-[; ;main.c: 305:                     if(lock_status) {
+"303
+[; ;main.c: 303:                     if(lock_status) {
 [e $ ! != -> _lock_status `i -> 0 `i 424  ]
 {
-"306
-[; ;main.c: 306:                         send_stat(LOCK_OPEND);
+"304
+[; ;main.c: 304:                         send_stat(LOCK_OPEND);
 [e ( _send_stat (1 -> . `E2934 5 `uc ]
-"307
-[; ;main.c: 307:                     }else {
+"305
+[; ;main.c: 305:                     }else {
 }
 [e $U 425  ]
 [e :U 424 ]
 {
-"308
-[; ;main.c: 308:                         send_stat(LOCK_CLOSED);
+"306
+[; ;main.c: 306:                         send_stat(LOCK_CLOSED);
 [e ( _send_stat (1 -> . `E2934 6 `uc ]
-"309
-[; ;main.c: 309:                     }
+"307
+[; ;main.c: 307:                     }
 }
 [e :U 425 ]
-"310
-[; ;main.c: 310:                     request_storage = status_storage & (~(1<<7));
+"308
+[; ;main.c: 308:                     request_storage = status_storage & (~(1<<7));
 [e = _request_storage -> & -> _status_storage `i ~ << -> 1 `i -> 7 `i `uc ]
-"311
-[; ;main.c: 311:                     break;
+"309
+[; ;main.c: 309:                     break;
 [e $U 421  ]
-"312
-[; ;main.c: 312:             }
+"310
+[; ;main.c: 310:             }
 }
 [e $U 421  ]
 [e :U 422 ]
 [e [\ & -> _request_storage `i ~ << -> 1 `i -> 7 `i , $ . `E2930 2 423
  421 ]
 [e :U 421 ]
-"313
-[; ;main.c: 313:         }
+"311
+[; ;main.c: 311:         }
 }
 [e :U 420 ]
-"314
-[; ;main.c: 314:         static int old_cmd_exe_counter = 0;
+"312
+[; ;main.c: 312:         static int old_cmd_exe_counter = 0;
 [v F3005 `i ~T0 @X0 1 s old_cmd_exe_counter ]
 [i F3005
 -> 0 `i
 ]
-"315
-[; ;main.c: 315:         switch (cmd_exe) {
+"313
+[; ;main.c: 313:         switch (cmd_exe) {
 [e $U 427  ]
 {
-"316
-[; ;main.c: 316:             case WAITTOSTART:
+"314
+[; ;main.c: 314:             case WAITTOSTART:
 [e :U 428 ]
-"317
-[; ;main.c: 317:                     cmd_timer_len = 0;
+"315
+[; ;main.c: 315:                     cmd_timer_len = 0;
 [e = _cmd_timer_len -> -> 0 `i `l ]
-"318
-[; ;main.c: 318:                break;
+"316
+[; ;main.c: 316:                break;
 [e $U 426  ]
-"319
-[; ;main.c: 319:             case EXECMD:
+"317
+[; ;main.c: 317:             case EXECMD:
 [e :U 429 ]
-"320
-[; ;main.c: 320:                 if(old_cmd_exe_counter != cmd_exe_counter) {
+"318
+[; ;main.c: 318:                 if(old_cmd_exe_counter != cmd_exe_counter) {
 [e $ ! != F3005 _cmd_exe_counter 430  ]
 {
-"321
-[; ;main.c: 321:                     cmd_time = 0;
+"319
+[; ;main.c: 319:                     cmd_time = 0;
 [e = _cmd_time -> -> 0 `i `l ]
-"322
-[; ;main.c: 322:                     cmd_timer_len = 1000;
+"320
+[; ;main.c: 320:                     cmd_timer_len = 1000;
 [e = _cmd_timer_len -> -> 1000 `i `l ]
-"323
-[; ;main.c: 323:                 }
+"321
+[; ;main.c: 321:                 }
 }
 [e :U 430 ]
-"324
-[; ;main.c: 324:                 old_cmd_exe_counter = cmd_exe_counter;
+"322
+[; ;main.c: 322:                 old_cmd_exe_counter = cmd_exe_counter;
 [e = F3005 _cmd_exe_counter ]
-"325
-[; ;main.c: 325:                 switch (cmd) {
+"323
+[; ;main.c: 323:                 switch (cmd) {
 [e $U 432  ]
 {
-"326
-[; ;main.c: 326:                     case CHANGE_PASSWORD:
+"324
+[; ;main.c: 324:                     case CHANGE_PASSWORD:
 [e :U 433 ]
-"327
-[; ;main.c: 327:                         switch (cmd_exe_counter) {
+"325
+[; ;main.c: 325:                         switch (cmd_exe_counter) {
 [e $U 435  ]
 {
-"328
-[; ;main.c: 328:                             case 0:
+"326
+[; ;main.c: 326:                             case 0:
 [e :U 436 ]
-"329
-[; ;main.c: 329:                                 send_req(PASSWORD);
+"327
+[; ;main.c: 327:                                 send_req(PASSWORD);
 [e ( _send_req (1 -> . `E2930 0 `uc ]
-"330
-[; ;main.c: 330:                                 cmd_exe_counter++;
+"328
+[; ;main.c: 328:                                 cmd_exe_counter++;
 [e ++ _cmd_exe_counter -> 1 `i ]
-"331
-[; ;main.c: 331:                                 break;
+"329
+[; ;main.c: 329:                                 break;
 [e $U 434  ]
-"332
-[; ;main.c: 332:                             case 1:
+"330
+[; ;main.c: 330:                             case 1:
 [e :U 437 ]
-"333
-[; ;main.c: 333:                                 cmd_exe_counter = seek_confirmation(1, 2, 0, 255);
+"331
+[; ;main.c: 331:                                 cmd_exe_counter = seek_confirmation(1, 2, 0, 255);
 [e = _cmd_exe_counter ( _seek_confirmation (4 , , , -> 1 `i -> 2 `i -> 0 `i -> 255 `i ]
-"334
-[; ;main.c: 334:                                 break;
+"332
+[; ;main.c: 332:                                 break;
 [e $U 434  ]
-"335
-[; ;main.c: 335:                             case 2:
+"333
+[; ;main.c: 333:                             case 2:
 [e :U 438 ]
-"336
-[; ;main.c: 336:                                 if(wait_for_requested(PASSWORD)) {
+"334
+[; ;main.c: 334:                                 if(wait_for_requested(PASSWORD)) {
 [e $ ! != -> ( _wait_for_requested (1 -> . `E2930 0 `uc `i -> 0 `i 439  ]
 {
-"337
-[; ;main.c: 337:                                     if(compare_pw(&data_storage[2], data_storage[1]) || !PORTBbits.RB0) {
+"335
+[; ;main.c: 335:                                     if(compare_pw(&data_storage[2], data_storage[1]) || !PORTBbits.RB0) {
 [e $ ! || != -> ( _compare_pw (2 , &U *U + &U _data_storage * -> -> -> 2 `i `ui `ux -> -> # *U &U _data_storage `ui `ux *U + &U _data_storage * -> -> -> 1 `i `ui `ux -> -> # *U &U _data_storage `ui `ux `i -> 0 `i ! != -> . . _PORTBbits 0 0 `i -> 0 `i 440  ]
 {
-"338
-[; ;main.c: 338:                                         cmd_exe_counter++;
+"336
+[; ;main.c: 336:                                         cmd_exe_counter++;
 [e ++ _cmd_exe_counter -> 1 `i ]
-"339
-[; ;main.c: 339:                                     }else {
+"337
+[; ;main.c: 337:                                     }else {
 }
 [e $U 441  ]
 [e :U 440 ]
 {
-"340
-[; ;main.c: 340:                                         send_stat(DENY);
+"338
+[; ;main.c: 338:                                         send_stat(DENY);
 [e ( _send_stat (1 -> . `E2934 2 `uc ]
-"341
-[; ;main.c: 341:                                         stop_cmd();
+"339
+[; ;main.c: 339:                                         stop_cmd();
 [e ( _stop_cmd ..  ]
-"342
-[; ;main.c: 342:                                     }
+"340
+[; ;main.c: 340:                                     }
 }
 [e :U 441 ]
-"343
-[; ;main.c: 343:                                 }
+"341
+[; ;main.c: 341:                                 }
 }
 [e :U 439 ]
-"344
-[; ;main.c: 344:                                 break;
+"342
+[; ;main.c: 342:                                 break;
 [e $U 434  ]
-"345
-[; ;main.c: 345:                             case 3:
+"343
+[; ;main.c: 343:                             case 3:
 [e :U 442 ]
-"346
-[; ;main.c: 346:                                 send_req(NEW_PASSWORD);
+"344
+[; ;main.c: 344:                                 send_req(NEW_PASSWORD);
 [e ( _send_req (1 -> . `E2930 1 `uc ]
-"347
-[; ;main.c: 347:                                 cmd_exe_counter++;
+"345
+[; ;main.c: 345:                                 cmd_exe_counter++;
 [e ++ _cmd_exe_counter -> 1 `i ]
-"348
-[; ;main.c: 348:                                 break;
+"346
+[; ;main.c: 346:                                 break;
 [e $U 434  ]
-"349
-[; ;main.c: 349:                             case 4:
+"347
+[; ;main.c: 347:                             case 4:
 [e :U 443 ]
-"350
-[; ;main.c: 350:                                 cmd_exe_counter = seek_confirmation(4, 5, 3, 255);
+"348
+[; ;main.c: 348:                                 cmd_exe_counter = seek_confirmation(4, 5, 3, 255);
 [e = _cmd_exe_counter ( _seek_confirmation (4 , , , -> 4 `i -> 5 `i -> 3 `i -> 255 `i ]
-"351
-[; ;main.c: 351:                                 break;
+"349
+[; ;main.c: 349:                                 break;
 [e $U 434  ]
-"352
-[; ;main.c: 352:                             case 5:
+"350
+[; ;main.c: 350:                             case 5:
 [e :U 444 ]
-"353
-[; ;main.c: 353:                                 if(wait_for_requested(NEW_PASSWORD)) {
+"351
+[; ;main.c: 351:                                 if(wait_for_requested(NEW_PASSWORD)) {
 [e $ ! != -> ( _wait_for_requested (1 -> . `E2930 1 `uc `i -> 0 `i 445  ]
 {
-"354
-[; ;main.c: 354:                                     save_pw(&data_storage[2], data_storage[1]);
+"352
+[; ;main.c: 352:                                     save_pw(&data_storage[2], data_storage[1]);
 [e ( _save_pw (2 , &U *U + &U _data_storage * -> -> -> 2 `i `ui `ux -> -> # *U &U _data_storage `ui `ux *U + &U _data_storage * -> -> -> 1 `i `ui `ux -> -> # *U &U _data_storage `ui `ux ]
-"355
-[; ;main.c: 355:                                     send_stat(COMMAND_EXECUTED);
+"353
+[; ;main.c: 353:                                     send_stat(COMMAND_EXECUTED);
 [e ( _send_stat (1 -> . `E2934 0 `uc ]
-"356
-[; ;main.c: 356:                                     stop_cmd();
+"354
+[; ;main.c: 354:                                     stop_cmd();
 [e ( _stop_cmd ..  ]
-"357
-[; ;main.c: 357:                                 }
+"355
+[; ;main.c: 355:                                 }
 }
 [e :U 445 ]
-"358
-[; ;main.c: 358:                                 break;
+"356
+[; ;main.c: 356:                                 break;
 [e $U 434  ]
-"359
-[; ;main.c: 359:                             case 255:
+"357
+[; ;main.c: 357:                             case 255:
 [e :U 446 ]
-"360
-[; ;main.c: 360:                                 send_stat(CANCELD);
+"358
+[; ;main.c: 358:                                 send_stat(CANCELD);
 [e ( _send_stat (1 -> . `E2934 7 `uc ]
-"361
-[; ;main.c: 361:                                 stop_cmd();
+"359
+[; ;main.c: 359:                                 stop_cmd();
 [e ( _stop_cmd ..  ]
-"362
-[; ;main.c: 362:                                 break;
+"360
+[; ;main.c: 360:                                 break;
 [e $U 434  ]
-"363
-[; ;main.c: 363:                         }
+"361
+[; ;main.c: 361:                         }
 }
 [e $U 434  ]
 [e :U 435 ]
@@ -1527,114 +1529,114 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 255 `i 446
  434 ]
 [e :U 434 ]
-"364
-[; ;main.c: 364:                         break;
+"362
+[; ;main.c: 362:                         break;
 [e $U 431  ]
-"365
-[; ;main.c: 365:                     case OPEN_LOCK:
+"363
+[; ;main.c: 363:                     case OPEN_LOCK:
 [e :U 447 ]
-"366
-[; ;main.c: 366:                         switch (cmd_exe_counter) {
+"364
+[; ;main.c: 364:                         switch (cmd_exe_counter) {
 [e $U 449  ]
 {
-"367
-[; ;main.c: 367:                             case 0:
+"365
+[; ;main.c: 365:                             case 0:
 [e :U 450 ]
-"368
-[; ;main.c: 368:                                 if(lock_status == 1) {
+"366
+[; ;main.c: 366:                                 if(lock_status == 1) {
 [e $ ! == -> _lock_status `i -> 1 `i 451  ]
 {
-"369
-[; ;main.c: 369:                                     working_state = WAITFORCLOSE;
+"367
+[; ;main.c: 367:                                     working_state = WAITFORCLOSE;
 [e = _working_state . `E2906 3 ]
-"370
-[; ;main.c: 370:                                     send_stat(COMMAND_EXECUTED);
+"368
+[; ;main.c: 368:                                     send_stat(COMMAND_EXECUTED);
 [e ( _send_stat (1 -> . `E2934 0 `uc ]
-"371
-[; ;main.c: 371:                                     stop_cmd();
+"369
+[; ;main.c: 369:                                     stop_cmd();
 [e ( _stop_cmd ..  ]
-"372
-[; ;main.c: 372:                                 }else {
+"370
+[; ;main.c: 370:                                 }else {
 }
 [e $U 452  ]
 [e :U 451 ]
 {
-"373
-[; ;main.c: 373:                                     send_req(PASSWORD);
+"371
+[; ;main.c: 371:                                     send_req(PASSWORD);
 [e ( _send_req (1 -> . `E2930 0 `uc ]
-"374
-[; ;main.c: 374:                                     cmd_exe_counter++;
+"372
+[; ;main.c: 372:                                     cmd_exe_counter++;
 [e ++ _cmd_exe_counter -> 1 `i ]
-"375
-[; ;main.c: 375:                                 }
+"373
+[; ;main.c: 373:                                 }
 }
 [e :U 452 ]
-"376
-[; ;main.c: 376:                                 break;
+"374
+[; ;main.c: 374:                                 break;
 [e $U 448  ]
-"377
-[; ;main.c: 377:                             case 1:
+"375
+[; ;main.c: 375:                             case 1:
 [e :U 453 ]
-"378
-[; ;main.c: 378:                                 cmd_exe_counter = seek_confirmation(1, 2, 0, 255);
+"376
+[; ;main.c: 376:                                 cmd_exe_counter = seek_confirmation(1, 2, 0, 255);
 [e = _cmd_exe_counter ( _seek_confirmation (4 , , , -> 1 `i -> 2 `i -> 0 `i -> 255 `i ]
-"379
-[; ;main.c: 379:                                 break;
+"377
+[; ;main.c: 377:                                 break;
 [e $U 448  ]
-"380
-[; ;main.c: 380:                             case 2:
+"378
+[; ;main.c: 378:                             case 2:
 [e :U 454 ]
-"381
-[; ;main.c: 381:                                 if(wait_for_requested(PASSWORD)) {
+"379
+[; ;main.c: 379:                                 if(wait_for_requested(PASSWORD)) {
 [e $ ! != -> ( _wait_for_requested (1 -> . `E2930 0 `uc `i -> 0 `i 455  ]
 {
-"382
-[; ;main.c: 382:                                     if(compare_pw(&data_storage[2], data_storage[1]) || !PORTBbits.RB0) {
+"380
+[; ;main.c: 380:                                     if(compare_pw(&data_storage[2], data_storage[1]) || !PORTBbits.RB0) {
 [e $ ! || != -> ( _compare_pw (2 , &U *U + &U _data_storage * -> -> -> 2 `i `ui `ux -> -> # *U &U _data_storage `ui `ux *U + &U _data_storage * -> -> -> 1 `i `ui `ux -> -> # *U &U _data_storage `ui `ux `i -> 0 `i ! != -> . . _PORTBbits 0 0 `i -> 0 `i 456  ]
 {
-"383
-[; ;main.c: 383:                                         working_state = OPENLOCK;
+"381
+[; ;main.c: 381:                                         working_state = OPENLOCK;
 [e = _working_state . `E2906 1 ]
-"384
-[; ;main.c: 384:                                         send_stat(COMMAND_EXECUTED);
+"382
+[; ;main.c: 382:                                         send_stat(COMMAND_EXECUTED);
 [e ( _send_stat (1 -> . `E2934 0 `uc ]
-"385
-[; ;main.c: 385:                                     }else {
+"383
+[; ;main.c: 383:                                     }else {
 }
 [e $U 457  ]
 [e :U 456 ]
 {
-"386
-[; ;main.c: 386:                                         send_stat(DENY);
+"384
+[; ;main.c: 384:                                         send_stat(DENY);
 [e ( _send_stat (1 -> . `E2934 2 `uc ]
-"387
-[; ;main.c: 387:                                     }
+"385
+[; ;main.c: 385:                                     }
 }
 [e :U 457 ]
-"388
-[; ;main.c: 388:                                     stop_cmd();
+"386
+[; ;main.c: 386:                                     stop_cmd();
 [e ( _stop_cmd ..  ]
-"389
-[; ;main.c: 389:                                 }
+"387
+[; ;main.c: 387:                                 }
 }
 [e :U 455 ]
-"390
-[; ;main.c: 390:                                 break;
+"388
+[; ;main.c: 388:                                 break;
 [e $U 448  ]
-"391
-[; ;main.c: 391:                             case 255:
+"389
+[; ;main.c: 389:                             case 255:
 [e :U 458 ]
-"392
-[; ;main.c: 392:                                 send_stat(CANCELD);
+"390
+[; ;main.c: 390:                                 send_stat(CANCELD);
 [e ( _send_stat (1 -> . `E2934 7 `uc ]
-"393
-[; ;main.c: 393:                                 stop_cmd();
+"391
+[; ;main.c: 391:                                 stop_cmd();
 [e ( _stop_cmd ..  ]
-"394
-[; ;main.c: 394:                                 break;
+"392
+[; ;main.c: 392:                                 break;
 [e $U 448  ]
-"395
-[; ;main.c: 395:                         }
+"393
+[; ;main.c: 393:                         }
 }
 [e $U 448  ]
 [e :U 449 ]
@@ -1644,223 +1646,223 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 255 `i 458
  448 ]
 [e :U 448 ]
-"396
-[; ;main.c: 396:                         break;
+"394
+[; ;main.c: 394:                         break;
 [e $U 431  ]
-"398
-[; ;main.c: 398:                     case START_CONFIG:
+"396
+[; ;main.c: 396:                     case START_CONFIG:
 [e :U 459 ]
-"399
-[; ;main.c: 399:                         switch (cmd_exe_counter) {
+"397
+[; ;main.c: 397:                         switch (cmd_exe_counter) {
 [e $U 461  ]
 {
-"400
-[; ;main.c: 400:                             case 0:
+"398
+[; ;main.c: 398:                             case 0:
 [e :U 462 ]
-"401
-[; ;main.c: 401:                                 send_req(PASSWORD);
+"399
+[; ;main.c: 399:                                 send_req(PASSWORD);
 [e ( _send_req (1 -> . `E2930 0 `uc ]
-"402
-[; ;main.c: 402:                                 cmd_exe_counter++;
+"400
+[; ;main.c: 400:                                 cmd_exe_counter++;
 [e ++ _cmd_exe_counter -> 1 `i ]
-"403
-[; ;main.c: 403:                                 break;
+"401
+[; ;main.c: 401:                                 break;
 [e $U 460  ]
-"404
-[; ;main.c: 404:                             case 1:
+"402
+[; ;main.c: 402:                             case 1:
 [e :U 463 ]
-"405
-[; ;main.c: 405:                                 cmd_exe_counter = seek_confirmation(1, 2, 0, 255);
+"403
+[; ;main.c: 403:                                 cmd_exe_counter = seek_confirmation(1, 2, 0, 255);
 [e = _cmd_exe_counter ( _seek_confirmation (4 , , , -> 1 `i -> 2 `i -> 0 `i -> 255 `i ]
-"406
-[; ;main.c: 406:                                 break;
+"404
+[; ;main.c: 404:                                 break;
 [e $U 460  ]
-"407
-[; ;main.c: 407:                             case 2:
+"405
+[; ;main.c: 405:                             case 2:
 [e :U 464 ]
-"408
-[; ;main.c: 408:                                 if(wait_for_requested(PASSWORD)) {
+"406
+[; ;main.c: 406:                                 if(wait_for_requested(PASSWORD)) {
 [e $ ! != -> ( _wait_for_requested (1 -> . `E2930 0 `uc `i -> 0 `i 465  ]
 {
-"409
-[; ;main.c: 409:                                     if(compare_pw(&data_storage[2], data_storage[1]) || !PORTBbits.RB0) {
+"407
+[; ;main.c: 407:                                     if(compare_pw(&data_storage[2], data_storage[1]) || !PORTBbits.RB0) {
 [e $ ! || != -> ( _compare_pw (2 , &U *U + &U _data_storage * -> -> -> 2 `i `ui `ux -> -> # *U &U _data_storage `ui `ux *U + &U _data_storage * -> -> -> 1 `i `ui `ux -> -> # *U &U _data_storage `ui `ux `i -> 0 `i ! != -> . . _PORTBbits 0 0 `i -> 0 `i 466  ]
 {
-"410
-[; ;main.c: 410:                                         working_state = IDLE;
+"408
+[; ;main.c: 408:                                         working_state = IDLE;
 [e = _working_state . `E2906 0 ]
-"411
-[; ;main.c: 411:                                         do { LATAbits.LATA0 = 1; } while(0);
+"409
+[; ;main.c: 409:                                         do { LATAbits.LATA0 = 1; } while(0);
 [e :U 469 ]
 {
 [e = . . _LATAbits 0 0 -> -> 1 `i `uc ]
 }
 [e :U 468 ]
-"412
-[; ;main.c: 412:                                         send_stat(LOCK_OPEND);
+"410
+[; ;main.c: 410:                                         send_stat(LOCK_OPEND);
 [e ( _send_stat (1 -> . `E2934 5 `uc ]
-"413
-[; ;main.c: 413:                                         lock_status = 1;
+"411
+[; ;main.c: 411:                                         lock_status = 1;
 [e = _lock_status -> -> 1 `i `a ]
-"414
-[; ;main.c: 414:                                         send_stat(CONTINUE);
+"412
+[; ;main.c: 412:                                         send_stat(CONTINUE);
 [e ( _send_stat (1 -> . `E2934 8 `uc ]
-"415
-[; ;main.c: 415:                                         cmd_exe_counter ++;
+"413
+[; ;main.c: 413:                                         cmd_exe_counter ++;
 [e ++ _cmd_exe_counter -> 1 `i ]
-"416
-[; ;main.c: 416:                                     }else {
+"414
+[; ;main.c: 414:                                     }else {
 }
 [e $U 470  ]
 [e :U 466 ]
 {
-"417
-[; ;main.c: 417:                                         send_stat(DENY);
+"415
+[; ;main.c: 415:                                         send_stat(DENY);
 [e ( _send_stat (1 -> . `E2934 2 `uc ]
-"418
-[; ;main.c: 418:                                         stop_cmd();
+"416
+[; ;main.c: 416:                                         stop_cmd();
 [e ( _stop_cmd ..  ]
-"419
-[; ;main.c: 419:                                     }
+"417
+[; ;main.c: 417:                                     }
 }
 [e :U 470 ]
-"421
-[; ;main.c: 421:                                 }
+"419
+[; ;main.c: 419:                                 }
 }
 [e :U 465 ]
-"422
-[; ;main.c: 422:                                 break;
+"420
+[; ;main.c: 420:                                 break;
 [e $U 460  ]
-"423
-[; ;main.c: 423:                             case 3:
+"421
+[; ;main.c: 421:                             case 3:
 [e :U 471 ]
-"424
-[; ;main.c: 424:                                 cmd_timer_len = 12000;
+"422
+[; ;main.c: 422:                                 cmd_timer_len = 12000;
 [e = _cmd_timer_len -> -> 12000 `i `l ]
-"425
-[; ;main.c: 425:                                 if((status_storage & (1<<7)) > 0 && (status_storage & (~(1<<7))) == CONTINUE) {
+"423
+[; ;main.c: 423:                                 if((status_storage & (1<<7)) > 0 && (status_storage & (~(1<<7))) == CONTINUE) {
 [e $ ! && > & -> _status_storage `i << -> 1 `i -> 7 `i -> 0 `i == & -> _status_storage `i ~ << -> 1 `i -> 7 `i -> . `E2934 8 `i 472  ]
 {
-"426
-[; ;main.c: 426:                                     ADC_StartConversion();
+"424
+[; ;main.c: 424:                                     ADC_StartConversion();
 [e ( _ADC_StartConversion ..  ]
-"427
-[; ;main.c: 427:                                     cmd_exe_counter ++;
+"425
+[; ;main.c: 425:                                     cmd_exe_counter ++;
 [e ++ _cmd_exe_counter -> 1 `i ]
-"428
-[; ;main.c: 428:                                 }
+"426
+[; ;main.c: 426:                                 }
 }
 [e :U 472 ]
-"429
-[; ;main.c: 429:                                 status_storage = status_storage & (~(1<<7));
+"427
+[; ;main.c: 427:                                 status_storage = status_storage & (~(1<<7));
 [e = _status_storage -> & -> _status_storage `i ~ << -> 1 `i -> 7 `i `uc ]
-"430
-[; ;main.c: 430:                                 break;
+"428
+[; ;main.c: 428:                                 break;
 [e $U 460  ]
-"431
-[; ;main.c: 431:                             case 4:
+"429
+[; ;main.c: 429:                             case 4:
 [e :U 473 ]
-"432
-[; ;main.c: 432:                                 if(ADC_IsConversionDone()) {
+"430
+[; ;main.c: 430:                                 if(ADC_IsConversionDone()) {
 [e $ ! != -> ( _ADC_IsConversionDone ..  `i -> 0 `i 474  ]
 {
-"433
-[; ;main.c: 433:                                     new_hall_code_close = ADC_GetConversionResult();
+"431
+[; ;main.c: 431:                                     new_hall_code_close = ADC_GetConversionResult();
 [e = _new_hall_code_close ( _ADC_GetConversionResult ..  ]
-"434
-[; ;main.c: 434:                                     send_stat(CONTINUE);
+"432
+[; ;main.c: 432:                                     send_stat(CONTINUE);
 [e ( _send_stat (1 -> . `E2934 8 `uc ]
-"435
-[; ;main.c: 435:                                     cmd_exe_counter ++;
+"433
+[; ;main.c: 433:                                     cmd_exe_counter ++;
 [e ++ _cmd_exe_counter -> 1 `i ]
-"436
-[; ;main.c: 436:                                 }
+"434
+[; ;main.c: 434:                                 }
 }
 [e :U 474 ]
-"437
-[; ;main.c: 437:                                 break;
+"435
+[; ;main.c: 435:                                 break;
 [e $U 460  ]
-"438
-[; ;main.c: 438:                             case 5:
+"436
+[; ;main.c: 436:                             case 5:
 [e :U 475 ]
-"439
-[; ;main.c: 439:                                 if((status_storage & (1<<7)) > 0 && (status_storage & (~(1<<7))) == CONTINUE) {
+"437
+[; ;main.c: 437:                                 if((status_storage & (1<<7)) > 0 && (status_storage & (~(1<<7))) == CONTINUE) {
 [e $ ! && > & -> _status_storage `i << -> 1 `i -> 7 `i -> 0 `i == & -> _status_storage `i ~ << -> 1 `i -> 7 `i -> . `E2934 8 `i 476  ]
 {
-"440
-[; ;main.c: 440:                                     ADC_StartConversion();
+"438
+[; ;main.c: 438:                                     ADC_StartConversion();
 [e ( _ADC_StartConversion ..  ]
-"441
-[; ;main.c: 441:                                     cmd_exe_counter ++;
+"439
+[; ;main.c: 439:                                     cmd_exe_counter ++;
 [e ++ _cmd_exe_counter -> 1 `i ]
-"442
-[; ;main.c: 442:                                 }
+"440
+[; ;main.c: 440:                                 }
 }
 [e :U 476 ]
-"443
-[; ;main.c: 443:                                 status_storage = status_storage & (~(1<<7));
+"441
+[; ;main.c: 441:                                 status_storage = status_storage & (~(1<<7));
 [e = _status_storage -> & -> _status_storage `i ~ << -> 1 `i -> 7 `i `uc ]
-"444
-[; ;main.c: 444:                                 break;
+"442
+[; ;main.c: 442:                                 break;
 [e $U 460  ]
-"445
-[; ;main.c: 445:                             case 6:
+"443
+[; ;main.c: 443:                             case 6:
 [e :U 477 ]
-"446
-[; ;main.c: 446:                                 if(ADC_IsConversionDone()) {
+"444
+[; ;main.c: 444:                                 if(ADC_IsConversionDone()) {
 [e $ ! != -> ( _ADC_IsConversionDone ..  `i -> 0 `i 478  ]
 {
-"447
-[; ;main.c: 447:                                     new_hall_code_open = ADC_GetConversionResult();
+"445
+[; ;main.c: 445:                                     new_hall_code_open = ADC_GetConversionResult();
 [e = _new_hall_code_open ( _ADC_GetConversionResult ..  ]
-"448
-[; ;main.c: 448:                                     send_stat(COMMAND_EXECUTED);
+"446
+[; ;main.c: 446:                                     send_stat(COMMAND_EXECUTED);
 [e ( _send_stat (1 -> . `E2934 0 `uc ]
-"449
-[; ;main.c: 449:                                     save_hall_codes(new_hall_code_open, new_hall_code_close);
+"447
+[; ;main.c: 447:                                     save_hall_codes(new_hall_code_open, new_hall_code_close);
 [e ( _save_hall_codes (2 , _new_hall_code_open _new_hall_code_close ]
-"450
-[; ;main.c: 450:                                     read_hall_codes();
+"448
+[; ;main.c: 448:                                     read_hall_codes();
 [e ( _read_hall_codes ..  ]
-"451
-[; ;main.c: 451:                                     working_state = OPENLOCK;
+"449
+[; ;main.c: 449:                                     working_state = OPENLOCK;
 [e = _working_state . `E2906 1 ]
-"452
-[; ;main.c: 452:                                     stop_cmd();
+"450
+[; ;main.c: 450:                                     stop_cmd();
 [e ( _stop_cmd ..  ]
-"453
-[; ;main.c: 453:                                     new_hall_code_open = 0;
+"451
+[; ;main.c: 451:                                     new_hall_code_open = 0;
 [e = _new_hall_code_open -> -> 0 `i `uc ]
-"454
-[; ;main.c: 454:                                     new_hall_code_close = 0;
+"452
+[; ;main.c: 452:                                     new_hall_code_close = 0;
 [e = _new_hall_code_close -> -> 0 `i `uc ]
-"455
-[; ;main.c: 455:                                 }
+"453
+[; ;main.c: 453:                                 }
 }
 [e :U 478 ]
-"456
-[; ;main.c: 456:                                 break;
+"454
+[; ;main.c: 454:                                 break;
 [e $U 460  ]
-"457
-[; ;main.c: 457:                             case 255:
+"455
+[; ;main.c: 455:                             case 255:
 [e :U 479 ]
-"458
-[; ;main.c: 458:                                 send_stat(CANCELD);
+"456
+[; ;main.c: 456:                                 send_stat(CANCELD);
 [e ( _send_stat (1 -> . `E2934 7 `uc ]
-"459
-[; ;main.c: 459:                                 stop_cmd();
+"457
+[; ;main.c: 457:                                 stop_cmd();
 [e ( _stop_cmd ..  ]
-"460
-[; ;main.c: 460:                                 new_hall_code_open = 0;
+"458
+[; ;main.c: 458:                                 new_hall_code_open = 0;
 [e = _new_hall_code_open -> -> 0 `i `uc ]
-"461
-[; ;main.c: 461:                                 new_hall_code_close = 0;
+"459
+[; ;main.c: 459:                                 new_hall_code_close = 0;
 [e = _new_hall_code_close -> -> 0 `i `uc ]
-"462
-[; ;main.c: 462:                                 break;
+"460
+[; ;main.c: 460:                                 break;
 [e $U 460  ]
-"463
-[; ;main.c: 463:                         }
+"461
+[; ;main.c: 461:                         }
 }
 [e $U 460  ]
 [e :U 461 ]
@@ -1874,11 +1876,11 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 255 `i 479
  460 ]
 [e :U 460 ]
-"464
-[; ;main.c: 464:                         break;
+"462
+[; ;main.c: 462:                         break;
 [e $U 431  ]
-"466
-[; ;main.c: 466:                 }
+"464
+[; ;main.c: 464:                 }
 }
 [e $U 431  ]
 [e :U 432 ]
@@ -1887,11 +1889,11 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ . `E2926 2 459
  431 ]
 [e :U 431 ]
-"467
-[; ;main.c: 467:                 break;
+"465
+[; ;main.c: 465:                 break;
 [e $U 426  ]
-"468
-[; ;main.c: 468:         }
+"466
+[; ;main.c: 466:         }
 }
 [e $U 426  ]
 [e :U 427 ]
@@ -1899,120 +1901,120 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> . `E2922 1 `ui 429
  426 ]
 [e :U 426 ]
-"470
-[; ;main.c: 470:         switch (working_state) {
+"468
+[; ;main.c: 468:         switch (working_state) {
 [e $U 481  ]
 {
-"471
-[; ;main.c: 471:             case IDLE:
+"469
+[; ;main.c: 469:             case IDLE:
 [e :U 482 ]
-"473
-[; ;main.c: 473:                 break;
+"471
+[; ;main.c: 471:                 break;
 [e $U 480  ]
-"474
-[; ;main.c: 474:             case OPENLOCK:
+"472
+[; ;main.c: 472:             case OPENLOCK:
 [e :U 483 ]
-"475
-[; ;main.c: 475:                 do { LATAbits.LATA0 = 1; } while(0);
+"473
+[; ;main.c: 473:                 do { LATAbits.LATA0 = 1; } while(0);
 [e :U 486 ]
 {
 [e = . . _LATAbits 0 0 -> -> 1 `i `uc ]
 }
 [e :U 485 ]
-"476
-[; ;main.c: 476:                 send_stat(LOCK_OPEND);
+"474
+[; ;main.c: 474:                 send_stat(LOCK_OPEND);
 [e ( _send_stat (1 -> . `E2934 5 `uc ]
-"477
-[; ;main.c: 477:                 lock_status = 1;
+"475
+[; ;main.c: 475:                 lock_status = 1;
 [e = _lock_status -> -> 1 `i `a ]
-"478
-[; ;main.c: 478:                 working_state = WAITFOROPEN;
+"476
+[; ;main.c: 476:                 working_state = WAITFOROPEN;
 [e = _working_state . `E2906 2 ]
-"479
-[; ;main.c: 479:                 ADC_StartConversion();
+"477
+[; ;main.c: 477:                 ADC_StartConversion();
 [e ( _ADC_StartConversion ..  ]
-"480
-[; ;main.c: 480:                 break;
+"478
+[; ;main.c: 478:                 break;
 [e $U 480  ]
-"481
-[; ;main.c: 481:             case WAITFOROPEN:
+"479
+[; ;main.c: 479:             case WAITFOROPEN:
 [e :U 487 ]
-"482
-[; ;main.c: 482:                 if(ADC_IsConversionDone()) {
+"480
+[; ;main.c: 480:                 if(ADC_IsConversionDone()) {
 [e $ ! != -> ( _ADC_IsConversionDone ..  `i -> 0 `i 488  ]
 {
-"483
-[; ;main.c: 483:                     uint8_t res = ADRESH;
+"481
+[; ;main.c: 481:                     uint8_t res = ADRESH;
 [v _res `uc ~T0 @X0 1 a ]
 [e = _res _ADRESH ]
-"484
-[; ;main.c: 484:                     if(door_status_changed(1, res)) {
+"482
+[; ;main.c: 482:                     if(door_status_changed(1, res)) {
 [e $ ! != -> ( _door_status_changed (2 , -> -> 1 `i `a -> _res `s `i -> 0 `i 489  ]
 {
-"485
-[; ;main.c: 485:                         working_state = WAITFORCLOSE;
+"483
+[; ;main.c: 483:                         working_state = WAITFORCLOSE;
 [e = _working_state . `E2906 3 ]
-"486
-[; ;main.c: 486:                     }
+"484
+[; ;main.c: 484:                     }
 }
 [e :U 489 ]
-"487
-[; ;main.c: 487:                     ADC_StartConversion();
+"485
+[; ;main.c: 485:                     ADC_StartConversion();
 [e ( _ADC_StartConversion ..  ]
-"488
-[; ;main.c: 488:                 }
+"486
+[; ;main.c: 486:                 }
 }
 [e :U 488 ]
-"489
-[; ;main.c: 489:                 break;
+"487
+[; ;main.c: 487:                 break;
 [e $U 480  ]
-"490
-[; ;main.c: 490:             case WAITFORCLOSE:
+"488
+[; ;main.c: 488:             case WAITFORCLOSE:
 [e :U 490 ]
-"491
-[; ;main.c: 491:                 if(ADC_IsConversionDone()) {
+"489
+[; ;main.c: 489:                 if(ADC_IsConversionDone()) {
 [e $ ! != -> ( _ADC_IsConversionDone ..  `i -> 0 `i 491  ]
 {
-"492
-[; ;main.c: 492:                     uint8_t res = ADRESH;
+"490
+[; ;main.c: 490:                     uint8_t res = ADRESH;
 [v _res `uc ~T0 @X0 1 a ]
 [e = _res _ADRESH ]
-"493
-[; ;main.c: 493:                     if(door_status_changed(0, res)) {
+"491
+[; ;main.c: 491:                     if(door_status_changed(0, res)) {
 [e $ ! != -> ( _door_status_changed (2 , -> -> 0 `i `a -> _res `s `i -> 0 `i 492  ]
 {
-"494
-[; ;main.c: 494:                         send_stat(LOCK_CLOSED);
+"492
+[; ;main.c: 492:                         send_stat(LOCK_CLOSED);
 [e ( _send_stat (1 -> . `E2934 6 `uc ]
-"495
-[; ;main.c: 495:                         lock_status = 0;
+"493
+[; ;main.c: 493:                         lock_status = 0;
 [e = _lock_status -> -> 0 `i `a ]
-"496
-[; ;main.c: 496:                         working_state = IDLE;
+"494
+[; ;main.c: 494:                         working_state = IDLE;
 [e = _working_state . `E2906 0 ]
-"497
-[; ;main.c: 497:                         do { LATAbits.LATA0 = 0; } while(0);
+"495
+[; ;main.c: 495:                         do { LATAbits.LATA0 = 0; } while(0);
 [e :U 495 ]
 {
 [e = . . _LATAbits 0 0 -> -> 0 `i `uc ]
 }
 [e :U 494 ]
-"498
-[; ;main.c: 498:                     }
+"496
+[; ;main.c: 496:                     }
 }
 [e :U 492 ]
-"499
-[; ;main.c: 499:                     ADC_StartConversion();
+"497
+[; ;main.c: 497:                     ADC_StartConversion();
 [e ( _ADC_StartConversion ..  ]
-"500
-[; ;main.c: 500:                 }
+"498
+[; ;main.c: 498:                 }
 }
 [e :U 491 ]
-"501
-[; ;main.c: 501:                 break;
+"499
+[; ;main.c: 499:                 break;
 [e $U 480  ]
-"502
-[; ;main.c: 502:         }
+"500
+[; ;main.c: 500:         }
 }
 [e $U 480  ]
 [e :U 481 ]
@@ -2022,26 +2024,26 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> . `E2906 3 `ui 490
  480 ]
 [e :U 480 ]
-"503
-[; ;main.c: 503:     }
+"501
+[; ;main.c: 501:     }
 }
-[e :U 364 ]
-[e $U 365  ]
-[e :U 366 ]
+[e :U 369 ]
+[e $U 370  ]
+[e :U 371 ]
+"502
+[; ;main.c: 502: }
+[e :UE 368 ]
+}
 "504
-[; ;main.c: 504: }
-[e :UE 363 ]
-}
-"506
-[; ;main.c: 506: void del_array(uint8_t *array, int16_t len) {
+[; ;main.c: 504: void del_array(uint8_t *array, int16_t len) {
 [v _del_array `(v ~T0 @X0 1 ef2`*uc`s ]
 {
 [e :U _del_array ]
 [v _array `*uc ~T0 @X0 1 r1 ]
 [v _len `s ~T0 @X0 1 r2 ]
 [f ]
-"507
-[; ;main.c: 507:     for (int16_t x = 0; x < len; x++) *(array + x) = 0;
+"505
+[; ;main.c: 505:     for (int16_t x = 0; x < len; x++) *(array + x) = 0;
 {
 [v _x `s ~T0 @X0 1 a ]
 [e = _x -> -> 0 `i `s ]
@@ -2053,50 +2055,50 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ < -> _x `i -> _len `i 497  ]
 [e :U 498 ]
 }
-"508
-[; ;main.c: 508: }
+"506
+[; ;main.c: 506: }
 [e :UE 496 ]
 }
-"510
-[; ;main.c: 510: void send_msg_stopping(uint8_t *msg, uint8_t len) {
+"508
+[; ;main.c: 508: void send_msg_stopping(uint8_t *msg, uint8_t len) {
 [v _send_msg_stopping `(v ~T0 @X0 1 ef2`*uc`uc ]
 {
 [e :U _send_msg_stopping ]
 [v _msg `*uc ~T0 @X0 1 r1 ]
 [v _len `uc ~T0 @X0 1 r2 ]
 [f ]
-"511
-[; ;main.c: 511:     for (int x = 0; x < len; x++) {
+"509
+[; ;main.c: 509:     for (int x = 0; x < len; x++) {
 {
 [v _x `i ~T0 @X0 1 a ]
 [e = _x -> 0 `i ]
 [e $U 505  ]
 [e :U 502 ]
 {
-"512
-[; ;main.c: 512:         while (!EUSART_is_tx_done());
+"510
+[; ;main.c: 510:         while (!EUSART_is_tx_done());
 [e $U 506  ]
 [e :U 507 ]
 [e :U 506 ]
 [e $ ! != -> ( _EUSART_is_tx_done ..  `i -> 0 `i 507  ]
 [e :U 508 ]
-"513
-[; ;main.c: 513:         EUSART_Write(*(msg + x));
+"511
+[; ;main.c: 511:         EUSART_Write(*(msg + x));
 [e ( _EUSART_Write (1 *U + _msg * -> _x `x -> -> # *U _msg `i `x ]
-"514
-[; ;main.c: 514:     }
+"512
+[; ;main.c: 512:     }
 }
 [e ++ _x -> 1 `i ]
 [e :U 505 ]
 [e $ < _x -> _len `i 502  ]
 [e :U 503 ]
 }
-"515
-[; ;main.c: 515: }
+"513
+[; ;main.c: 513: }
 [e :UE 501 ]
 }
-"517
-[; ;main.c: 517: void send_cmd(uint8_t cmd) {
+"515
+[; ;main.c: 515: void send_cmd(uint8_t cmd) {
 [v _send_cmd `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _send_cmd ]
@@ -2105,8 +2107,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v F3018 `uc ~T0 @X0 -> 3 `i s ]
 [i F3018
 :U ..
-"518
-[; ;main.c: 518:     uint8_t command_protocol[] = {0b10000001, cmd, 0};
+"516
+[; ;main.c: 516:     uint8_t command_protocol[] = {0b10000001, cmd, 0};
 -> -> 0 `i `uc
 -> -> 0 `i `uc
 -> -> 0 `i `uc
@@ -2115,34 +2117,34 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _command_protocol `uc ~T0 @X0 -> 3 `i a ]
 [e = _command_protocol F3018 ]
 [e ; = *U + &U _command_protocol * -> -> -> 0 `i `ui `ux -> -> # *U &U _command_protocol `ui `ux -> -> 129 `i `uc ; = *U + &U _command_protocol * -> -> -> 1 `i `ui `ux -> -> # *U &U _command_protocol `ui `ux _cmd = *U + &U _command_protocol * -> -> -> 2 `i `ui `ux -> -> # *U &U _command_protocol `ui `ux -> -> 0 `i `uc ]
-"519
-[; ;main.c: 519:     command_protocol[2] = command_protocol[0] ^ command_protocol[1];
+"517
+[; ;main.c: 517:     command_protocol[2] = command_protocol[0] ^ command_protocol[1];
 [e = *U + &U _command_protocol * -> -> -> 2 `i `ui `ux -> -> # *U &U _command_protocol `ui `ux -> ^ -> *U + &U _command_protocol * -> -> -> 0 `i `ui `ux -> -> # *U &U _command_protocol `ui `ux `i -> *U + &U _command_protocol * -> -> -> 1 `i `ui `ux -> -> # *U &U _command_protocol `ui `ux `i `uc ]
-"520
-[; ;main.c: 520:     send_msg_stopping(command_protocol, 3);
+"518
+[; ;main.c: 518:     send_msg_stopping(command_protocol, 3);
 [e ( _send_msg_stopping (2 , &U _command_protocol -> -> 3 `i `uc ]
-"521
-[; ;main.c: 521:     status_storage = 0;
+"519
+[; ;main.c: 519:     status_storage = 0;
 [e = _status_storage -> -> 0 `i `uc ]
-"522
-[; ;main.c: 522: }
+"520
+[; ;main.c: 520: }
 [e :UE 509 ]
 }
-"524
-[; ;main.c: 524: void send_req(uint8_t var) {
+"522
+[; ;main.c: 522: void send_req(uint8_t var) {
 [v _send_req `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _send_req ]
 [v _var `uc ~T0 @X0 1 r1 ]
 [f ]
-"525
-[; ;main.c: 525:     del_array(data_storage, 127 + 2);
+"523
+[; ;main.c: 523:     del_array(data_storage, 127 + 2);
 [e ( _del_array (2 , &U _data_storage -> + -> 127 `i -> 2 `i `s ]
 [v F3022 `uc ~T0 @X0 -> 3 `i s ]
 [i F3022
 :U ..
-"526
-[; ;main.c: 526:     uint8_t request_protocol[] = {0b01000010, var, 0};
+"524
+[; ;main.c: 524:     uint8_t request_protocol[] = {0b01000010, var, 0};
 -> -> 0 `i `uc
 -> -> 0 `i `uc
 -> -> 0 `i `uc
@@ -2151,21 +2153,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _request_protocol `uc ~T0 @X0 -> 3 `i a ]
 [e = _request_protocol F3022 ]
 [e ; = *U + &U _request_protocol * -> -> -> 0 `i `ui `ux -> -> # *U &U _request_protocol `ui `ux -> -> 66 `i `uc ; = *U + &U _request_protocol * -> -> -> 1 `i `ui `ux -> -> # *U &U _request_protocol `ui `ux _var = *U + &U _request_protocol * -> -> -> 2 `i `ui `ux -> -> # *U &U _request_protocol `ui `ux -> -> 0 `i `uc ]
-"527
-[; ;main.c: 527:     request_protocol[2] = request_protocol[0] ^ request_protocol[1];
+"525
+[; ;main.c: 525:     request_protocol[2] = request_protocol[0] ^ request_protocol[1];
 [e = *U + &U _request_protocol * -> -> -> 2 `i `ui `ux -> -> # *U &U _request_protocol `ui `ux -> ^ -> *U + &U _request_protocol * -> -> -> 0 `i `ui `ux -> -> # *U &U _request_protocol `ui `ux `i -> *U + &U _request_protocol * -> -> -> 1 `i `ui `ux -> -> # *U &U _request_protocol `ui `ux `i `uc ]
-"528
-[; ;main.c: 528:     send_msg_stopping(request_protocol, 3);
+"526
+[; ;main.c: 526:     send_msg_stopping(request_protocol, 3);
 [e ( _send_msg_stopping (2 , &U _request_protocol -> -> 3 `i `uc ]
-"529
-[; ;main.c: 529:     status_storage = 0;
+"527
+[; ;main.c: 527:     status_storage = 0;
 [e = _status_storage -> -> 0 `i `uc ]
-"530
-[; ;main.c: 530: }
+"528
+[; ;main.c: 528: }
 [e :UE 510 ]
 }
-"532
-[; ;main.c: 532: void send_dat(uint8_t *dat, uint8_t len, uint8_t var) {
+"530
+[; ;main.c: 530: void send_dat(uint8_t *dat, uint8_t len, uint8_t var) {
 [v _send_dat `(v ~T0 @X0 1 ef3`*uc`uc`uc ]
 {
 [e :U _send_dat ]
@@ -2173,56 +2175,56 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _len `uc ~T0 @X0 1 r2 ]
 [v _var `uc ~T0 @X0 1 r3 ]
 [f ]
-"533
-[; ;main.c: 533:     uint8_t control_byte = 0b00100100;
+"531
+[; ;main.c: 531:     uint8_t control_byte = 0b00100100;
 [v _control_byte `uc ~T0 @X0 1 a ]
 [e = _control_byte -> -> 36 `i `uc ]
-"534
-[; ;main.c: 534:     control_byte = (control_byte ^ len) ^ var;
+"532
+[; ;main.c: 532:     control_byte = (control_byte ^ len) ^ var;
 [e = _control_byte -> ^ ^ -> _control_byte `i -> _len `i -> _var `i `uc ]
-"535
-[; ;main.c: 535:     send_msg_stopping(0b00100100, 1);
+"533
+[; ;main.c: 533:     send_msg_stopping(0b00100100, 1);
 [e ( _send_msg_stopping (2 , -> -> 36 `i `*uc -> -> 1 `i `uc ]
-"536
-[; ;main.c: 536:     for (int x = 0; x < len; x++) {
+"534
+[; ;main.c: 534:     for (int x = 0; x < len; x++) {
 {
 [v _x `i ~T0 @X0 1 a ]
 [e = _x -> 0 `i ]
 [e $U 515  ]
 [e :U 512 ]
 {
-"537
-[; ;main.c: 537:         control_byte = control_byte ^ *(dat + x);
+"535
+[; ;main.c: 535:         control_byte = control_byte ^ *(dat + x);
 [e = _control_byte -> ^ -> _control_byte `i -> *U + _dat * -> _x `x -> -> # *U _dat `i `x `i `uc ]
-"538
-[; ;main.c: 538:     }
+"536
+[; ;main.c: 536:     }
 }
 [e ++ _x -> 1 `i ]
 [e :U 515 ]
 [e $ < _x -> _len `i 512  ]
 [e :U 513 ]
 }
-"539
-[; ;main.c: 539:     send_msg_stopping(&len, 1);
+"537
+[; ;main.c: 537:     send_msg_stopping(&len, 1);
 [e ( _send_msg_stopping (2 , &U _len -> -> 1 `i `uc ]
-"540
-[; ;main.c: 540:     send_msg_stopping(&var, 1);
+"538
+[; ;main.c: 538:     send_msg_stopping(&var, 1);
 [e ( _send_msg_stopping (2 , &U _var -> -> 1 `i `uc ]
-"541
-[; ;main.c: 541:     send_msg_stopping(dat, len);
+"539
+[; ;main.c: 539:     send_msg_stopping(dat, len);
 [e ( _send_msg_stopping (2 , _dat _len ]
-"542
-[; ;main.c: 542:     send_msg_stopping(&control_byte, 1);
+"540
+[; ;main.c: 540:     send_msg_stopping(&control_byte, 1);
 [e ( _send_msg_stopping (2 , &U _control_byte -> -> 1 `i `uc ]
-"543
-[; ;main.c: 543:     status_storage = 0;
+"541
+[; ;main.c: 541:     status_storage = 0;
 [e = _status_storage -> -> 0 `i `uc ]
-"544
-[; ;main.c: 544: }
+"542
+[; ;main.c: 542: }
 [e :UE 511 ]
 }
-"546
-[; ;main.c: 546: void send_stat(uint8_t stat) {
+"544
+[; ;main.c: 544: void send_stat(uint8_t stat) {
 [v _send_stat `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _send_stat ]
@@ -2231,8 +2233,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v F3032 `uc ~T0 @X0 -> 2 `i s ]
 [i F3032
 :U ..
-"547
-[; ;main.c: 547:     uint8_t status_protocol[] = {0b00011000, stat};
+"545
+[; ;main.c: 545:     uint8_t status_protocol[] = {0b00011000, stat};
 -> -> 0 `i `uc
 -> -> 0 `i `uc
 ..
@@ -2240,106 +2242,106 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _status_protocol `uc ~T0 @X0 -> 2 `i a ]
 [e = _status_protocol F3032 ]
 [e ; = *U + &U _status_protocol * -> -> -> 0 `i `ui `ux -> -> # *U &U _status_protocol `ui `ux -> -> 24 `i `uc = *U + &U _status_protocol * -> -> -> 1 `i `ui `ux -> -> # *U &U _status_protocol `ui `ux _stat ]
-"548
-[; ;main.c: 548:     send_msg_stopping(status_protocol, 2);
+"546
+[; ;main.c: 546:     send_msg_stopping(status_protocol, 2);
 [e ( _send_msg_stopping (2 , &U _status_protocol -> -> 2 `i `uc ]
-"549
-[; ;main.c: 549: }
+"547
+[; ;main.c: 547: }
 [e :UE 516 ]
 }
-"551
-[; ;main.c: 551: _Bool compare_pw(uint8_t *pw, uint8_t len) {
+"549
+[; ;main.c: 549: _Bool compare_pw(uint8_t *pw, uint8_t len) {
 [v _compare_pw `(a ~T0 @X0 1 ef2`*uc`uc ]
 {
 [e :U _compare_pw ]
 [v _pw `*uc ~T0 @X0 1 r1 ]
 [v _len `uc ~T0 @X0 1 r2 ]
 [f ]
-"552
-[; ;main.c: 552:     _Bool res = 1;
+"550
+[; ;main.c: 550:     _Bool res = 1;
 [v _res `a ~T0 @X0 1 a ]
 [e = _res -> -> 1 `i `a ]
-"553
-[; ;main.c: 553:     uint8_t eedata = DATAEE_ReadByte(4);
+"551
+[; ;main.c: 551:     uint8_t eedata = DATAEE_ReadByte(4);
 [v _eedata `uc ~T0 @X0 1 a ]
 [e = _eedata ( _DATAEE_ReadByte (1 -> -> 4 `i `uc ]
-"554
-[; ;main.c: 554:     if (eedata != len) {
+"552
+[; ;main.c: 552:     if (eedata != len) {
 [e $ ! != -> _eedata `i -> _len `i 518  ]
 {
-"555
-[; ;main.c: 555:         res = 0;
+"553
+[; ;main.c: 553:         res = 0;
 [e = _res -> -> 0 `i `a ]
-"556
-[; ;main.c: 556:     } else {
+"554
+[; ;main.c: 554:     } else {
 }
 [e $U 519  ]
 [e :U 518 ]
 {
-"557
-[; ;main.c: 557:         for (int x = 0; x < len; x++) {
+"555
+[; ;main.c: 555:         for (int x = 0; x < len; x++) {
 {
 [v _x `i ~T0 @X0 1 a ]
 [e = _x -> 0 `i ]
 [e $U 523  ]
 [e :U 520 ]
 {
-"558
-[; ;main.c: 558:             eedata = DATAEE_ReadByte(x + 4 + 1);
+"556
+[; ;main.c: 556:             eedata = DATAEE_ReadByte(x + 4 + 1);
 [e = _eedata ( _DATAEE_ReadByte (1 -> + + _x -> 4 `i -> 1 `i `uc ]
-"559
-[; ;main.c: 559:             uint8_t indata = *(pw + x);
+"557
+[; ;main.c: 557:             uint8_t indata = *(pw + x);
 [v _indata `uc ~T0 @X0 1 a ]
 [e = _indata *U + _pw * -> _x `x -> -> # *U _pw `i `x ]
-"560
-[; ;main.c: 560:             if (eedata != indata) {
+"558
+[; ;main.c: 558:             if (eedata != indata) {
 [e $ ! != -> _eedata `i -> _indata `i 524  ]
 {
-"561
-[; ;main.c: 561:                 res = 0;
+"559
+[; ;main.c: 559:                 res = 0;
 [e = _res -> -> 0 `i `a ]
-"562
-[; ;main.c: 562:                 break;
+"560
+[; ;main.c: 560:                 break;
 [e $U 521  ]
-"563
-[; ;main.c: 563:             }
+"561
+[; ;main.c: 561:             }
 }
 [e :U 524 ]
-"564
-[; ;main.c: 564:         }
+"562
+[; ;main.c: 562:         }
 }
 [e ++ _x -> 1 `i ]
 [e :U 523 ]
 [e $ < _x -> _len `i 520  ]
 [e :U 521 ]
 }
-"565
-[; ;main.c: 565:     }
+"563
+[; ;main.c: 563:     }
 }
 [e :U 519 ]
-"566
-[; ;main.c: 566:     return res;
+"564
+[; ;main.c: 564:     return res;
 [e ) _res ]
 [e $UE 517  ]
-"567
-[; ;main.c: 567: }
+"565
+[; ;main.c: 565: }
 [e :UE 517 ]
 }
-"569
-[; ;main.c: 569: void save_pw(uint8_t *pw, uint8_t len) {
+"567
+[; ;main.c: 567: void save_pw(uint8_t *pw, uint8_t len) {
 [v _save_pw `(v ~T0 @X0 1 ef2`*uc`uc ]
 {
 [e :U _save_pw ]
 [v _pw `*uc ~T0 @X0 1 r1 ]
 [v _len `uc ~T0 @X0 1 r2 ]
 [f ]
-"570
-[; ;main.c: 570:     if (DATAEE_ReadByte(4) != len) DATAEE_WriteByte(4, len);
+"568
+[; ;main.c: 568:     if (DATAEE_ReadByte(4) != len) DATAEE_WriteByte(4, len);
 [e $ ! != -> ( _DATAEE_ReadByte (1 -> -> 4 `i `uc `i -> _len `i 526  ]
 [e ( _DATAEE_WriteByte (2 , -> -> 4 `i `uc _len ]
 [e :U 526 ]
-"571
-[; ;main.c: 571:     for (int x = 0; x < len; x++) if (DATAEE_ReadByte(x + 4 + 1) != *(pw + x)) DATAEE_WriteByte(x + 4 + 1, *(pw + x));
+"569
+[; ;main.c: 569:     for (int x = 0; x < len; x++) if (DATAEE_ReadByte(x + 4 + 1) != *(pw + x)) DATAEE_WriteByte(x + 4 + 1, *(pw + x));
 {
 [v _x `i ~T0 @X0 1 a ]
 [e = _x -> 0 `i ]
@@ -2353,50 +2355,50 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ < _x -> _len `i 527  ]
 [e :U 528 ]
 }
-"572
-[; ;main.c: 572: }
+"570
+[; ;main.c: 570: }
 [e :UE 525 ]
 }
-"574
-[; ;main.c: 574: void read_hall_codes(void) {
+"572
+[; ;main.c: 572: void read_hall_codes(void) {
 [v _read_hall_codes `(v ~T0 @X0 1 ef ]
 {
 [e :U _read_hall_codes ]
 [f ]
-"575
-[; ;main.c: 575:     hall_codes[0] = (uint8_t) DATAEE_ReadByte(0);
+"573
+[; ;main.c: 573:     hall_codes[0] = (uint8_t) DATAEE_ReadByte(0);
 [e = *U + &U _hall_codes * -> -> -> 0 `i `ui `ux -> -> # *U &U _hall_codes `ui `ux ( _DATAEE_ReadByte (1 -> -> 0 `i `uc ]
-"576
-[; ;main.c: 576:     hall_codes[1] = (uint8_t) DATAEE_ReadByte(1);
+"574
+[; ;main.c: 574:     hall_codes[1] = (uint8_t) DATAEE_ReadByte(1);
 [e = *U + &U _hall_codes * -> -> -> 1 `i `ui `ux -> -> # *U &U _hall_codes `ui `ux ( _DATAEE_ReadByte (1 -> -> 1 `i `uc ]
-"577
-[; ;main.c: 577: }
+"575
+[; ;main.c: 575: }
 [e :UE 532 ]
 }
-"579
-[; ;main.c: 579: void save_hall_codes(uint8_t open, uint8_t close) {
+"577
+[; ;main.c: 577: void save_hall_codes(uint8_t open, uint8_t close) {
 [v _save_hall_codes `(v ~T0 @X0 1 ef2`uc`uc ]
 {
 [e :U _save_hall_codes ]
 [v _open `uc ~T0 @X0 1 r1 ]
 [v _close `uc ~T0 @X0 1 r2 ]
 [f ]
-"580
-[; ;main.c: 580:     if (DATAEE_ReadByte(0) != open) DATAEE_WriteByte(0, open);
+"578
+[; ;main.c: 578:     if (DATAEE_ReadByte(0) != open) DATAEE_WriteByte(0, open);
 [e $ ! != -> ( _DATAEE_ReadByte (1 -> -> 0 `i `uc `i -> _open `i 534  ]
 [e ( _DATAEE_WriteByte (2 , -> -> 0 `i `uc _open ]
 [e :U 534 ]
-"581
-[; ;main.c: 581:     if (DATAEE_ReadByte(1) != close) DATAEE_WriteByte(1, close);
+"579
+[; ;main.c: 579:     if (DATAEE_ReadByte(1) != close) DATAEE_WriteByte(1, close);
 [e $ ! != -> ( _DATAEE_ReadByte (1 -> -> 1 `i `uc `i -> _close `i 535  ]
 [e ( _DATAEE_WriteByte (2 , -> -> 1 `i `uc _close ]
 [e :U 535 ]
-"582
-[; ;main.c: 582: }
+"580
+[; ;main.c: 580: }
 [e :UE 533 ]
 }
-"584
-[; ;main.c: 584: int seek_confirmation(int wait_num, int continue_num, int retry_num, int cancel_num) {
+"582
+[; ;main.c: 582: int seek_confirmation(int wait_num, int continue_num, int retry_num, int cancel_num) {
 [v _seek_confirmation `(i ~T0 @X0 1 ef4`i`i`i`i ]
 {
 [e :U _seek_confirmation ]
@@ -2405,46 +2407,46 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _retry_num `i ~T0 @X0 1 r3 ]
 [v _cancel_num `i ~T0 @X0 1 r4 ]
 [f ]
-"585
-[; ;main.c: 585:     if((status_storage & (1<<7)) > 0) {
+"583
+[; ;main.c: 583:     if((status_storage & (1<<7)) > 0) {
 [e $ ! > & -> _status_storage `i << -> 1 `i -> 7 `i -> 0 `i 537  ]
 {
-"586
-[; ;main.c: 586:         switch(status_storage & (~(1<<7))) {
+"584
+[; ;main.c: 584:         switch(status_storage & (~(1<<7))) {
 [e $U 539  ]
 {
-"587
-[; ;main.c: 587:             case 0b00000010:
+"585
+[; ;main.c: 585:             case 0b00000010:
 [e :U 540 ]
-"588
-[; ;main.c: 588:                 return continue_num;
+"586
+[; ;main.c: 586:                 return continue_num;
 [e ) _continue_num ]
 [e $UE 536  ]
-"589
-[; ;main.c: 589:                 break;
+"587
+[; ;main.c: 587:                 break;
 [e $U 538  ]
-"590
-[; ;main.c: 590:             case 0b00000100:
+"588
+[; ;main.c: 588:             case 0b00000100:
 [e :U 541 ]
-"591
-[; ;main.c: 591:                 return cancel_num;
+"589
+[; ;main.c: 589:                 return cancel_num;
 [e ) _cancel_num ]
 [e $UE 536  ]
-"592
-[; ;main.c: 592:                 break;
+"590
+[; ;main.c: 590:                 break;
 [e $U 538  ]
-"593
-[; ;main.c: 593:             case 0b00000101:
+"591
+[; ;main.c: 591:             case 0b00000101:
 [e :U 542 ]
-"594
-[; ;main.c: 594:                 return retry_num;
+"592
+[; ;main.c: 592:                 return retry_num;
 [e ) _retry_num ]
 [e $UE 536  ]
-"595
-[; ;main.c: 595:                 break;
+"593
+[; ;main.c: 593:                 break;
 [e $U 538  ]
-"596
-[; ;main.c: 596:         }
+"594
+[; ;main.c: 594:         }
 }
 [e $U 538  ]
 [e :U 539 ]
@@ -2453,109 +2455,109 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 5 `i 542
  538 ]
 [e :U 538 ]
-"597
-[; ;main.c: 597:         status_storage = status_storage & (~(1<<7));
+"595
+[; ;main.c: 595:         status_storage = status_storage & (~(1<<7));
 [e = _status_storage -> & -> _status_storage `i ~ << -> 1 `i -> 7 `i `uc ]
-"598
-[; ;main.c: 598:     }
+"596
+[; ;main.c: 596:     }
 }
 [e :U 537 ]
-"599
-[; ;main.c: 599:     return wait_num;
+"597
+[; ;main.c: 597:     return wait_num;
 [e ) _wait_num ]
 [e $UE 536  ]
-"600
-[; ;main.c: 600: }
+"598
+[; ;main.c: 598: }
 [e :UE 536 ]
 }
-"602
-[; ;main.c: 602: _Bool wait_for_requested(uint8_t req) {
+"600
+[; ;main.c: 600: _Bool wait_for_requested(uint8_t req) {
 [v _wait_for_requested `(a ~T0 @X0 1 ef1`uc ]
 {
 [e :U _wait_for_requested ]
 [v _req `uc ~T0 @X0 1 r1 ]
 [f ]
-"603
-[; ;main.c: 603:     if(((data_storage[0] & (1<<7)) > 0) && (req == (data_storage[0] & (~(1<<7))))) {
+"601
+[; ;main.c: 601:     if(((data_storage[0] & (1<<7)) > 0) && (req == (data_storage[0] & (~(1<<7))))) {
 [e $ ! && > & -> *U + &U _data_storage * -> -> -> 0 `i `ui `ux -> -> # *U &U _data_storage `ui `ux `i << -> 1 `i -> 7 `i -> 0 `i == -> _req `i & -> *U + &U _data_storage * -> -> -> 0 `i `ui `ux -> -> # *U &U _data_storage `ui `ux `i ~ << -> 1 `i -> 7 `i 544  ]
 {
-"604
-[; ;main.c: 604:         return 1;
+"602
+[; ;main.c: 602:         return 1;
 [e ) -> -> 1 `i `a ]
 [e $UE 543  ]
-"605
-[; ;main.c: 605:     }
+"603
+[; ;main.c: 603:     }
 }
 [e :U 544 ]
-"606
-[; ;main.c: 606:     return 0;
+"604
+[; ;main.c: 604:     return 0;
 [e ) -> -> 0 `i `a ]
 [e $UE 543  ]
-"607
-[; ;main.c: 607: }
+"605
+[; ;main.c: 605: }
 [e :UE 543 ]
 }
-"609
-[; ;main.c: 609: void stop_cmd(void) {
+"607
+[; ;main.c: 607: void stop_cmd(void) {
 [v _stop_cmd `(v ~T0 @X0 1 ef ]
 {
 [e :U _stop_cmd ]
 [f ]
-"610
-[; ;main.c: 610:     cmd_time = 0;
+"608
+[; ;main.c: 608:     cmd_time = 0;
 [e = _cmd_time -> -> 0 `i `l ]
-"611
-[; ;main.c: 611:     cmd_timer_len = 0;
+"609
+[; ;main.c: 609:     cmd_timer_len = 0;
 [e = _cmd_timer_len -> -> 0 `i `l ]
-"612
-[; ;main.c: 612:     cmd_exe_counter = 0;
+"610
+[; ;main.c: 610:     cmd_exe_counter = 0;
 [e = _cmd_exe_counter -> 0 `i ]
-"613
-[; ;main.c: 613:     cmd_exe = WAITTOSTART;
+"611
+[; ;main.c: 611:     cmd_exe = WAITTOSTART;
 [e = _cmd_exe . `E2922 0 ]
-"614
-[; ;main.c: 614: }
+"612
+[; ;main.c: 612: }
 [e :UE 545 ]
 }
-"616
-[; ;main.c: 616: _Bool door_status_changed(_Bool open_or_close, int16_t val) {
+"614
+[; ;main.c: 614: _Bool door_status_changed(_Bool open_or_close, int16_t val) {
 [v _door_status_changed `(a ~T0 @X0 1 ef2`a`s ]
 {
 [e :U _door_status_changed ]
 [v _open_or_close `a ~T0 @X0 1 r1 ]
 [v _val `s ~T0 @X0 1 r2 ]
 [f ]
-"617
-[; ;main.c: 617:     if(open_or_close) {
+"615
+[; ;main.c: 615:     if(open_or_close) {
 [e $ ! != -> _open_or_close `i -> 0 `i 547  ]
 {
-"618
-[; ;main.c: 618:         if((hall_codes[0] > hall_codes[1] && val >= hall_codes[1] + ((hall_codes[0] - hall_codes[1]) * 9 / 10)) || (hall_codes[0] < hall_codes[1] && val <= hall_codes[1] - ((hall_codes[1] - hall_codes[0]) * 9 / 10))) return 1;
+"616
+[; ;main.c: 616:         if((hall_codes[0] > hall_codes[1] && val >= hall_codes[1] + ((hall_codes[0] - hall_codes[1]) * 9 / 10)) || (hall_codes[0] < hall_codes[1] && val <= hall_codes[1] - ((hall_codes[1] - hall_codes[0]) * 9 / 10))) return 1;
 [e $ ! || && > -> *U + &U _hall_codes * -> -> -> 0 `i `ui `ux -> -> # *U &U _hall_codes `ui `ux `i -> *U + &U _hall_codes * -> -> -> 1 `i `ui `ux -> -> # *U &U _hall_codes `ui `ux `i >= -> _val `i + -> *U + &U _hall_codes * -> -> -> 1 `i `ui `ux -> -> # *U &U _hall_codes `ui `ux `i / * - -> *U + &U _hall_codes * -> -> -> 0 `i `ui `ux -> -> # *U &U _hall_codes `ui `ux `i -> *U + &U _hall_codes * -> -> -> 1 `i `ui `ux -> -> # *U &U _hall_codes `ui `ux `i -> 9 `i -> 10 `i && < -> *U + &U _hall_codes * -> -> -> 0 `i `ui `ux -> -> # *U &U _hall_codes `ui `ux `i -> *U + &U _hall_codes * -> -> -> 1 `i `ui `ux -> -> # *U &U _hall_codes `ui `ux `i <= -> _val `i - -> *U + &U _hall_codes * -> -> -> 1 `i `ui `ux -> -> # *U &U _hall_codes `ui `ux `i / * - -> *U + &U _hall_codes * -> -> -> 1 `i `ui `ux -> -> # *U &U _hall_codes `ui `ux `i -> *U + &U _hall_codes * -> -> -> 0 `i `ui `ux -> -> # *U &U _hall_codes `ui `ux `i -> 9 `i -> 10 `i 548  ]
 [e ) -> -> 1 `i `a ]
 [e $UE 546  ]
 [e :U 548 ]
-"619
-[; ;main.c: 619:     }else {
+"617
+[; ;main.c: 617:     }else {
 }
 [e $U 549  ]
 [e :U 547 ]
 {
-"620
-[; ;main.c: 620:         if((hall_codes[1] > hall_codes[0] && val >= hall_codes[0] + ((hall_codes[1] - hall_codes[0]) * 9 / 10)) || (hall_codes[1] < hall_codes[0] && val <= hall_codes[0] - ((hall_codes[0] - hall_codes[1]) * 9 / 10))) return 1;
+"618
+[; ;main.c: 618:         if((hall_codes[1] > hall_codes[0] && val >= hall_codes[0] + ((hall_codes[1] - hall_codes[0]) * 9 / 10)) || (hall_codes[1] < hall_codes[0] && val <= hall_codes[0] - ((hall_codes[0] - hall_codes[1]) * 9 / 10))) return 1;
 [e $ ! || && > -> *U + &U _hall_codes * -> -> -> 1 `i `ui `ux -> -> # *U &U _hall_codes `ui `ux `i -> *U + &U _hall_codes * -> -> -> 0 `i `ui `ux -> -> # *U &U _hall_codes `ui `ux `i >= -> _val `i + -> *U + &U _hall_codes * -> -> -> 0 `i `ui `ux -> -> # *U &U _hall_codes `ui `ux `i / * - -> *U + &U _hall_codes * -> -> -> 1 `i `ui `ux -> -> # *U &U _hall_codes `ui `ux `i -> *U + &U _hall_codes * -> -> -> 0 `i `ui `ux -> -> # *U &U _hall_codes `ui `ux `i -> 9 `i -> 10 `i && < -> *U + &U _hall_codes * -> -> -> 1 `i `ui `ux -> -> # *U &U _hall_codes `ui `ux `i -> *U + &U _hall_codes * -> -> -> 0 `i `ui `ux -> -> # *U &U _hall_codes `ui `ux `i <= -> _val `i - -> *U + &U _hall_codes * -> -> -> 0 `i `ui `ux -> -> # *U &U _hall_codes `ui `ux `i / * - -> *U + &U _hall_codes * -> -> -> 0 `i `ui `ux -> -> # *U &U _hall_codes `ui `ux `i -> *U + &U _hall_codes * -> -> -> 1 `i `ui `ux -> -> # *U &U _hall_codes `ui `ux `i -> 9 `i -> 10 `i 550  ]
 [e ) -> -> 1 `i `a ]
 [e $UE 546  ]
 [e :U 550 ]
-"621
-[; ;main.c: 621:     }
+"619
+[; ;main.c: 619:     }
 }
 [e :U 549 ]
-"622
-[; ;main.c: 622:     return 0;
+"620
+[; ;main.c: 620:     return 0;
 [e ) -> -> 0 `i `a ]
 [e $UE 546  ]
-"623
-[; ;main.c: 623: }
+"621
+[; ;main.c: 621: }
 [e :UE 546 ]
 }

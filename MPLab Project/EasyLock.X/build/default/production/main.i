@@ -4720,18 +4720,31 @@ void stop_cmd(void);
 int seek_confirmation(int wait_num, int continue_num, int retry_num, int cancel_num);
 _Bool door_status_changed(_Bool open_or_close, int16_t val);
 
-
 long receive_time = 0;
 long receive_timer_len = 0;
 long cmd_time = 0;
 long cmd_timer_len = 0;
 long button_time = 0;
 _Bool button_status = 0;
+_Bool button = 0;
 
 void timer_up() {
     if(receive_timer_len > 0) receive_time++;
     if(cmd_timer_len > 0) cmd_time++;
     if(button_status) button_time++;
+    button = !PORTBbits.RB0;
+    if(button != button_status) {
+        if(button_status && button_time < 50) {
+            if(lock_status) {
+                working_state = WAITFORCLOSE;
+            }else {
+                working_state = OPENLOCK;
+            }
+        }else {
+            button_time = 0;
+        }
+    }
+    button_status = button;
 }
 
 void main(void) {
@@ -4757,21 +4770,6 @@ void main(void) {
 
     while (1) {
 
-        _Bool new_button_status = !PORTBbits.RB0;
-        if(new_button_status != button_status) {
-            if(button_status && button_time < 50) {
-                if(lock_status) {
-                    working_state = WAITFORCLOSE;
-                }else {
-                    working_state = OPENLOCK;
-                }
-            }else {
-                button_time = 0;
-            }
-        }
-
-        button_status = new_button_status;
-        button_status = !PORTBbits.RB0;
         if(receive_timer_len > 0 && receive_time > receive_timer_len) {
             receive_time = 0;
             receive_timer_len = 0;
